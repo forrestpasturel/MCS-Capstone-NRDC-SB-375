@@ -1,0 +1,3 @@
+segment_id,post,pre,year_3,speed_gain_post,speed_rebound_year3,rebounded_to_pre_or_worse,annual_induced_vmt,co2_kg_per_vmt,annual_co2_penalty_kg
+I80_YOLO_001,52.0,42.0,41.0,10.0,-11.0,True,1250000,0.36,450000.0
+I80_YOLO_002,46.0,39.0,38.5,7.0,-7.5,True,740000,0.36,266400.0

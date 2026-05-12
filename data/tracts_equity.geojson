@@ -1,0 +1,1341 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "source": "Synthetic representative tracts \u2014 replace with CalEnviroScreen 4.0 exports",
+    "corridors": [
+      "I-80 (Yolo / Sacramento)",
+      "SR-99 (Central Valley)",
+      "I-105 (Los Angeles)",
+      "I-710 (Long Beach)"
+    ],
+    "note": "Run with geopandas installed + internet access for real CES 4.0 tract polygons"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0001",
+        "corridor": "I-80 (Yolo / Sacramento)",
+        "vmt_index": 82,
+        "vmt_pctile": 68,
+        "pollution_burden_pctile": 72,
+        "dac_flag": true,
+        "high_burden_flag": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.625,
+              38.528
+            ],
+            [
+              -121.595,
+              38.528
+            ],
+            [
+              -121.595,
+              38.552
+            ],
+            [
+              -121.625,
+              38.552
+            ],
+            [
+              -121.625,
+              38.528
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0002",
+        "corridor": "I-80 (Yolo / Sacramento)",
+        "vmt_index": 91,
+        "vmt_pctile": 77,
+        "pollution_burden_pctile": 78,
+        "dac_flag": true,
+        "high_burden_flag": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.585,
+              38.528
+            ],
+            [
+              -121.555,
+              38.528
+            ],
+            [
+              -121.555,
+              38.552
+            ],
+            [
+              -121.585,
+              38.552
+            ],
+            [
+              -121.585,
+              38.528
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0003",
+        "corridor": "I-80 (Yolo / Sacramento)",
+        "vmt_index": 75,
+        "vmt_pctile": 62,
+        "pollution_burden_pctile": 69,
+        "dac_flag": true,
+        "high_burden_flag": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.545,
+              38.528
+            ],
+            [
+              -121.515,
+              38.528
+            ],
+            [
+              -121.515,
+              38.552
+            ],
+            [
+              -121.545,
+              38.552
+            ],
+            [
+              -121.545,
+              38.528
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0004",
+        "corridor": "I-80 (Yolo / Sacramento)",
+        "vmt_index": 68,
+        "vmt_pctile": 55,
+        "pollution_burden_pctile": 65,
+        "dac_flag": false,
+        "high_burden_flag": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.625,
+              38.568
+            ],
+            [
+              -121.595,
+              38.568
+            ],
+            [
+              -121.595,
+              38.592
+            ],
+            [
+              -121.625,
+              38.592
+            ],
+            [
+              -121.625,
+              38.568
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0005",
+        "corridor": "I-80 (Yolo / Sacramento)",
+        "vmt_index": 88,
+        "vmt_pctile": 74,
+        "pollution_burden_pctile": 75,
+        "dac_flag": true,
+        "high_burden_flag": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.585,
+              38.568
+            ],
+            [
+              -121.555,
+              38.568
+            ],
+            [
+              -121.555,
+              38.592
+            ],
+            [
+              -121.585,
+              38.592
+            ],
+            [
+              -121.585,
+              38.568
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0006",
+        "corridor": "I-80 (Yolo / Sacramento)",
+        "vmt_index": 95,
+        "vmt_pctile": 80,
+        "pollution_burden_pctile": 82,
+        "dac_flag": true,
+        "high_burden_flag": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.545,
+              38.568
+            ],
+            [
+              -121.515,
+              38.568
+            ],
+            [
+              -121.515,
+              38.592
+            ],
+            [
+              -121.545,
+              38.592
+            ],
+            [
+              -121.545,
+              38.568
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0007",
+        "corridor": "I-80 (Yolo / Sacramento)",
+        "vmt_index": 72,
+        "vmt_pctile": 58,
+        "pollution_burden_pctile": 60,
+        "dac_flag": false,
+        "high_burden_flag": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.505,
+              38.528
+            ],
+            [
+              -121.475,
+              38.528
+            ],
+            [
+              -121.475,
+              38.552
+            ],
+            [
+              -121.505,
+              38.552
+            ],
+            [
+              -121.505,
+              38.528
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0008",
+        "corridor": "I-80 (Yolo / Sacramento)",
+        "vmt_index": 85,
+        "vmt_pctile": 71,
+        "pollution_burden_pctile": 70,
+        "dac_flag": true,
+        "high_burden_flag": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.505,
+              38.568
+            ],
+            [
+              -121.475,
+              38.568
+            ],
+            [
+              -121.475,
+              38.592
+            ],
+            [
+              -121.505,
+              38.592
+            ],
+            [
+              -121.505,
+              38.568
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0009",
+        "corridor": "SR-99 (Central Valley)",
+        "vmt_index": 92,
+        "vmt_pctile": 78,
+        "pollution_burden_pctile": 84,
+        "dac_flag": true,
+        "high_burden_flag": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -119.815,
+              36.658
+            ],
+            [
+              -119.785,
+              36.658
+            ],
+            [
+              -119.785,
+              36.682
+            ],
+            [
+              -119.815,
+              36.682
+            ],
+            [
+              -119.815,
+              36.658
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0010",
+        "corridor": "SR-99 (Central Valley)",
+        "vmt_index": 86,
+        "vmt_pctile": 73,
+        "pollution_burden_pctile": 80,
+        "dac_flag": true,
+        "high_burden_flag": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -119.755,
+              36.658
+            ],
+            [
+              -119.725,
+              36.658
+            ],
+            [
+              -119.725,
+              36.682
+            ],
+            [
+              -119.755,
+              36.682
+            ],
+            [
+              -119.755,
+              36.658
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0011",
+        "corridor": "SR-99 (Central Valley)",
+        "vmt_index": 98,
+        "vmt_pctile": 83,
+        "pollution_burden_pctile": 88,
+        "dac_flag": true,
+        "high_burden_flag": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -119.815,
+              36.698
+            ],
+            [
+              -119.785,
+              36.698
+            ],
+            [
+              -119.785,
+              36.722
+            ],
+            [
+              -119.815,
+              36.722
+            ],
+            [
+              -119.815,
+              36.698
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0012",
+        "corridor": "SR-99 (Central Valley)",
+        "vmt_index": 80,
+        "vmt_pctile": 67,
+        "pollution_burden_pctile": 76,
+        "dac_flag": true,
+        "high_burden_flag": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -119.755,
+              36.698
+            ],
+            [
+              -119.725,
+              36.698
+            ],
+            [
+              -119.725,
+              36.722
+            ],
+            [
+              -119.755,
+              36.722
+            ],
+            [
+              -119.755,
+              36.698
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0013",
+        "corridor": "SR-99 (Central Valley)",
+        "vmt_index": 90,
+        "vmt_pctile": 76,
+        "pollution_burden_pctile": 82,
+        "dac_flag": true,
+        "high_burden_flag": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -119.815,
+              36.738
+            ],
+            [
+              -119.785,
+              36.738
+            ],
+            [
+              -119.785,
+              36.762
+            ],
+            [
+              -119.815,
+              36.762
+            ],
+            [
+              -119.815,
+              36.738
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0014",
+        "corridor": "SR-99 (Central Valley)",
+        "vmt_index": 75,
+        "vmt_pctile": 61,
+        "pollution_burden_pctile": 72,
+        "dac_flag": true,
+        "high_burden_flag": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -119.755,
+              36.738
+            ],
+            [
+              -119.725,
+              36.738
+            ],
+            [
+              -119.725,
+              36.762
+            ],
+            [
+              -119.755,
+              36.762
+            ],
+            [
+              -119.755,
+              36.738
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0015",
+        "corridor": "SR-99 (Central Valley)",
+        "vmt_index": 70,
+        "vmt_pctile": 55,
+        "pollution_burden_pctile": 65,
+        "dac_flag": false,
+        "high_burden_flag": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -119.785,
+              36.618
+            ],
+            [
+              -119.755,
+              36.618
+            ],
+            [
+              -119.755,
+              36.642
+            ],
+            [
+              -119.785,
+              36.642
+            ],
+            [
+              -119.785,
+              36.618
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0016",
+        "corridor": "SR-99 (Central Valley)",
+        "vmt_index": 78,
+        "vmt_pctile": 64,
+        "pollution_burden_pctile": 70,
+        "dac_flag": true,
+        "high_burden_flag": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -119.785,
+              36.778
+            ],
+            [
+              -119.755,
+              36.778
+            ],
+            [
+              -119.755,
+              36.802
+            ],
+            [
+              -119.785,
+              36.802
+            ],
+            [
+              -119.785,
+              36.778
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0017",
+        "corridor": "I-105 (Los Angeles)",
+        "vmt_index": 95,
+        "vmt_pctile": 81,
+        "pollution_burden_pctile": 90,
+        "dac_flag": true,
+        "high_burden_flag": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -118.355,
+              33.918
+            ],
+            [
+              -118.325,
+              33.918
+            ],
+            [
+              -118.325,
+              33.942
+            ],
+            [
+              -118.355,
+              33.942
+            ],
+            [
+              -118.355,
+              33.918
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0018",
+        "corridor": "I-105 (Los Angeles)",
+        "vmt_index": 100,
+        "vmt_pctile": 85,
+        "pollution_burden_pctile": 92,
+        "dac_flag": true,
+        "high_burden_flag": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -118.315,
+              33.918
+            ],
+            [
+              -118.285,
+              33.918
+            ],
+            [
+              -118.285,
+              33.942
+            ],
+            [
+              -118.315,
+              33.942
+            ],
+            [
+              -118.315,
+              33.918
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0019",
+        "corridor": "I-105 (Los Angeles)",
+        "vmt_index": 88,
+        "vmt_pctile": 75,
+        "pollution_burden_pctile": 86,
+        "dac_flag": true,
+        "high_burden_flag": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -118.275,
+              33.918
+            ],
+            [
+              -118.245,
+              33.918
+            ],
+            [
+              -118.245,
+              33.942
+            ],
+            [
+              -118.275,
+              33.942
+            ],
+            [
+              -118.275,
+              33.918
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0020",
+        "corridor": "I-105 (Los Angeles)",
+        "vmt_index": 82,
+        "vmt_pctile": 69,
+        "pollution_burden_pctile": 80,
+        "dac_flag": true,
+        "high_burden_flag": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -118.235,
+              33.918
+            ],
+            [
+              -118.205,
+              33.918
+            ],
+            [
+              -118.205,
+              33.942
+            ],
+            [
+              -118.235,
+              33.942
+            ],
+            [
+              -118.235,
+              33.918
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0021",
+        "corridor": "I-105 (Los Angeles)",
+        "vmt_index": 78,
+        "vmt_pctile": 64,
+        "pollution_burden_pctile": 75,
+        "dac_flag": true,
+        "high_burden_flag": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -118.355,
+              33.938
+            ],
+            [
+              -118.325,
+              33.938
+            ],
+            [
+              -118.325,
+              33.962
+            ],
+            [
+              -118.355,
+              33.962
+            ],
+            [
+              -118.355,
+              33.938
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0022",
+        "corridor": "I-105 (Los Angeles)",
+        "vmt_index": 92,
+        "vmt_pctile": 79,
+        "pollution_burden_pctile": 88,
+        "dac_flag": true,
+        "high_burden_flag": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -118.315,
+              33.938
+            ],
+            [
+              -118.285,
+              33.938
+            ],
+            [
+              -118.285,
+              33.962
+            ],
+            [
+              -118.315,
+              33.962
+            ],
+            [
+              -118.315,
+              33.938
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0023",
+        "corridor": "I-105 (Los Angeles)",
+        "vmt_index": 70,
+        "vmt_pctile": 56,
+        "pollution_burden_pctile": 68,
+        "dac_flag": false,
+        "high_burden_flag": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -118.275,
+              33.938
+            ],
+            [
+              -118.245,
+              33.938
+            ],
+            [
+              -118.245,
+              33.962
+            ],
+            [
+              -118.275,
+              33.962
+            ],
+            [
+              -118.275,
+              33.938
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0024",
+        "corridor": "I-105 (Los Angeles)",
+        "vmt_index": 65,
+        "vmt_pctile": 50,
+        "pollution_burden_pctile": 60,
+        "dac_flag": false,
+        "high_burden_flag": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -118.235,
+              33.938
+            ],
+            [
+              -118.205,
+              33.938
+            ],
+            [
+              -118.205,
+              33.962
+            ],
+            [
+              -118.235,
+              33.962
+            ],
+            [
+              -118.235,
+              33.938
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0025",
+        "corridor": "I-710 (Long Beach)",
+        "vmt_index": 105,
+        "vmt_pctile": 88,
+        "pollution_burden_pctile": 97,
+        "dac_flag": true,
+        "high_burden_flag": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -118.235,
+              33.778
+            ],
+            [
+              -118.205,
+              33.778
+            ],
+            [
+              -118.205,
+              33.802
+            ],
+            [
+              -118.235,
+              33.802
+            ],
+            [
+              -118.235,
+              33.778
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0026",
+        "corridor": "I-710 (Long Beach)",
+        "vmt_index": 110,
+        "vmt_pctile": 92,
+        "pollution_burden_pctile": 95,
+        "dac_flag": true,
+        "high_burden_flag": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -118.195,
+              33.778
+            ],
+            [
+              -118.165,
+              33.778
+            ],
+            [
+              -118.165,
+              33.802
+            ],
+            [
+              -118.195,
+              33.802
+            ],
+            [
+              -118.195,
+              33.778
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0027",
+        "corridor": "I-710 (Long Beach)",
+        "vmt_index": 100,
+        "vmt_pctile": 85,
+        "pollution_burden_pctile": 93,
+        "dac_flag": true,
+        "high_burden_flag": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -118.235,
+              33.798
+            ],
+            [
+              -118.205,
+              33.798
+            ],
+            [
+              -118.205,
+              33.822
+            ],
+            [
+              -118.235,
+              33.822
+            ],
+            [
+              -118.235,
+              33.798
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0028",
+        "corridor": "I-710 (Long Beach)",
+        "vmt_index": 98,
+        "vmt_pctile": 83,
+        "pollution_burden_pctile": 90,
+        "dac_flag": true,
+        "high_burden_flag": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -118.195,
+              33.798
+            ],
+            [
+              -118.165,
+              33.798
+            ],
+            [
+              -118.165,
+              33.822
+            ],
+            [
+              -118.195,
+              33.822
+            ],
+            [
+              -118.195,
+              33.798
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0029",
+        "corridor": "I-710 (Long Beach)",
+        "vmt_index": 92,
+        "vmt_pctile": 78,
+        "pollution_burden_pctile": 88,
+        "dac_flag": true,
+        "high_burden_flag": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -118.235,
+              33.818
+            ],
+            [
+              -118.205,
+              33.818
+            ],
+            [
+              -118.205,
+              33.842
+            ],
+            [
+              -118.235,
+              33.842
+            ],
+            [
+              -118.235,
+              33.818
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0030",
+        "corridor": "I-710 (Long Beach)",
+        "vmt_index": 88,
+        "vmt_pctile": 75,
+        "pollution_burden_pctile": 85,
+        "dac_flag": true,
+        "high_burden_flag": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -118.195,
+              33.818
+            ],
+            [
+              -118.165,
+              33.818
+            ],
+            [
+              -118.165,
+              33.842
+            ],
+            [
+              -118.195,
+              33.842
+            ],
+            [
+              -118.195,
+              33.818
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0031",
+        "corridor": "I-710 (Long Beach)",
+        "vmt_index": 80,
+        "vmt_pctile": 67,
+        "pollution_burden_pctile": 78,
+        "dac_flag": true,
+        "high_burden_flag": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -118.235,
+              33.838
+            ],
+            [
+              -118.205,
+              33.838
+            ],
+            [
+              -118.205,
+              33.862
+            ],
+            [
+              -118.235,
+              33.862
+            ],
+            [
+              -118.235,
+              33.838
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0032",
+        "corridor": "I-710 (Long Beach)",
+        "vmt_index": 75,
+        "vmt_pctile": 61,
+        "pollution_burden_pctile": 72,
+        "dac_flag": false,
+        "high_burden_flag": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -118.195,
+              33.838
+            ],
+            [
+              -118.165,
+              33.838
+            ],
+            [
+              -118.165,
+              33.862
+            ],
+            [
+              -118.195,
+              33.862
+            ],
+            [
+              -118.195,
+              33.838
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0033",
+        "corridor": "I-710 (Long Beach)",
+        "vmt_index": 115,
+        "vmt_pctile": 95,
+        "pollution_burden_pctile": 98,
+        "dac_flag": true,
+        "high_burden_flag": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -118.215,
+              33.758
+            ],
+            [
+              -118.185,
+              33.758
+            ],
+            [
+              -118.185,
+              33.782
+            ],
+            [
+              -118.215,
+              33.782
+            ],
+            [
+              -118.215,
+              33.758
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tract_id": "06_synth_0034",
+        "corridor": "I-710 (Long Beach)",
+        "vmt_index": 85,
+        "vmt_pctile": 72,
+        "pollution_burden_pctile": 82,
+        "dac_flag": true,
+        "high_burden_flag": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -118.175,
+              33.808
+            ],
+            [
+              -118.145,
+              33.808
+            ],
+            [
+              -118.145,
+              33.832
+            ],
+            [
+              -118.175,
+              33.832
+            ],
+            [
+              -118.175,
+              33.808
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

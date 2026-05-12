@@ -1,0 +1,13 @@
+cat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'EOF' > srr,catacat << 'at, base_year: int) -> dict:
+    """
+    Read NCST outputs computationally or use a heuristic calculation 
+    to output annual and 20-year CO2 equivalent penalties.
+    """
+    pass
+
+def compute_climate_floor_score(project_stats: dict) -> float:
+    """
+    Combine VMT reduction, safety, and air quality into a Statewide Project
+    Prioritization Score (Virginia SMART SCALE style style).
+    """
+    pass

@@ -1,0 +1,25 @@
+search_roots:
+  - "/Users/forrestpasturel/Downloads"
+  - "/Users/forrestpasturel/Documents"
+
+# For each required output filename in data/raw, provide one or more glob patterns
+# that can match your real export files in search_roots.
+patterns:
+  vmt_index_cbg.csv:
+    - "**/*vmt*index*cbg*.csv"
+    - "**/*vmt*cbg*.csv"
+  calenviroscreen40.csv:
+    - "**/*calenviroscreen*4*.csv"
+    - "**/*calenviro*csv"
+  pems_segment_timeseries.csv:
+    - "**/*pems*segment*.csv"
+    - "**/*pems*timeseries*.csv"
+  induced_travel_inputs.csv:
+    - "**/*induced*travel*.csv"
+    - "**/*induced*vmt*.csv"
+  emfac_scenario_a.csv:
+    - "**/*emfac*scenario*a*.csv"
+    - "**/*emfac*highway*.csv"
+  emfac_scenario_b.csv:
+    - "**/*emfac*scenario*b*.csv"
+    - "**/*emfac*brt*infill*.csv"

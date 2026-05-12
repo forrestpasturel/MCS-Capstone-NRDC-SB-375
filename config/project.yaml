@@ -1,0 +1,22 @@
+project:
+  name: "SB1087 Guardrails Capstone"
+  corridor_name: "I-80 Yolo County"
+  analysis_year_start: 2015
+  analysis_year_end: 2024
+
+paths:
+  vmt_index_cbg: "data/raw/vmt_index_cbg.csv"
+  calenviroscreen: "data/raw/calenviroscreen40.csv"
+  pems_timeseries: "data/raw/pems_segment_timeseries.csv"
+  induced_travel_inputs: "data/raw/induced_travel_inputs.csv"
+  emfac_scenario_a: "data/raw/emfac_scenario_a.csv"
+  emfac_scenario_b: "data/raw/emfac_scenario_b.csv"
+
+output:
+  diagnostic_dataset: "data/processed/diagnostic_dataset.parquet"
+  congestion_results: "data/processed/congestion_rebound_results.csv"
+  climate_floor_results: "data/processed/climate_floor_results.csv"
+  implementation_gap_figure: "output/figures/fig01_implementation_gap.png"
+  congestion_rebound_figure: "output/figures/fig02_congestion_rebound.png"
+  climate_floor_figure: "output/figures/fig03_climate_floor.png"
+  summary_table: "output/tables/table01_key_metrics.csv"

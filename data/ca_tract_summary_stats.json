@@ -1,0 +1,37 @@
+{
+  "statewide": {
+    "tract_count": 8028,
+    "share_dac": 0.247,
+    "mean_vmt_pc": 22.7,
+    "mean_vmt_pc_dac": 23.4,
+    "mean_vmt_pc_non_dac": 22.5,
+    "mean_ghg_pc_tpy": 3.352,
+    "count_high_vmt_high_pollution": 309,
+    "share_dac_high_vmt_high_pollution": 0.0299,
+    "mean_ces_percentile": 50.0,
+    "mean_pollution_burden_pct": 50.0
+  },
+  "unclassified": {
+    "tract_count": 8028,
+    "share_dac": 0.247,
+    "mean_vmt_pc": 22.7,
+    "mean_vmt_pc_dac": 23.4,
+    "mean_vmt_pc_non_dac": 22.5,
+    "mean_ghg_pc_tpy": 3.352,
+    "count_high_vmt_high_pollution": 309,
+    "share_dac_high_vmt_high_pollution": 0.0299,
+    "mean_ces_percentile": 50.0,
+    "mean_pollution_burden_pct": 50.0
+  },
+  "_metadata": {
+    "generated_by": "build_tract_dataset.py",
+    "sources": [
+      "CalEnviroScreen 4.0 (OEHHA)",
+      "Priority Populations 4.0 (CARB)",
+      "VMT per capita (user-provided tract-level CSV)"
+    ],
+    "emission_factor_g_co2_per_mile": 404.0,
+    "high_vmt_quantile_threshold": 0.75,
+    "high_pollution_percentile_threshold": 75
+  }
+}

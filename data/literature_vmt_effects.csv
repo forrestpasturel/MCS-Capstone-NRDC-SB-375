@@ -1,0 +1,5 @@
+policy_type,vmt_pct_low,vmt_pct_high,source_short
+"Compact land use / TOD",-5,-15,"Handy & Boarnet 2016; CARB SB 375/743 guidance"
+"Transit & active transportation",-2,-10,"APTA ridership studies; NCST meta-analyses; SB 743 resources"
+"Pricing & TDM (congestion, parking)",-4,-12,"PPIC 'Driving Change' 2021; SB 743 mitigation resources"
+"Highway expansion (no mitigation)",+5,+15,"Caltrans/NCST Induced Travel Calculator 2022; Duranton & Turner 2011"

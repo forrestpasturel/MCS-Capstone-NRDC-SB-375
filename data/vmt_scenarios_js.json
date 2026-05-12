@@ -1,0 +1,67 @@
+{
+  "years": [
+    2025,
+    2030,
+    2035,
+    2040,
+    2045
+  ],
+  "scenarios": {
+    "california_today_bau": [
+      108.0,
+      110.2,
+      112.4,
+      114.7,
+      117.0
+    ],
+    "ca_29pct_target_path": [
+      108.0,
+      98.8,
+      89.5,
+      80.2,
+      71.0
+    ],
+    "colorado_budget_lock": [
+      108.0,
+      105.9,
+      103.8,
+      101.7,
+      99.7
+    ],
+    "minnesota_capacity_trigger": [
+      108.0,
+      106.9,
+      105.9,
+      104.8,
+      103.8
+    ],
+    "virginia_scoring": [
+      108.0,
+      108.0,
+      108.0,
+      108.0,
+      108.0
+    ],
+    "massachusetts_caps": [
+      108.0,
+      104.8,
+      101.7,
+      98.7,
+      95.8
+    ],
+    "combined_approach": [
+      108.0,
+      100.6,
+      93.8,
+      87.4,
+      81.5
+    ]
+  },
+  "metadata": {
+    "index_basis": "2001 Caltrans per-capita VMT peak = 100",
+    "start_year": 2025,
+    "bau_2025_index": 108.0,
+    "target_2045_index": 71.0,
+    "note": "Conceptual / illustrative \u2014 replace with Caltrans MVMT CSV inputs"
+  }
+}

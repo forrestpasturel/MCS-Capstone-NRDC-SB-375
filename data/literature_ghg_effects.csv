@@ -1,0 +1,4 @@
+scenario,ghg_reduction_low,ghg_reduction_high,source_short
+"Technology only (EVs + efficiency)",-25,-40,"CARB 2022 Scoping Plan; ICCT fleet projections"
+"Tech + modest VMT reduction (~5%)",-35,-50,"CARB Scoping Plan + PPIC 'Driving Change' 2021"
+"Tech + ambitious VMT reduction (~15%)",-50,-65,"Composite: CARB + NCST + urban transport policy modelling"

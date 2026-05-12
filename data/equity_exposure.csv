@@ -1,0 +1,25 @@
+corridor,scenario,exposure_index,disadvantaged_pct,aadt_thousands
+I-80 (Yolo / Sacramento),current_burden,78.0,0.62,145
+I-80 (Yolo / Sacramento),colorado_budget_lock,73.3,0.62,145
+I-80 (Yolo / Sacramento),minnesota_capacity_trigger,74.1,0.62,145
+I-80 (Yolo / Sacramento),virginia_scoring,75.0,0.62,145
+I-80 (Yolo / Sacramento),massachusetts_caps,72.4,0.62,145
+I-80 (Yolo / Sacramento),combined_approach,69.4,0.62,145
+SR-99 (Central Valley),current_burden,88.0,0.81,110
+SR-99 (Central Valley),colorado_budget_lock,82.1,0.81,110
+SR-99 (Central Valley),minnesota_capacity_trigger,83.2,0.81,110
+SR-99 (Central Valley),virginia_scoring,84.2,0.81,110
+SR-99 (Central Valley),massachusetts_caps,81.0,0.81,110
+SR-99 (Central Valley),combined_approach,77.3,0.81,110
+I-105 (Los Angeles),current_burden,92.0,0.89,190
+I-105 (Los Angeles),colorado_budget_lock,85.2,0.89,190
+I-105 (Los Angeles),minnesota_capacity_trigger,86.5,0.89,190
+I-105 (Los Angeles),virginia_scoring,87.7,0.89,190
+I-105 (Los Angeles),massachusetts_caps,84.0,0.89,190
+I-105 (Los Angeles),combined_approach,79.7,0.89,190
+I-710 (Long Beach),current_burden,100.0,0.94,220
+I-710 (Long Beach),colorado_budget_lock,92.0,0.94,220
+I-710 (Long Beach),minnesota_capacity_trigger,93.4,0.94,220
+I-710 (Long Beach),virginia_scoring,94.9,0.94,220
+I-710 (Long Beach),massachusetts_caps,90.5,0.94,220
+I-710 (Long Beach),combined_approach,85.4,0.94,220

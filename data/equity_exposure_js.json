@@ -1,0 +1,64 @@
+{
+  "corridor_labels": [
+    "I-80 (Yolo / Sacramento)",
+    "SR-99 (Central Valley)",
+    "I-105 (Los Angeles)",
+    "I-710 (Long Beach)"
+  ],
+  "before_values": [
+    78,
+    88,
+    92,
+    100
+  ],
+  "after_combined": [
+    69.4,
+    77.3,
+    79.7,
+    85.4
+  ],
+  "dac_pcts": [
+    62.0,
+    81.0,
+    89.0,
+    94.0
+  ],
+  "by_reform": {
+    "colorado_budget_lock": [
+      73.3,
+      82.1,
+      85.2,
+      92.0
+    ],
+    "minnesota_capacity_trigger": [
+      74.1,
+      83.2,
+      86.5,
+      93.4
+    ],
+    "virginia_scoring": [
+      75.0,
+      84.2,
+      87.7,
+      94.9
+    ],
+    "massachusetts_caps": [
+      72.4,
+      81.0,
+      84.0,
+      90.5
+    ],
+    "combined_approach": [
+      69.4,
+      77.3,
+      79.7,
+      85.4
+    ]
+  },
+  "metadata": {
+    "index_basis": "I-710 corridor = 100 (highest burden)",
+    "vmt_pm25_elasticity": 0.6,
+    "source": "Calibrated to CalEnviroScreen 4.0 traffic burden scores",
+    "note": "Conceptual / illustrative \u2014 replace with tract-level CalEnviroScreen exports"
+  }
+}
