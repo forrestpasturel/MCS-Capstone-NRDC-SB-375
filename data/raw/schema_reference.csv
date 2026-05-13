@@ -1,0 +1,26 @@
+dataset,column_name,type,description
+vmt_index_cbg,cbg_id,string,Census Block Group identifier
+vmt_index_cbg,year,int,Observation year
+vmt_index_cbg,vmt_per_capita,float,Per-capita VMT estimate
+calenviroscreen40,cbg_id,string,Census Block Group identifier
+calenviroscreen40,traffic_density,float,Traffic density metric
+calenviroscreen40,pollution_burden_pctile,float,CalEnviroScreen pollution burden percentile
+pems_segment_timeseries,segment_id,string,PeMS segment identifier
+pems_segment_timeseries,date,date,Observation date
+pems_segment_timeseries,period,string,AM/PM/All-day period
+pems_segment_timeseries,avg_speed_mph,float,Observed average speed
+pems_segment_timeseries,capacity_added,float,Added lane-miles or equivalent
+pems_segment_timeseries,phase,string,pre|post|year_3
+induced_travel_inputs,segment_id,string,Segment identifier
+induced_travel_inputs,annual_induced_vmt,float,Estimated annual induced VMT
+induced_travel_inputs,co2_kg_per_vmt,float,CO2 factor in kg per VMT
+emfac_scenario_a,year,int,Modeled year
+emfac_scenario_a,ghg_tons,float,Total annual GHG tons
+emfac_scenario_a,vmt_index,float,VMT index
+emfac_scenario_a,accessibility_index,float,Accessibility score
+emfac_scenario_a,equity_index,float,Equity score
+emfac_scenario_b,year,int,Modeled year
+emfac_scenario_b,ghg_tons,float,Total annual GHG tons
+emfac_scenario_b,vmt_index,float,VMT index
+emfac_scenario_b,accessibility_index,float,Accessibility score
+emfac_scenario_b,equity_index,float,Equity score

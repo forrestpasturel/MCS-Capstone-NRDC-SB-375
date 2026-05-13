@@ -1,0 +1,7 @@
+segment_id,date,period,avg_speed_mph,capacity_added,phase
+I80_YOLO_001,2018-05-15,PM,42.0,1.2,pre
+I80_YOLO_001,2020-05-15,PM,52.0,1.2,post
+I80_YOLO_001,2023-05-15,PM,41.0,1.2,year_3
+I80_YOLO_002,2018-05-15,PM,39.0,0.8,pre
+I80_YOLO_002,2020-05-15,PM,46.0,0.8,post
+I80_YOLO_002,2023-05-15,PM,38.5,0.8,year_3
