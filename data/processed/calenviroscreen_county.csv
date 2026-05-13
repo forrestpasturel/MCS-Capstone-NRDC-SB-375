@@ -1,0 +1,21 @@
+county,pollution_burden_score,traffic_density_percentile,pm25_percentile,diesel_pm_percentile,low_income_pct,disadvantaged_community
+Los Angeles,7.8,95,88,92,38.2,Yes
+Fresno,8.2,72,96,78,48.6,Yes
+Kern,7.9,68,94,74,42.1,Yes
+San Bernardino,7.4,88,86,90,36.8,Yes
+Riverside,7.1,85,82,86,34.2,Yes
+Sacramento,6.2,76,72,68,32.4,Yes
+Alameda,6.8,82,78,84,30.6,Yes
+San Diego,5.9,74,68,72,28.4,No
+Santa Clara,5.2,78,62,76,22.6,No
+San Francisco,4.8,70,58,64,24.2,No
+Contra Costa,6.4,80,74,82,28.8,Yes
+Ventura,5.6,72,64,68,26.4,No
+San Joaquin,7.6,70,90,72,44.2,Yes
+Tulare,7.4,60,88,64,46.8,Yes
+Kings,7.2,56,86,60,48.2,Yes
+Stanislaus,7.0,68,84,66,40.6,Yes
+Merced,7.8,62,92,68,50.4,Yes
+Madera,7.6,58,90,62,44.8,Yes
+Imperial,8.0,52,82,56,54.6,Yes
+Solano,5.8,74,68,76,30.2,Yes

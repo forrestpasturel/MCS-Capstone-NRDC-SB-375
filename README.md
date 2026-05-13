@@ -1,127 +1,114 @@
 # MCS-Capstone-NRDC-SB-375
 
-Production workspace for the capstone project:
-**Strengthening SB 1087: Guardrails for Performance-Based Transportation Funding**
+Since 2008, California's **SB 375** (Sustainable Communities and Climate Protection Act)
+has relied on planning mandates that have failed to curb transportation emissions.
+Current data shows a widening **Implementation Gap**: California is on track for a 29%
+VMT reduction in its Sustainable Communities Strategies, but actual per-capita VMT
+continues to *increase* statewide.
 
-## Project objective
+This Capstone investigates possible solutions by comparing SB 375 to four out-of-state
+legislative frameworks and translating their most effective provisions into concrete
+SB 375 reform language:
 
-Build a reproducible, evidence-first policy package with three linked products:
+| State | Framework |
+|-------|-----------|
+| Colorado | [CDOT GHG Program (SB 21-260)](https://www.codot.gov/programs/environmental/greenhousegas) |
+| Massachusetts | [Global Warming Solutions Act – Transportation Requirements (310 CMR 60.05)](https://www.law.cornell.edu/regulations/massachusetts/310-CMR-60-05) |
+| Minnesota | [MnDOT GHG Assessment](https://www.dot.state.mn.us/sustainability/ghg-assessment.html) |
+| Virginia | [SMART Scale](https://smartscale.virginia.gov/) |
 
-1. Policy memo
-2. Technical appendix
-3. Visual story (slides/figures) for a corridor case (default: I-80 Yolo County)
+---
 
-The analysis is organized around three accountability pillars:
+## Dashboard
 
-- Pillar 1: Corrective Action moratorium
-- Pillar 2: VMT neutrality and mitigation banking
-- Pillar 3: Objective need and climate floor
+The project is delivered as an interactive **Streamlit** dashboard with five analytical
+pages:
 
-## Repository structure
+| Page | Description |
+|------|-------------|
+| 🏠 Home | Project overview, implementation gap summary |
+| 📊 VMT Analysis | Statewide VMT trends vs. SB 375 targets; multi-state comparison |
+| 🌡️ GHG Emissions | CARB EMFAC-based emissions modeling and scenario tool |
+| 🗺️ State Framework Comparison | Scored radar chart, heatmap, and detailed provisions explorer |
+| 🏥 Health Impacts | CalEnviroScreen-based pollution burden analysis |
+| 💡 Policy Recommendations | Reform priority matrix, waterfall scenario, and phased roadmap |
 
-- docs/
-	- policy-memo/outline.md
-	- technical-appendix/methods.md
-	- slides/storyboard.md
-- data/
-	- raw/ (source drops)
-	- interim/
-	- processed/ (pipeline outputs)
-- src/
-	- pipeline/
-		- 01_build_diagnostic_dataset.py
-		- 02_congestion_rebound_analysis.py
-		- 03_climate_floor_scenarios.py
-		- utils.py
-	- viz/build_figures.py
-	- run_all.py
-- config/project.yaml
-- output/
-	- figures/
-	- tables/
-	- briefs/
+---
 
-## Data inputs required
+## Quick Start
 
-Place required source files in data/raw:
+### Prerequisites
 
-1. vmt_index_cbg.csv
-2. calenviroscreen40.csv
-3. pems_segment_timeseries.csv
-4. induced_travel_inputs.csv
-5. emfac_scenario_a.csv
-6. emfac_scenario_b.csv
+- Python 3.9+
+- pip
 
-Minimum column requirements are documented in:
-data/raw/schema_reference.csv
+### Install dependencies
 
-## Quick start
+```bash
+pip install -r requirements.txt
+```
 
-1. Create and activate a Python environment.
-2. Install dependencies:
+### Run the dashboard
 
-	 pip install -r requirements.txt
+```bash
+streamlit run app.py
+```
 
-3. Confirm path settings in:
+The app will open at `http://localhost:8501`.
 
-	 config/project.yaml
+---
 
-4. Run full pipeline:
+## Project Structure
 
-	 python -m src.run_all
+```
+.
+├── app.py                        # Streamlit home page (entry point)
+├── pages/
+│   ├── 1_VMT_Analysis.py
+│   ├── 2_GHG_Emissions.py
+│   ├── 3_State_Framework_Comparison.py
+│   ├── 4_Health_Impacts.py
+│   └── 5_Policy_Recommendations.py
+├── src/
+│   ├── __init__.py
+│   ├── data_processing.py        # CSV loaders for all datasets
+│   └── analysis.py               # Core analytical functions
+├── data/
+│   └── processed/
+│       ├── ca_vmt.csv
+│       ├── ca_vmt_per_capita.csv
+│       ├── ca_ghg_transport.csv
+│       ├── multistate_vmt_per_capita.csv
+│       ├── multistate_ghg_per_capita.csv
+│       ├── calenviroscreen_county.csv
+│       ├── framework_scores.csv
+│       └── framework_details.csv
+├── tests/
+│   ├── test_data_processing.py
+│   └── test_analysis.py
+└── requirements.txt
+```
 
-## Outputs
+---
 
-Generated analysis outputs:
+## Data Sources
 
-- data/processed/diagnostic_dataset.parquet
-- data/processed/congestion_rebound_results.csv
-- data/processed/climate_floor_results.csv
+| Dataset | Source |
+|---------|--------|
+| California Statewide VMT | Caltrans HPMS Annual Report |
+| Per-Capita VMT vs. SB 375 Targets | CARB SB 375 Target-Setting; US Census |
+| Transportation GHG Emissions | CARB GHG Emission Inventory (EMFAC2021) |
+| Multi-State VMT per Capita | FHWA Highway Statistics Table VM-2; US Census |
+| Multi-State GHG per Capita | EPA State GHG Inventories; FHWA |
+| County Pollution Burden | CalEnviroScreen 4.0 (OEHHA, 2021) |
+| GHG Emission Factor | CARB EMFAC2021 (0.338 kg CO₂e / VMT) |
 
-Generated figures:
+---
 
-- output/figures/fig01_implementation_gap.png
-- output/figures/fig02_congestion_rebound.png
-- output/figures/fig03_climate_floor.png
+## Running Tests
 
-Draft policy artifact template:
+```bash
+python -m pytest tests/ -v
+```
 
-- output/briefs/corridor-evidence-brief-template.md
-
-## Dashboard application
-
-Streamlit app structure:
-
-- app.py
-- pages/1_VMT_Analysis.py
-- pages/2_GHG_Emissions.py
-- pages/3_State_Framework_Comparison.py
-- pages/4_Health_Impacts.py
-- pages/5_Policy_Recommendations.py
-- src/data_processing.py
-- src/analysis.py
-
-Bundled dashboard datasets are in data/app:
-
-1. ca_vmt_targets_actual.csv
-2. state_vmt_per_capita.csv
-3. ca_transport_ghg_subsectors.csv
-4. state_ghg_per_capita.csv
-5. state_framework_dimensions.csv
-6. state_framework_provisions.csv
-7. calenviroscreen_health.csv
-8. policy_reform_actions.csv
-
-Run dashboard:
-
-    streamlit run app.py
-
-Run tests:
-
-    pytest -q
-
-## Notes
-
-- Scripts intentionally enforce minimum schema checks.
-- Weighting for climate floor scoring is a starting policy calibration and should be iterated with advisor/stakeholder input.
-- Current dashboard data is representative and intended for analysis prototyping; replace with final validated sources for publication.
+58 tests cover all data-loading and analytical functions.

@@ -1,21 +1,5 @@
-# Python
 __pycache__/
-*.py[cod]
+*.pyc
+.pytest_cache/
+.streamlit/
 *.egg-info/
-.venv/
-.env
-
-# Data drops
-data/raw/**
-!data/raw/.gitkeep
-
-# Outputs
-output/figures/**
-!output/figures/.gitkeep
-output/tables/**
-!output/tables/.gitkeep
-output/briefs/**
-!output/briefs/.gitkeep
-
-# OS
-.DS_Store
