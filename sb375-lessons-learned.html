@@ -852,6 +852,25 @@
             padding: 2rem;
         }
 
+        /* HOLC redlining tooltip */
+        .holc-tooltip {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 12px;
+            line-height: 1.45;
+            padding: 6px 10px;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,.18);
+        }
+        .holc-tooltip .holc-grade-badge {
+            display: inline-block;
+            font-weight: 700;
+            font-size: 13px;
+            padding: 1px 7px;
+            border-radius: 4px;
+            color: #fff;
+            margin-right: 5px;
+        }
+
         /* ============================================================
        KPI METRIC CARDS
     ============================================================ */
@@ -2737,6 +2756,8 @@
                 <li><a href="https://dot.ca.gov/programs/traffic-operations/census" target="_blank"
                         rel="noopener">Caltrans
                         Traffic Census</a> — highway segment count data</li>
+                <li><a href="https://dsl.richmond.edu/panorama/redlining/" target="_blank"
+                        rel="noopener">Mapping Inequality</a> — HOLC redlining map polygons (Digital Scholarship Lab, U. of Richmond)</li>
             </ul>
         </div>
     </section>
@@ -3148,9 +3169,11 @@
             var dacRef = { layer: null };
             var hotspotRef = { layer: null };
             var corridorRef = { layer: null };
+            var holcRef = { layer: null };
             var legendDiv = null;
             var activeBase = 'vmt';  // 'vmt' or 'traffic'
             var hasCorridors = false;
+            var holcActive = false;
 
             /* ── Legend rendering ────────────────────────────────── */
             function updateLegend() {
@@ -3170,12 +3193,20 @@
                     '<h4 style="margin-top:8px">Overlays</h4>' +
                     '<div class="map-legend-row"><span class="map-legend-swatch" style="background:transparent;border:2px dashed #6a1b9a"></span> DAC tract</div>' +
                     '<div class="map-legend-row"><span class="map-legend-swatch" style="background:transparent;border:2.5px solid #d32f2f"></span> High VMT + Pollution</div>' +
+                    (holcActive ?
+                        '<h4 style="margin-top:8px">HOLC Redlining Grades (1930s)</h4>' +
+                        '<div class="map-legend-row"><span class="map-legend-swatch" style="background:#76a865;opacity:.7"></span> A &ndash; Best</div>' +
+                        '<div class="map-legend-row"><span class="map-legend-swatch" style="background:#7db5c4;opacity:.7"></span> B &ndash; Still Desirable</div>' +
+                        '<div class="map-legend-row"><span class="map-legend-swatch" style="background:#e7dc6b;opacity:.7"></span> C &ndash; Declining</div>' +
+                        '<div class="map-legend-row"><span class="map-legend-swatch" style="background:#d9838d;opacity:.7"></span> D &ndash; Hazardous (Redlined)</div>' : '') +
                     (hasCorridors ?
                         '<h4 style="margin-top:8px">Roads (DVMT)</h4>' +
                         '<div class="map-legend-row"><span style="display:inline-block;width:18px;height:3px;background:#e8912d;border-radius:1px;flex-shrink:0"></span> High</div>' +
                         '<div class="map-legend-row"><span style="display:inline-block;width:18px;height:4px;background:#d45215;border-radius:1px;flex-shrink:0"></span> Very high</div>' +
                         '<div class="map-legend-row"><span style="display:inline-block;width:18px;height:5px;background:#b71c1c;border-radius:1px;flex-shrink:0"></span> Extreme</div>' : '') +
-                    '<div style="margin-top:6px;font-size:.7rem;color:#888;line-height:1.3">DAC and hotspot outlines based on<br>CalEnviroScreen 4.0 percentiles.</div>';
+                    '<div style="margin-top:6px;font-size:.7rem;color:#888;line-height:1.3">DAC and hotspot outlines based on<br>CalEnviroScreen 4.0 percentiles.' +
+                    (holcActive ? '<br>HOLC data: <a href="https://dsl.richmond.edu/panorama/redlining/" target="_blank" style="color:#5a8a6e">Mapping Inequality</a> / U. of Richmond.' : '') +
+                    '</div>';
             }
 
             /* ── Try traffic-augmented file first, fallback to original */
@@ -3303,7 +3334,75 @@
                             console.log('Equity map: loaded ' + corridorJson.features.length + ' corridor segments');
                         })
                         .catch(function () {
-                            console.log('Equity map: major_corridors.geojson not found — overlay skipped');
+                            console.log('Equity map: major_corridors.geojson not found, overlay skipped');
+                        });
+
+                    // ── HOLC Redlining overlay (separate fetch) ────────
+                    var HOLC_COLORS = {
+                        'A': '#76a865',
+                        'B': '#7db5c4',
+                        'C': '#e7dc6b',
+                        'D': '#d9838d'
+                    };
+                    var HOLC_LABELS = {
+                        'A': 'Best',
+                        'B': 'Still Desirable',
+                        'C': 'Declining',
+                        'D': 'Hazardous'
+                    };
+
+                    fetch('data/holc_california.geojson')
+                        .then(function (r) {
+                            if (!r.ok) throw new Error('HTTP ' + r.status);
+                            return r.json();
+                        })
+                        .then(function (holcJson) {
+                            holcRef.layer = L.geoJSON(holcJson, {
+                                style: function (f) {
+                                    var grade = f.properties.grade || '';
+                                    return {
+                                        fillColor: HOLC_COLORS[grade] || '#ccc',
+                                        fillOpacity: 0.40,
+                                        weight: 1.2,
+                                        color: HOLC_COLORS[grade] || '#999',
+                                        opacity: 0.65,
+                                    };
+                                },
+                                onEachFeature: function (feature, layer) {
+                                    var p = feature.properties;
+                                    var grade = p.grade || '?';
+                                    var bgColor = HOLC_COLORS[grade] || '#999';
+                                    var catLabel = p.cat || HOLC_LABELS[grade] || '';
+                                    layer.bindTooltip(
+                                        '<span class="holc-grade-badge" style="background:' + bgColor + '">' + grade + '</span>' +
+                                        '<strong>' + catLabel + '</strong>' +
+                                        (p.city ? '<br>' + p.city + ', CA' : '') +
+                                        (p.label ? '<br><span style="color:#888;font-size:11px">Area ' + p.label + '</span>' : ''),
+                                        { sticky: true, className: 'holc-tooltip' }
+                                    );
+                                },
+                            });  // not added by default
+
+                            layerCtrl.addOverlay(holcRef.layer, '\uD83D\uDDFA\uFE0F Historical Redlining (HOLC Grades)');
+
+                            // Track overlay toggle for legend updates
+                            map.on('overlayadd', function (e) {
+                                if (e.layer === holcRef.layer) {
+                                    holcActive = true;
+                                    updateLegend();
+                                }
+                            });
+                            map.on('overlayremove', function (e) {
+                                if (e.layer === holcRef.layer) {
+                                    holcActive = false;
+                                    updateLegend();
+                                }
+                            });
+
+                            console.log('Equity map: loaded ' + holcJson.features.length + ' HOLC redlining areas');
+                        })
+                        .catch(function () {
+                            console.log('Equity map: holc_california.geojson not found, redlining overlay skipped');
                         });
                 })
                 .catch(function (err) {
