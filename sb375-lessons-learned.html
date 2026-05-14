@@ -1547,6 +1547,285 @@
             font-weight: 600;
             color: var(--sky);
         }
+
+        /* ============================================================
+           SEGREGATION BY DESIGN — HIGHWAY-REDLINING SECTION
+        ============================================================ */
+        #redlining-connection {
+            background: #1B3A2F;
+            color: #F5E6D3;
+            padding: 3.5rem 0;
+        }
+        #redlining-connection .wrap {
+            max-width: var(--max);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        #redlining-connection .section-kicker {
+            display: inline-block;
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: #4A9B8E;
+            margin-bottom: .5rem;
+        }
+        #redlining-connection h2 {
+            font-size: 1.65rem;
+            font-weight: 800;
+            color: #F5E6D3;
+            margin-bottom: 1rem;
+            line-height: 1.25;
+        }
+        .sbd-framing {
+            font-size: 1.02rem;
+            line-height: 1.75;
+            color: #d9cdbf;
+            max-width: 700px;
+            margin-bottom: 2.5rem;
+        }
+
+        /* City Switcher */
+        .city-switcher {
+            display: flex;
+            gap: .5rem;
+            margin-bottom: 1rem;
+        }
+        .city-switcher button {
+            padding: .5rem 1.2rem;
+            font-family: var(--font);
+            font-size: .85rem;
+            font-weight: 600;
+            border: 2px solid #4A9B8E;
+            border-radius: 8px;
+            background: transparent;
+            color: #4A9B8E;
+            cursor: pointer;
+            transition: all .2s ease;
+        }
+        .city-switcher button.active,
+        .city-switcher button:hover {
+            background: #4A9B8E;
+            color: #1B3A2F;
+        }
+
+        /* HOLC Focus Map */
+        #holc-focus-map {
+            width: 100%;
+            height: 480px;
+            border-radius: var(--r);
+            border: 2px solid #2d5247;
+            margin-bottom: .75rem;
+        }
+        .holc-map-caption {
+            font-size: .82rem;
+            color: #b0a698;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+        }
+        .holc-map-caption a {
+            color: #4A9B8E;
+        }
+
+        /* HOLC Map Legend (inline, dark theme) */
+        .holc-inline-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .75rem 1.5rem;
+            margin-top: .75rem;
+            margin-bottom: .5rem;
+            padding: .75rem 1rem;
+            background: rgba(255,255,255,.06);
+            border-radius: 8px;
+            font-size: .78rem;
+            color: #d9cdbf;
+        }
+        .holc-inline-legend .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .holc-inline-legend .swatch {
+            width: 14px;
+            height: 14px;
+            border-radius: 3px;
+            border: 1px solid rgba(255,255,255,.2);
+            flex-shrink: 0;
+        }
+
+        /* Stat Cards Row */
+        .sbd-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        .sbd-stat-card {
+            background: #254D40;
+            border-radius: var(--r);
+            padding: 1.5rem 1.2rem;
+            text-align: center;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+        .sbd-stat-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,.25);
+        }
+        .sbd-stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #E8967A;
+            line-height: 1.1;
+            margin-bottom: .4rem;
+        }
+        .sbd-stat-label {
+            font-size: .85rem;
+            color: #F5E6D3;
+            line-height: 1.45;
+            margin-bottom: .5rem;
+        }
+        .sbd-stat-source {
+            font-size: .72rem;
+            color: #4A9B8E;
+            font-style: italic;
+        }
+
+        /* Segregation Timeline */
+        .sbd-timeline {
+            position: relative;
+            padding-left: 3rem;
+            margin-top: 2rem;
+        }
+        .sbd-timeline::before {
+            content: '';
+            position: absolute;
+            left: 14px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #4A9B8E, #E8967A, #d9838d);
+            border-radius: 2px;
+        }
+        .sbd-tl-card {
+            position: relative;
+            background: #254D40;
+            border-left: 4px solid #E8967A;
+            border-radius: 0 var(--r) var(--r) 0;
+            padding: 1.4rem 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: transform .2s ease;
+        }
+        .sbd-tl-card:hover {
+            transform: translateX(4px);
+        }
+        .sbd-tl-card::before {
+            content: '';
+            position: absolute;
+            left: -3rem;
+            top: 1.3rem;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #E8967A;
+            border: 3px solid #1B3A2F;
+        }
+        .sbd-tl-year {
+            display: inline-block;
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            background: #E8967A;
+            color: #1B3A2F;
+            border-radius: 4px;
+            padding: .2rem .65rem;
+            margin-bottom: .55rem;
+        }
+        .sbd-tl-card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #F5E6D3;
+            margin-bottom: .4rem;
+        }
+        .sbd-tl-card p {
+            font-size: .92rem;
+            color: #d9cdbf;
+            line-height: 1.65;
+        }
+        .sbd-tl-source {
+            display: block;
+            margin-top: .5rem;
+            font-size: .75rem;
+            color: #4A9B8E;
+            font-style: italic;
+        }
+        .sbd-tl-source a {
+            color: #4A9B8E;
+            text-decoration: underline;
+            text-decoration-color: rgba(74,155,142,.3);
+        }
+        .sbd-tl-source a:hover {
+            text-decoration-color: #4A9B8E;
+        }
+
+        /* Methodology Collapsible */
+        .sbd-methodology {
+            margin-top: 2.5rem;
+            border: 1px solid #2d5247;
+            border-radius: var(--r);
+            overflow: hidden;
+        }
+        .sbd-methodology summary {
+            padding: .85rem 1.2rem;
+            font-size: .88rem;
+            font-weight: 600;
+            color: #4A9B8E;
+            cursor: pointer;
+            background: rgba(74,155,142,.08);
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+        .sbd-methodology summary::-webkit-details-marker { display: none; }
+        .sbd-methodology summary::before {
+            content: '▶';
+            font-size: .65rem;
+            transition: transform .2s ease;
+        }
+        .sbd-methodology[open] summary::before {
+            transform: rotate(90deg);
+        }
+        .sbd-methodology .method-body {
+            padding: 1rem 1.2rem;
+            font-size: .82rem;
+            color: #b0a698;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 800px) {
+            .sbd-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 500px) {
+            .sbd-stats {
+                grid-template-columns: 1fr;
+            }
+            .sbd-timeline {
+                padding-left: 2.2rem;
+            }
+            .sbd-tl-card::before {
+                left: -2.2rem;
+            }
+            #redlining-connection h2 {
+                font-size: 1.35rem;
+            }
+            .sbd-stat-number {
+                font-size: 2.2rem;
+            }
+        }
     </style>
 </head>
 
@@ -1566,6 +1845,7 @@
             <li><a href="#evidence">Evidence</a></li>
             <li><a href="#highway-history">History</a></li>
             <li><a href="#case-studies">Case Studies</a></li>
+            <li><a href="#redlining-connection">Redlining</a></li>
             <li><a href="#problem">The Problem</a></li>
             <li><a href="#state-stories">State Stories</a></li>
             <li><a href="#california">For California</a></li>
@@ -2068,6 +2348,176 @@
                 </div>
                 <a class="cs-cite" href="https://greenlining.org/homes-before-highways" target="_blank"
                     rel="noopener">Greenlining Institute, <em>Homes Before Highways</em> (2025) ↗</a>
+            </div>
+        </section>
+
+
+        <!-- ================================================================
+     § 3.9 · SEGREGATION BY DESIGN: HIGHWAY-REDLINING CONNECTION
+================================================================ -->
+        <section id="redlining-connection" aria-labelledby="sbd-heading" data-animate="fade">
+            <div class="wrap">
+                <span class="section-kicker">Equity Deep Dive</span>
+                <h2 id="sbd-heading">&#127968; Segregation by Design: How Redlining Built Today's Pollution Crisis</h2>
+                <p class="sbd-framing">
+                    California's transportation pollution crisis didn't happen by accident. The neighborhoods
+                    bearing the heaviest pollution burdens today are overwhelmingly the same neighborhoods that
+                    federal housing policy deliberately targeted for disinvestment in the 1930s, and that
+                    highway planners deliberately routed freeways through in the 1950s and 1970s. This is a story
+                    with a beginning, a middle, and a present that is still unfolding.
+                </p>
+
+                <!-- ── COMPONENT 2: INTERACTIVE THEN vs NOW MAP ─────── -->
+                <h3 style="color:#F5E6D3; font-size:1.15rem; margin-bottom:.75rem;">Then vs. Now: Redlining and Pollution Burden</h3>
+                <div class="city-switcher" id="city-switcher">
+                    <button class="active" data-city="oakland">Oakland</button>
+                    <button data-city="la">Los Angeles</button>
+                </div>
+                <div id="holc-focus-map"></div>
+                <div class="holc-inline-legend">
+                    <span style="font-weight:600; color:#F5E6D3;">HOLC Grades:</span>
+                    <span class="legend-item"><span class="swatch" style="background:#76a865"></span> A &ndash; Best</span>
+                    <span class="legend-item"><span class="swatch" style="background:#7db5c4"></span> B &ndash; Still Desirable</span>
+                    <span class="legend-item"><span class="swatch" style="background:#e7dc6b"></span> C &ndash; Declining</span>
+                    <span class="legend-item"><span class="swatch" style="background:#d9838d"></span> D &ndash; Hazardous</span>
+                    <span style="color:#999">&nbsp;|&nbsp;</span>
+                    <span class="legend-item"><span class="swatch" style="background:#d32f2f"></span> High pollution burden</span>
+                    <span class="legend-item"><span style="display:inline-block;width:18px;height:3px;background:#E8967A;border-radius:1px"></span> Freeway corridor</span>
+                </div>
+                <p class="holc-map-caption">
+                    With few exceptions, present-day pollution burden in Oakland and Los Angeles corresponds
+                    directly to the 1937&ndash;39 HOLC redlining maps. The areas graded "Hazardous" are today
+                    predominantly communities of color with the highest CalEnviroScreen scores.
+                    This is not a coincidence.<br>
+                    Sources: HOLC via <a href="https://dsl.richmond.edu/panorama/redlining/" target="_blank" rel="noopener">Mapping Inequality</a>
+                    (Univ. of Richmond, 2023); CalEnviroScreen 4.0 (OEHHA).
+                    Oakland narrative: <a href="https://segregationbydesign.com/oakland/redlining" target="_blank" rel="noopener">Segregation by Design</a>.
+                </p>
+
+                <!-- ── COMPONENT 3: DESTRUCTION BY THE NUMBERS ─────── -->
+                <h3 style="color:#F5E6D3; font-size:1.15rem; margin-bottom:1rem;">Destruction by the Numbers</h3>
+                <div class="sbd-stats">
+                    <div class="sbd-stat-card">
+                        <div class="sbd-stat-number">5,000</div>
+                        <div class="sbd-stat-label">Homes destroyed by the Cypress Freeway (I-880) alone in West Oakland</div>
+                        <div class="sbd-stat-source">Segregation by Design, 2024</div>
+                    </div>
+                    <div class="sbd-stat-card">
+                        <div class="sbd-stat-number">850+</div>
+                        <div class="sbd-stat-label">Homes &amp; businesses demolished by California highway expansion, 2018&ndash;2024</div>
+                        <div class="sbd-stat-source">Greenlining Institute, 2025</div>
+                    </div>
+                    <div class="sbd-stat-card">
+                        <div class="sbd-stat-number">74%</div>
+                        <div class="sbd-stat-label">Of HOLC "Hazardous" neighborhoods are low-to-moderate income TODAY, 80+ years later</div>
+                        <div class="sbd-stat-source">NCRC / Mapping Inequality, 2023</div>
+                    </div>
+                    <div class="sbd-stat-card">
+                        <div class="sbd-stat-number">64%</div>
+                        <div class="sbd-stat-label">Of HOLC "Hazardous" neighborhoods are majority-minority communities TODAY</div>
+                        <div class="sbd-stat-source">NCRC / Mapping Inequality, 2023</div>
+                    </div>
+                </div>
+
+                <!-- ── COMPONENT 4: HOW WE GOT HERE TIMELINE ──────── -->
+                <h3 style="color:#F5E6D3; font-size:1.15rem; margin-bottom:.75rem;">How We Got Here</h3>
+                <div class="sbd-timeline">
+                    <div class="sbd-tl-card" data-animate="slide">
+                        <span class="sbd-tl-year">1937</span>
+                        <h3>Federal Maps Designate Communities of Color as "Hazardous"</h3>
+                        <p>
+                            The Home Owners' Loan Corporation grades Oakland and LA neighborhoods A through D
+                            for mortgage eligibility. Grade D ("Hazardous") areas are overwhelmingly
+                            Black and immigrant. Residents in these areas are denied federally-backed home
+                            loans, unable to build the generational wealth the government was simultaneously
+                            providing to white families in Grade A neighborhoods.
+                        </p>
+                        <span class="sbd-tl-source">
+                            Source: <a href="https://dsl.richmond.edu/panorama/redlining/" target="_blank" rel="noopener">Mapping Inequality, Univ. of Richmond</a>
+                        </span>
+                    </div>
+
+                    <div class="sbd-tl-card" data-animate="slide">
+                        <span class="sbd-tl-year">1950s&ndash;1960s</span>
+                        <h3>Freeways Are Routed Through the Same Neighborhoods</h3>
+                        <p>
+                            Highway planners build I-880, I-980, and I-580 directly through West
+                            Oakland's Black neighborhoods, the same areas the HOLC had redlined. The
+                            Cypress Freeway destroys 5,000 homes. I-980 creates a concrete wall between
+                            West Oakland and downtown. These were not random routing decisions: planners
+                            explicitly used freeways as barriers between differently graded areas.
+                        </p>
+                        <span class="sbd-tl-source">
+                            Source: <a href="https://segregationbydesign.com/oakland/freeways" target="_blank" rel="noopener">Segregation by Design</a>
+                        </span>
+                    </div>
+
+                    <div class="sbd-tl-card" data-animate="slide">
+                        <span class="sbd-tl-year">1960s&ndash;1970s</span>
+                        <h3>Urban Renewal Compounds the Damage</h3>
+                        <p>
+                            What the freeways didn't destroy, urban renewal projects finished.
+                            West Oakland's 7th Street corridor, once called the "Harlem of the West"
+                            with jazz clubs, Black-owned banks, and walkable transit-connected neighborhoods,
+                            is systematically dismantled. The Key System streetcar network, the spine of
+                            transit-oriented Black Oakland, is replaced with car infrastructure.
+                        </p>
+                        <span class="sbd-tl-source">
+                            Source: <a href="https://www.greenbelt.org/blog/oakland-black-neighborhoods-resilience/" target="_blank" rel="noopener">Greenbelt Alliance</a>
+                        </span>
+                    </div>
+
+                    <div class="sbd-tl-card" data-animate="slide">
+                        <span class="sbd-tl-year">2018&ndash;2024</span>
+                        <h3>Highway Expansion Continues in the Same Communities</h3>
+                        <p>
+                            Despite outlawing overt redlining in 1968, California's highway expansion
+                            program demolishes 850+ homes and businesses, with 90% of them concentrated
+                            in communities that still rank in the 90th to 99th percentile of CalEnviroScreen.
+                            The I-5 expansion alone demolishes 569 structures in a community where 96% of
+                            households are severely housing cost-burdened.
+                        </p>
+                        <span class="sbd-tl-source">
+                            Source: <a href="https://greenlining.org/homes-before-highways" target="_blank" rel="noopener">Greenlining Institute, <em>Homes Before Highways</em></a> (2025)
+                        </span>
+                    </div>
+
+                    <div class="sbd-tl-card" data-animate="slide">
+                        <span class="sbd-tl-year">Today</span>
+                        <h3>The Burden Is Still Concentrated in the Same Places</h3>
+                        <p>
+                            Oakland's formerly redlined flatlands have 4% tree canopy coverage
+                            compared to 50%+ in the hills. During heat waves, these neighborhoods run
+                            12&deg;F hotter. They have among the highest asthma rates in California.
+                            And 200+ more highway expansions are planned statewide, with no requirement
+                            to prove climate performance or community benefit. SB 1087 is a chance
+                            to change that.
+                        </p>
+                        <span class="sbd-tl-source">
+                            Sources: <a href="https://www.greenbelt.org/blog/oakland-black-neighborhoods-resilience/" target="_blank" rel="noopener">Greenbelt Alliance</a>;
+                            <a href="https://greenlining.org/homes-before-highways" target="_blank" rel="noopener">Greenlining Institute</a>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- ── COLLAPSIBLE METHODOLOGY ─────────────────────── -->
+                <details class="sbd-methodology">
+                    <summary>&#128214; Data &amp; Methodology</summary>
+                    <div class="method-body">
+                        HOLC redlining polygons sourced from the
+                        <a href="https://dsl.richmond.edu/panorama/redlining/" target="_blank" rel="noopener" style="color:#4A9B8E">Mapping Inequality project</a>
+                        (University of Richmond Digital Scholarship Lab, Robert K. Nelson et al., 2023),
+                        cross-walked to 2020 census tracts.
+                        CalEnviroScreen 4.0 data from OEHHA.
+                        Freeway impact statistics from Greenlining Institute's
+                        <a href="https://greenlining.org/homes-before-highways" target="_blank" rel="noopener" style="color:#4A9B8E"><em>Homes Before Highways</em></a> report (2025).
+                        Historical Oakland narrative sourced from
+                        <a href="https://www.greenbelt.org/blog/oakland-black-neighborhoods-resilience/" target="_blank" rel="noopener" style="color:#4A9B8E">Greenbelt Alliance</a> (Shepard, 2025) and
+                        <a href="https://segregationbydesign.com/oakland/redlining" target="_blank" rel="noopener" style="color:#4A9B8E">Segregation by Design</a> (Susaneck, 2024).
+                        National HOLC outcome statistics from
+                        <a href="https://ncrc.org/holc/" target="_blank" rel="noopener" style="color:#4A9B8E">NCRC</a> and ArcGIS analysis of Mapping Inequality data.
+                    </div>
+                </details>
             </div>
         </section>
 
@@ -3029,6 +3479,246 @@
                             }
                         }
                     }
+                });
+            }
+
+        })();
+    </script>
+
+    <!-- ================================================================
+     HOLC Focus Map (Segregation by Design section)
+     Loads Oakland / LA HOLC data + CalEnviroScreen tracts + freeway corridors
+================================================================ -->
+    <script>
+        (function () {
+            'use strict';
+
+            var mapEl = document.getElementById('holc-focus-map');
+            if (!mapEl || typeof L === 'undefined') return;
+
+            /* ── City configurations ────────────────────────────────── */
+            var CITIES = {
+                oakland: {
+                    center: [37.8098, -122.2133],
+                    zoom: 12,
+                    holcFile: 'data/holc_oakland.geojson',
+                    year: '1937',
+                    freeways: [
+                        {
+                            name: 'I-880',
+                            coords: [[37.7298, -122.1948], [37.7468, -122.1978], [37.7643, -122.2074], [37.7813, -122.2225], [37.7970, -122.2499], [37.8095, -122.2642], [37.8250, -122.2795], [37.8445, -122.2855], [37.8604, -122.2791]]
+                        },
+                        {
+                            name: 'I-980',
+                            coords: [[37.7990, -122.2764], [37.8035, -122.2722], [37.8070, -122.2697], [37.8124, -122.2694]]
+                        },
+                        {
+                            name: 'I-580',
+                            coords: [[37.7408, -122.1638], [37.7545, -122.1738], [37.7658, -122.1848], [37.7780, -122.1958], [37.7894, -122.2218], [37.7952, -122.2368], [37.8048, -122.2538], [37.8132, -122.2690]]
+                        }
+                    ]
+                },
+                la: {
+                    center: [34.0048, -118.2500],
+                    zoom: 11,
+                    holcFile: 'data/holc_losangeles.geojson',
+                    year: '1939',
+                    freeways: [
+                        {
+                            name: 'I-10',
+                            coords: [[34.0395, -118.3428], [34.0380, -118.3198], [34.0362, -118.2968], [34.0348, -118.2738], [34.0335, -118.2508], [34.0322, -118.2278], [34.0310, -118.2048]]
+                        },
+                        {
+                            name: 'I-110',
+                            coords: [[34.0735, -118.2795], [34.0615, -118.2765], [34.0495, -118.2735], [34.0375, -118.2705], [34.0255, -118.2675], [34.0135, -118.2645], [33.9935, -118.2695], [33.9735, -118.2745]]
+                        },
+                        {
+                            name: 'I-710',
+                            coords: [[34.0505, -118.2108], [34.0355, -118.2108], [34.0205, -118.2108], [34.0055, -118.2108], [33.9905, -118.2108], [33.9705, -118.2148], [33.9505, -118.2188]]
+                        },
+                        {
+                            name: 'I-105',
+                            coords: [[33.9305, -118.3648], [33.9305, -118.3398], [33.9305, -118.3148], [33.9305, -118.2898], [33.9305, -118.2648], [33.9305, -118.2398], [33.9305, -118.2148]]
+                        }
+                    ]
+                }
+            };
+
+            /* ── HOLC colors & tooltips ─────────────────────────────── */
+            var HOLC_COLORS = { 'A': '#76a865', 'B': '#7db5c4', 'C': '#e7dc6b', 'D': '#d9838d' };
+            var HOLC_NOTES = {
+                'A': 'Designated "Best" \u2014 primarily white, received federal mortgage backing.',
+                'B': 'Designated "Still Desirable" \u2014 moderate risk, some lending access.',
+                'C': 'Designated "Declining" \u2014 aging housing, immigrant populations, lending restricted.',
+                'D': 'Designated "Hazardous" \u2014 primarily Black and immigrant communities, denied federal loans. These areas were later targeted for freeway construction.'
+            };
+
+            /* ── Initialize map ─────────────────────────────────────── */
+            var holcMap = L.map('holc-focus-map', {
+                scrollWheelZoom: false,
+                zoomControl: true,
+            }).setView(CITIES.oakland.center, CITIES.oakland.zoom);
+
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
+                subdomains: 'abcd',
+                maxZoom: 18
+            }).addTo(holcMap);
+
+            /* ── Layer groups ───────────────────────────────────────── */
+            var tractLayer = null;
+            var holcLayer = null;
+            var freewayLayer = null;
+            var currentCity = 'oakland';
+
+            /* ── CalEnviroScreen pollution burden backdrop ───────────── */
+            function pollutionStyle(feature) {
+                var pct = feature.properties.pollution_burden_pct;
+                var fill = '#222';
+                if (pct >= 90) fill = '#d32f2f';
+                else if (pct >= 75) fill = '#e65100';
+                else if (pct >= 50) fill = '#f9a825';
+                else if (pct >= 25) fill = '#66bb6a';
+                else if (pct > 0) fill = '#2e7d32';
+                return {
+                    fillColor: fill,
+                    fillOpacity: 0.35,
+                    weight: 0.3,
+                    color: '#444',
+                    opacity: 0.3,
+                };
+            }
+
+            /* ── Load CalEnviroScreen tracts (reuse main data) ──────── */
+            var PRIMARY = 'data/ca_tract_vmt_ces_pp_with_traffic.geojson';
+            var FALLBACK = 'data/ca_tract_vmt_ces_pp.geojson';
+
+            fetch(PRIMARY)
+                .then(function (r) { if (!r.ok) throw new Error(); return r.json(); })
+                .catch(function () { return fetch(FALLBACK).then(function (r) { return r.json(); }); })
+                .then(function (geojson) {
+                    tractLayer = L.geoJSON(geojson, {
+                        style: pollutionStyle,
+                        filter: function (f) {
+                            return f.properties.pollution_burden_pct != null &&
+                                   f.properties.pollution_burden_pct > 0;
+                        },
+                        onEachFeature: function (feature, layer) {
+                            var p = feature.properties;
+                            layer.bindTooltip(
+                                '<b>' + (p.county || '') + '</b> \u2014 Tract ' + (p.geoid || '') +
+                                '<br>Pollution burden: <b>' + (p.pollution_burden_pct || '\u2014') + 'th pctile</b>' +
+                                '<br>CES score: ' + (p.ces_percentile || '\u2014'),
+                                { sticky: true }
+                            );
+                        },
+                    }).addTo(holcMap);
+                    // Load initial city
+                    loadCity('oakland');
+                })
+                .catch(function () {
+                    console.log('HOLC focus map: tract data not found, loading HOLC only');
+                    loadCity('oakland');
+                });
+
+            /* ── Load a city's HOLC + freeway data ──────────────────── */
+            function loadCity(cityKey) {
+                var cfg = CITIES[cityKey];
+                if (!cfg) return;
+                currentCity = cityKey;
+
+                // Clear existing overlays
+                if (holcLayer) { holcMap.removeLayer(holcLayer); holcLayer = null; }
+                if (freewayLayer) { holcMap.removeLayer(freewayLayer); freewayLayer = null; }
+
+                // Fly to city
+                holcMap.flyTo(cfg.center, cfg.zoom, { duration: 1.2 });
+
+                // Load HOLC polygons
+                fetch(cfg.holcFile)
+                    .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+                    .then(function (holcJson) {
+                        holcLayer = L.geoJSON(holcJson, {
+                            style: function (f) {
+                                var grade = f.properties.grade || '';
+                                return {
+                                    fillColor: HOLC_COLORS[grade] || '#ccc',
+                                    fillOpacity: 0.45,
+                                    weight: 1.5,
+                                    color: HOLC_COLORS[grade] || '#999',
+                                    opacity: 0.7,
+                                };
+                            },
+                            onEachFeature: function (feature, layer) {
+                                var p = feature.properties;
+                                var grade = p.grade || '?';
+                                var bg = HOLC_COLORS[grade] || '#999';
+                                var note = HOLC_NOTES[grade] || '';
+                                layer.bindTooltip(
+                                    '<div style="max-width:260px;font-family:Inter,sans-serif;font-size:12px;line-height:1.5">' +
+                                    '<span style="display:inline-block;background:' + bg + ';color:#fff;font-weight:700;padding:1px 7px;border-radius:4px;margin-right:5px">' + grade + '</span>' +
+                                    '<strong>HOLC Grade ' + grade + '</strong>' +
+                                    '<br><span style="color:#888">Mapped ' + cfg.year + '</span>' +
+                                    (p.city ? '<br>' + p.city + ', CA' : '') +
+                                    '<hr style="margin:5px 0;border:none;border-top:1px solid #ddd">' +
+                                    '<em style="color:#666">' + note + '</em>' +
+                                    '</div>',
+                                    { sticky: true, className: 'holc-tooltip' }
+                                );
+                            },
+                        }).addTo(holcMap);
+
+                        console.log('HOLC focus map: loaded ' + holcJson.features.length + ' HOLC areas for ' + cityKey);
+                    })
+                    .catch(function (err) {
+                        console.warn('HOLC focus map: could not load ' + cfg.holcFile, err);
+                    });
+
+                // Draw freeway corridors
+                var freewayFeatures = cfg.freeways.map(function (fw) {
+                    return {
+                        type: 'Feature',
+                        properties: { name: fw.name },
+                        geometry: {
+                            type: 'LineString',
+                            coordinates: fw.coords.map(function (c) { return [c[1], c[0]]; })
+                        }
+                    };
+                });
+
+                freewayLayer = L.geoJSON({ type: 'FeatureCollection', features: freewayFeatures }, {
+                    style: function () {
+                        return {
+                            color: '#E8967A',
+                            weight: 4,
+                            opacity: 0.9,
+                            lineCap: 'round',
+                            dashArray: null,
+                        };
+                    },
+                    onEachFeature: function (feature, layer) {
+                        layer.bindTooltip(
+                            '<b>' + feature.properties.name + '</b><br><span style="color:#888;font-size:11px">Built through redlined neighborhoods</span>',
+                            { sticky: true }
+                        );
+                    },
+                }).addTo(holcMap);
+            }
+
+            /* ── City switcher buttons ──────────────────────────────── */
+            var switcher = document.getElementById('city-switcher');
+            if (switcher) {
+                switcher.addEventListener('click', function (e) {
+                    var btn = e.target.closest('button[data-city]');
+                    if (!btn) return;
+                    var city = btn.getAttribute('data-city');
+                    if (city === currentCity) return;
+
+                    // Update active state
+                    switcher.querySelectorAll('button').forEach(function (b) { b.classList.remove('active'); });
+                    btn.classList.add('active');
+
+                    loadCity(city);
                 });
             }
 
