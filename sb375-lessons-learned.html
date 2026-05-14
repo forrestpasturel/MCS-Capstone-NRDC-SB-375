@@ -668,7 +668,7 @@
         }
 
         /* ============================================================
-       SCROLL ANIMATIONS
+       SCROLL ANIMATIONS (legacy data-animate + new data-anim)
     ============================================================ */
         [data-animate] {
             opacity: 0;
@@ -683,7 +683,8 @@
             transform: translateY(30px);
         }
 
-        [data-animate].visible {
+        [data-animate].visible,
+        [data-animate].anim-visible {
             opacity: 1;
             transform: none;
         }
@@ -1993,11 +1994,6 @@
 
     </style>
 </head>
-
-
-
-    <!-- Skip link -->
-    <a class="skip" href="#main">Skip to main content</a>
 
 <body>
 
@@ -3360,6 +3356,8 @@
         </section>
 
 
+    </main>
+
     <!-- ================================================================
      DATA SOURCES
 ================================================================ -->
@@ -3491,7 +3489,7 @@
         (function(){
             'use strict';
             if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-            var els = document.querySelectorAll('[data-anim]');
+            var els = document.querySelectorAll('[data-anim], [data-animate]');
             if (!els.length) return;
             var obs = new IntersectionObserver(function(entries){
                 entries.forEach(function(e){
@@ -3508,6 +3506,7 @@
                             });
                         }
                         e.target.classList.add('anim-visible');
+                        e.target.classList.add('visible');
                         obs.unobserve(e.target);
                     }
                 });
