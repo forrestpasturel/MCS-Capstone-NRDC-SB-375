@@ -1826,8 +1826,178 @@
                 font-size: 2.2rem;
             }
         }
+
+        /* ============================================================
+           HERO SECTION
+        ============================================================ */
+        .hero-section {
+            background: linear-gradient(170deg, #1B3A2F 0%, #0F2318 100%);
+            color: #F5E6D3;
+            padding: 6rem 1.5rem 4rem;
+            text-align: center;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-inner { max-width: 800px; margin: 0 auto; }
+        .hero-eyebrow {
+            display: block;
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            color: #4A9B8E;
+            margin-bottom: 1.5rem;
+        }
+        .hero-section h1 {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 3.25rem;
+            font-weight: 700;
+            line-height: 1.15;
+            color: #F5E6D3;
+            margin-bottom: 1rem;
+        }
+        .hero-sub {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 2rem;
+            color: #E8967A;
+            font-weight: 400;
+            margin-bottom: 2rem;
+        }
+        .hero-body {
+            font-size: 1.12rem;
+            line-height: 1.75;
+            color: #d9cdbf;
+            max-width: 640px;
+            margin: 0 auto 2.5rem;
+        }
+        .hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn-coral {
+            display: inline-block; padding: .75rem 1.8rem; background: #E8967A; color: #1B3A2F;
+            font-weight: 700; font-family: var(--font); font-size: .95rem; border-radius: 8px;
+            text-decoration: none; transition: transform .15s, box-shadow .15s;
+        }
+        .btn-coral:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(232,150,122,.35); }
+        .btn-outline-teal {
+            display: inline-block; padding: .75rem 1.8rem; border: 2px solid #4A9B8E; color: #4A9B8E;
+            font-weight: 700; font-family: var(--font); font-size: .95rem; border-radius: 8px;
+            text-decoration: none; background: transparent; transition: all .15s;
+        }
+        .btn-outline-teal:hover { background: #4A9B8E; color: #1B3A2F; }
+        .scroll-indicator {
+            margin-top: 2.5rem; animation: pulse-bounce 2s ease-in-out infinite;
+        }
+        .scroll-chevron { font-size: 1.5rem; color: #4A9B8E; opacity: .7; }
+        @keyframes pulse-bounce {
+            0%, 100% { transform: translateY(0); opacity: .5; }
+            50% { transform: translateY(8px); opacity: 1; }
+        }
+        @media (max-width: 700px) {
+            .hero-section h1 { font-size: 2.25rem; }
+            .hero-sub { font-size: 1.45rem; }
+            .hero-section { padding: 4rem 1.2rem 3rem; min-height: 70vh; }
+        }
+
+        /* ============================================================
+           TRANSITION ELEMENTS
+        ============================================================ */
+        .transition-bridge {
+            background: #254D40; padding: 3.5rem 1.5rem; text-align: center;
+        }
+        .transition-bridge p {
+            font-size: 1.55rem; font-weight: 600; line-height: 1.45; color: #E8967A;
+            max-width: 680px; margin: 0 auto;
+        }
+        .transition-stat {
+            background: #0F2318; padding: 3.5rem 1.5rem; text-align: center;
+        }
+        .stat-big {
+            font-size: 4.5rem; font-weight: 800; color: #E8967A; line-height: 1;
+            margin-bottom: .5rem;
+        }
+        .stat-label {
+            font-size: 1.1rem; color: #F5E6D3; max-width: 500px; margin: 0 auto;
+            line-height: 1.55;
+        }
+        .transition-label {
+            text-align: center; padding: 2.5rem 1.5rem;
+            background: var(--surface, #f7f8f7);
+        }
+        .label-pill {
+            display: inline-block; padding: .4rem 1.4rem; border: 2px solid #4A9B8E;
+            border-radius: 24px; font-size: .82rem; font-weight: 700; color: #4A9B8E;
+            letter-spacing: .04em; text-transform: uppercase;
+        }
+
+        /* ============================================================
+           SCROLL PROGRESS BAR
+        ============================================================ */
+        #scroll-progress {
+            position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+            background: #E8967A; z-index: 10001; transition: width 30ms linear;
+        }
+
+        /* ============================================================
+           HAMBURGER MENU (MOBILE)
+        ============================================================ */
+        .hamburger {
+            display: none; background: none; border: none; cursor: pointer;
+            padding: 6px; flex-direction: column; gap: 5px;
+        }
+        .hamburger span {
+            display: block; width: 24px; height: 2px; background: var(--ink, #0f1c14);
+            border-radius: 2px; transition: transform .25s, opacity .25s;
+        }
+        .hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+        .hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+        @media (max-width: 800px) {
+            .hamburger { display: flex; }
+            .nav-links {
+                display: none; position: absolute; top: 100%; left: 0; right: 0;
+                background: var(--white, #fff); flex-direction: column;
+                padding: .5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,.1);
+                border-top: 1px solid var(--border, #d8e0da);
+            }
+            .nav-links.open { display: flex; }
+            .nav-links li { padding: 0; }
+            .nav-links a { display: block; padding: .7rem 1.5rem; }
+        }
+        .nav { position: relative; }
+        .nav-links a.active-link {
+            color: #E8967A; border-bottom: 2px solid #E8967A; padding-bottom: 2px;
+        }
+
+        /* ============================================================
+           SCROLL-TRIGGERED ANIMATIONS
+        ============================================================ */
+        [data-anim="fade"] { opacity: 0; transform: translateY(20px); transition: opacity .5s ease-out, transform .5s ease-out; }
+        [data-anim="fade"].anim-visible { opacity: 1; transform: translateY(0); }
+
+        [data-anim="slide-left"] { opacity: 0; transform: translateX(-40px); transition: opacity .5s ease-out, transform .5s ease-out; }
+        [data-anim="slide-left"].anim-visible { opacity: 1; transform: translateX(0); }
+
+        [data-anim="scale"] { opacity: 0; transform: scale(.97); transition: opacity .5s ease-out, transform .5s ease-out; }
+        [data-anim="scale"].anim-visible { opacity: 1; transform: scale(1); }
+
+        [data-anim="bridge"] { opacity: 0; transform: scale(.97); transition: opacity .5s ease-out, transform .5s ease-out; }
+        [data-anim="bridge"].anim-visible { opacity: 1; transform: scale(1); }
+
+        [data-anim="stagger"] { opacity: 0; transform: translateY(30px); transition: opacity .6s ease-out, transform .6s ease-out; }
+        [data-anim="stagger"].anim-visible { opacity: 1; transform: translateY(0); }
+
+        @media (prefers-reduced-motion: reduce) {
+            [data-anim] { opacity: 1 !important; transform: none !important; transition: none !important; }
+        }
+
     </style>
 </head>
+
+
+
+    <!-- Skip link -->
+    <a class="skip" href="#main">Skip to main content</a>
 
 <body>
 
@@ -1837,64 +2007,62 @@
     <!-- ================================================================
      NAVIGATION
 ================================================================ -->
+    <div id="scroll-progress"></div>
     <nav class="nav" aria-label="Site navigation">
-        <div class="nav-brand">SB 375 → SB 1087 · Lessons Learned</div>
+        <div class="nav-brand">SB 375 &rarr; SB 1087 &middot; Lessons Learned</div>
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
         <ul class="nav-links">
-            <li><a href="#key-takeaways">Takeaways</a></li>
-            <li><a href="#visuals">Visuals</a></li>
-            <li><a href="#evidence">Evidence</a></li>
+            <li><a href="#crisis">The Problem</a></li>
             <li><a href="#highway-history">History</a></li>
             <li><a href="#case-studies">Case Studies</a></li>
-            <li><a href="#redlining-connection">Redlining</a></li>
-            <li><a href="#problem">The Problem</a></li>
-            <li><a href="#state-stories">State Stories</a></li>
+            <li><a href="#problem">The Law</a></li>
+            <li><a href="#state-stories">Other States</a></li>
+            <li><a href="#key-takeaways">Takeaways</a></li>
             <li><a href="#california">For California</a></li>
+            <li><a href="#visuals">Data</a></li>
             <li><a href="#simulator">Simulator</a></li>
-            <li><a href="#cta">Take Action</a></li>
+            <li><a href="#cta">Act</a></li>
         </ul>
     </nav>
 
     <main id="main">
 
+
         <!-- ================================================================
-     § 0 · HERO
+     HERO
 ================================================================ -->
-        <section id="hero" aria-labelledby="hero-h1">
-            <div class="wrap">
-                <span class="kicker">California · Transportation &amp; Climate Policy</span>
-                <h1 id="hero-h1">Why Our Transportation Dollars Matter</h1>
-                <p class="hero-sub">
-                    Every road project, transit line, and highway expansion is a choice. A choice about who benefits,
-                    who breathes cleaner air, and whether California moves closer to its climate goals or further away.
+        <section id="hero" class="hero-section">
+            <div class="hero-inner">
+                <span class="hero-eyebrow">UC BERKELEY &middot; NRDC CAPSTONE &middot; 2026</span>
+                <h1 id="hero-h1">California has a plan to fix its transportation crisis.</h1>
+                <h2 class="hero-sub"><em>It just doesn&rsquo;t have to follow it.</em></h2>
+                <p class="hero-body">
+                    SB 375 requires every California region to plan for lower emissions. But there is no
+                    rule that says transportation dollars have to follow the plan. This dashboard explores
+                    what it would take to close that gap, and what four other states have already done to
+                    make it happen.
                 </p>
-                <p>
-                    California passed <strong>SB 375</strong> to align regional transportation plans with greenhouse
-                    gas reduction targets. It was a meaningful first step. But there is a gap between the plans on
-                    paper and the projects that actually get funded. Billions of dollars continue to flow to highway
-                    widenings that increase driving, worsen air quality, and burden communities already living next
-                    to some of the most congested roads in the country.
-                </p>
-                <p style="margin-top:.9rem;">
-                    <strong>SB 1087</strong> is a concrete opportunity to close that gap. Four other states
-                    have already shown how. Colorado, Minnesota, Virginia, and Massachusetts each built real rules
-                    that tie transportation spending to climate and health performance. California can do the same.
-                </p>
-                <div class="hero-pills">
-                    <span class="pill">VMT Reduction</span>
-                    <span class="pill">GHG Emissions</span>
-                    <span class="pill">Public Health &amp; Equity</span>
-                    <span class="pill">Investment Mandates</span>
-                    <span class="pill">SB 1087 Reform</span>
+                <div class="hero-ctas">
+                    <a href="#crisis" class="btn-coral">Explore the Evidence &darr;</a>
+                    <a href="#simulator" class="btn-outline-teal">Jump to the Simulator</a>
+                </div>
+                <div class="scroll-indicator" aria-hidden="true">
+                    <span class="scroll-chevron">&darr;</span>
                 </div>
             </div>
         </section>
+
+
+        <div class="transition-label"><span class="label-pill">The Scale of the Problem</span></div>
 
         <!-- ================================================================
      § 1 · STORY PANELS – The Crisis in Numbers
 ================================================================ -->
 
         <!-- Panel 1: GHG share -->
-        <section class="story-panel" id="intro-evidence">
+        <section class="story-panel" id="crisis" data-anim="fade">
             <div class="wrap">
                 <div class="panel-text">
                     <span class="kicker">The Crisis in Numbers</span>
@@ -2009,226 +2177,9 @@
             </div>
         </section>
 
-
-        <!-- ================================================================
-     § 2 · KEY TAKEAWAYS
-================================================================ -->
-        <section id="key-takeaways" aria-labelledby="kt-heading">
-            <div class="wrap">
-                <span class="kicker">At a Glance</span>
-                <h2 id="kt-heading">Key Takeaways</h2>
-                <p class="lead">
-                    The visuals and stories below all point to the same conclusion: when investment rules have
-                    teeth, spending shifts. And so do emissions, driving rates, and health outcomes.
-                </p>
-                <div class="takeaway-grid">
-                    <div class="takeaway-card" data-animate="slide">
-                        <div class="tc-icon">📋</div>
-                        <h3>Plans ≠ Investments</h3>
-                        <p>SB 375 requires good plans. It doesn't require good spending. The gap between the two is
-                            where
-                            climate progress gets lost.</p>
-                    </div>
-                    <div class="takeaway-card" data-animate="slide">
-                        <div class="tc-icon">📉</div>
-                        <h3>Policy Tools Reduce VMT</h3>
-                        <p>Budget locks, capacity triggers, and scoring systems all tend to shift money away from
-                            projects that generate new driving, which reduces vehicle miles traveled over time.</p>
-                    </div>
-                    <div class="takeaway-card" data-animate="slide">
-                        <div class="tc-icon">🌿</div>
-                        <h3>Hard Limits Work</h3>
-                        <p>Legally binding emission caps, like the ones Massachusetts established, change how agencies
-                            prioritize
-                            projects internally, not just what they promise in reports.</p>
-                    </div>
-                    <div class="takeaway-card" data-animate="slide">
-                        <div class="tc-icon">🏘️</div>
-                        <h3>Equity Is Central</h3>
-                        <p>Communities near highways bear the highest pollution burdens. Redirecting funds toward
-                            transit,
-                            walking, and infill housing delivers the greatest health gains in those places.</p>
-                    </div>
-                </div>
-
-                <!-- Policy Journey Graphic -->
-                <div class="policy-journey" data-animate="fade">
-                    <div class="pj-step">
-                        <div class="pj-node">📄</div>
-                        <div class="pj-label">Plans Only</div>
-                    </div>
-                    <div class="pj-arrow"></div>
-                    <div class="pj-step">
-                        <div class="pj-node">💰</div>
-                        <div class="pj-label">Funding Rules</div>
-                    </div>
-                    <div class="pj-arrow"></div>
-                    <div class="pj-step">
-                        <div class="pj-node">🏗️</div>
-                        <div class="pj-label">Better Projects</div>
-                    </div>
-                    <div class="pj-arrow"></div>
-                    <div class="pj-step">
-                        <div class="pj-node">🌱</div>
-                        <div class="pj-label">Cleaner Air &amp; Safer Streets</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- ================================================================
-     § 3 · VISUALIZATION REGIONS
-================================================================ -->
-        <section id="visuals" aria-labelledby="visuals-heading">
-            <div class="wrap">
-                <span class="kicker">Data &amp; Evidence</span>
-                <h2 id="visuals-heading">Policy Performance at a Glance</h2>
-                <p class="lead">
-                    The charts below are computed from documented parameters: Caltrans VMT growth rates,
-                    EMFAC2021 CO₂ fleet-average factors, NCST induced-travel elasticities, and
-                    CalEnviroScreen-calibrated corridor burden scores. Values are illustrative scenario
-                    projections, not certified forecasts, and will be updated as corridor analyses mature.
-                </p>
-
-                <!-- ── VIZ 1: VMT ── -->
-                <div class="viz-block" id="viz-vmt" data-animate="slide">
-                    <h3>Potential VMT Reductions by Policy Approach</h3>
-                    <p>
-                        Each tool changes the incentive structure so that fewer lane-miles get built, more
-                        transit gets funded, and total driving slows compared to trend.
-                    </p>
-                    <div class="chart-wrapper">
-                        <canvas id="vmt-reduction-chart"
-                            aria-label="Bar chart: Conceptual VMT change (%) by policy approach vs. California baseline"
-                            role="img"></canvas>
-                        <p class="chart-disclaimer">Conceptual / illustrative data only. Values represent plausible
-                            scenario ranges,
-                            not modeled forecasts.</p>
-                    </div>
-                </div>
-
-                <!-- ── VIZ 2: GHG ── -->
-                <div class="viz-block" id="viz-ghg" data-animate="slide">
-                    <h3>Potential GHG Emissions Reductions Over Time</h3>
-                    <p>
-                        Shifting transportation spending away from highway capacity expansions and toward transit,
-                        walking, biking, and infill housing takes time to register in emissions data, but the
-                        trajectory compounds. This chart shows a conceptual 20-year comparison: California's
-                        current emissions path under existing SB 375 planning rules versus scenarios where SB 1087
-                        guardrails are in place. Reformed scenarios track lower over time, with steeper
-                        reductions as transit ridership builds, induced demand from new highway lanes is avoided,
-                        and more housing locates near jobs and services. The Massachusetts-style annual cap
-                        provides a reference for what staying "on track" would look like.
-                    </p>
-                    <div class="chart-wrapper">
-                        <canvas id="ghg-trend-chart"
-                            aria-label="Line chart: Conceptual GHG emission trajectories 2025–2045 under current law vs. SB 1087 policy scenarios"
-                            role="img"></canvas>
-                        <p class="chart-disclaimer">Conceptual / illustrative data only. Trajectories represent
-                            plausible scenario
-                            directions, not modeled forecasts.</p>
-                    </div>
-                </div>
-
-                <!-- ── VIZ 2.5: EVIDENCE FROM RESEARCH ── -->
-                <div class="viz-block" id="evidence" data-animate="slide">
-                    <h3>What the Evidence Shows</h3>
-                    <p>
-                        A growing body of California-focused research quantifies how different policy levers affect
-                        driving levels. Land-use strategies that place housing near transit and jobs (compact
-                        development / TOD) consistently show <strong>5–15% VMT reductions</strong> per household
-                        (Handy &amp; Boarnet 2016; CARB SB&nbsp;375 guidance). Pricing and TDM programs, such as
-                        congestion charges and employer commute incentives, yield <strong>3–12% reductions</strong>
-                        (PPIC <em>Driving Change</em>, 2021). Meanwhile, the NCST Induced Travel Calculator documents
-                        that highway capacity expansions routinely generate <strong>5–15% more driving</strong> on
-                        affected corridors within a few years (Caltrans/NCST, 2022). The chart below summarizes
-                        these literature-informed ranges.
-                    </p>
-                    <div class="chart-wrapper">
-                        <canvas id="literature-vmt-chart"
-                            aria-label="Horizontal bar chart: Literature-informed VMT change ranges by policy type"
-                            role="img" style="max-height:300px"></canvas>
-                        <p class="chart-disclaimer">Ranges are drawn from peer-reviewed and agency studies; they
-                            represent
-                            typical effect sizes, not project-specific forecasts. Sources: Handy/Boarnet 2016, PPIC
-                            2021,
-                            Caltrans/NCST 2022, CARB SB&nbsp;743 guidance.</p>
-                    </div>
-
-                    <p style="margin-top:1.5rem">
-                        Electrification alone will not get California to its climate targets. Vehicle technology (EVs
-                        and fuel standards) can deliver roughly <strong>25–40% GHG reductions</strong> from current
-                        levels by 2045 (CARB Scoping Plan 2022). Adding a modest VMT reduction (~5%) pushes that to
-                        about <strong>35–50%</strong>. An ambitious package combining technology with ~15% VMT cuts
-                        reaches <strong>50–65%</strong>, far closer to California's carbon-neutrality targets.
-                        SB 1087 is designed to unlock that combined potential.
-                    </p>
-                    <div class="chart-wrapper">
-                        <canvas id="literature-ghg-chart"
-                            aria-label="Bar chart: Projected GHG reductions under three scenarios (technology only, modest VMT cut, ambitious VMT cut)"
-                            role="img" style="max-height:260px"></canvas>
-                        <p class="chart-disclaimer">Illustrative ranges informed by CARB Scoping Plan 2022, PPIC, and
-                            NCST research. Not project-specific model outputs.</p>
-                    </div>
-                </div>
-
-                <!-- ── VIZ 3: EQUITY / HEALTH ── -->
-                <div class="viz-block" id="viz-equity" data-animate="slide">
-                    <h3>Health and Equity Impacts in Overburdened Communities</h3>
-                    <p>
-                        Disadvantaged communities, particularly those near major highways and freight corridors,
-                        face higher rates of traffic-related air pollution and the health consequences that follow:
-                        elevated asthma, cardiovascular disease, and premature death. The map and chart below
-                        compare estimated current pollution exposure with potential outcomes under SB 1087-style
-                        investment shifts across key California corridors.
-                    </p>
-
-                    <!-- KPI Metric Cards -->
-                    <div class="kpi-row">
-                        <div class="kpi-card">
-                            <div class="kpi-value kpi-red">309</div>
-                            <div class="kpi-label">High VMT + high pollution<br>hotspot tracts statewide</div>
-                        </div>
-                        <div class="kpi-card">
-                            <div class="kpi-value">23.4 <span style="font-size:.85rem;font-weight:500">vs</span> 22.5
-                            </div>
-                            <div class="kpi-label">Avg VMT (mi/day) in<br>DAC vs non-DAC tracts</div>
-                        </div>
-                        <div class="kpi-card">
-                            <div class="kpi-value">3.35</div>
-                            <div class="kpi-label">Statewide avg GHG<br>(tons CO₂ per person/yr)</div>
-                        </div>
-                    </div>
-
-                    <!-- Leaflet Map -->
-                    <div id="equity-map"></div>
-                    <p class="map-caption">
-                        Fill color shows a <strong>VMT index</strong>: each tract’s per-capita driving relative to the
-                        statewide average (100&nbsp;=&nbsp;California average). Dashed outlines mark
-                        <strong>disadvantaged
-                            community (DAC)</strong> tracts as defined in CalEnviroScreen&nbsp;4.0 (≥&nbsp;75th
-                        percentile).
-                        Thick red outlines mark tracts that are both <strong>high-VMT and high-pollution</strong>
-                        (top&nbsp;25% for VMT index and pollution burden).
-                        Data&nbsp;sources: CalEnviroScreen&nbsp;4.0 (OEHHA) + tract-level per-capita VMT derived from
-                        regional estimates and Caltrans/Tracking California traffic data.
-                    </p>
-
-                    <!-- Equity Bar Chart (kept below the map) -->
-                    <div class="chart-wrapper">
-                        <canvas id="equity-impact-chart"
-                            aria-label="Grouped bar chart: Conceptual pollution burden and projected benefit by corridor under SB 1087-style reform"
-                            role="img"></canvas>
-                        <p class="chart-disclaimer">Conceptual / illustrative data only. Exposure index is relative, not
-                            derived
-                            from measured monitoring data.</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
+        <div class="transition-bridge" data-anim="bridge">
+            <div class="wrap"><p>This didn&rsquo;t happen overnight. The roots of today&rsquo;s pollution crisis go back nearly a century.</p></div>
+        </div>
 
         <!-- ================================================================
      § 3.5 · HIGHWAY HARM HISTORICAL TIMELINE
@@ -2243,7 +2194,7 @@
                 </p>
 
                 <div class="timeline">
-                    <div class="tl-card" data-animate="slide">
+                    <div class="tl-card" data-anim="slide-left" data-animate="slide">
                         <span class="tl-badge">1930s</span>
                         <h3>Redlining Concentrates Risk</h3>
                         <p>
@@ -2254,7 +2205,7 @@
                         <span class="tl-source">Source: Greenbelt Alliance / HOLC maps</span>
                     </div>
 
-                    <div class="tl-card" data-animate="slide">
+                    <div class="tl-card" data-anim="slide-left" data-animate="slide">
                         <span class="tl-badge">1950s–70s</span>
                         <h3>Freeways Built Through Communities of Color</h3>
                         <p>
@@ -2265,7 +2216,7 @@
                         <span class="tl-source">Source: Greenlining Institute, 2025</span>
                     </div>
 
-                    <div class="tl-card" data-animate="slide">
+                    <div class="tl-card" data-anim="slide-left" data-animate="slide">
                         <span class="tl-badge">2018–2024</span>
                         <h3>Displacement Continues</h3>
                         <p>
@@ -2275,7 +2226,7 @@
                         <span class="tl-source">Source: Greenlining Institute / Caltrans SB 695 data</span>
                     </div>
 
-                    <div class="tl-card" data-animate="slide">
+                    <div class="tl-card" data-anim="slide-left" data-animate="slide">
                         <span class="tl-badge">Today</span>
                         <h3>The Burden Persists</h3>
                         <p>
@@ -2285,69 +2236,6 @@
                         <span class="tl-source">Source: CalEnviroScreen 4.0 (OEHHA)</span>
                     </div>
                 </div>
-            </div>
-        </section>
-
-
-        <!-- ================================================================
-     § 3.75 · CASE STUDIES
-================================================================ -->
-        <section id="case-studies" aria-labelledby="cs-heading" data-animate="fade">
-            <div class="wrap">
-                <span class="kicker">Real Projects, Real People</span>
-                <h2 id="cs-heading">Case Studies: The Human Cost of Highway Expansion</h2>
-                <p class="lead">
-                    These are not hypothetical scenarios. Each project below was built, funded with public dollars,
-                    and completed in the last decade.
-                </p>
-
-                <div class="cs-grid">
-                    <div class="cs-card" data-animate="slide">
-                        <div class="cs-route">I-5 · Los Angeles</div>
-                        <div class="cs-stat">569</div>
-                        <div class="cs-stat-label">homes &amp; businesses demolished</div>
-                        <p>
-                            The surrounding community ranks in the <strong>98th percentile</strong> of CalEnviroScreen
-                            pollution burden. 96% of households in the area were already severely housing
-                            cost-burdened before demolition began.
-                        </p>
-                        <div class="cs-cost">Cost: $1.8 billion, completed 7 years late</div>
-                        <span class="cs-tag">Most destructive expansion 2018–2024</span>
-                    </div>
-
-                    <div class="cs-card" data-animate="slide">
-                        <div class="cs-route">SR-99 · Fresno</div>
-                        <div class="cs-stat">11</div>
-                        <div class="cs-stat-label">local businesses demolished</div>
-                        <p>
-                            Community ranks in the <strong>90th–99th percentile</strong> of CalEnviroScreen.
-                            72% of households severely housing cost-burdened. The expansion increased
-                            heavy truck traffic in California's already highest-pollution region.
-                        </p>
-                        <div class="cs-cost">Cost: $146 million</div>
-                        <span class="cs-tag">Small businesses erased</span>
-                    </div>
-
-                    <div class="cs-card" data-animate="slide">
-                        <div class="cs-route">I-405 · Los Angeles</div>
-                        <div class="cs-stat">23</div>
-                        <div class="cs-stat-label">homes &amp; businesses demolished</div>
-                        <p>
-                            Traffic and commute times <strong>increased</strong> after the expansion.
-                            96% of households severely housing cost-burdened. $2.16 billion spent,
-                            and congestion got worse.
-                        </p>
-                        <div class="cs-cost">Cost: $2.16 billion</div>
-                        <span class="cs-tag">Billions spent, traffic got worse</span>
-                    </div>
-                </div>
-
-                <div class="cs-summary">
-                    These are incumbent, car-dominated transportation infrastructure projects with no requirement
-                    to prove climate performance or community benefit.
-                </div>
-                <a class="cs-cite" href="https://greenlining.org/homes-before-highways" target="_blank"
-                    rel="noopener">Greenlining Institute, <em>Homes Before Highways</em> (2025) ↗</a>
             </div>
         </section>
 
@@ -2521,6 +2409,76 @@
             </div>
         </section>
 
+        <div class="transition-stat" data-anim="bridge">
+            <div class="stat-big">850+</div>
+            <div class="stat-label">Homes and businesses demolished by California highway expansion since 2018 alone</div>
+        </div>
+
+        <!-- ================================================================
+     § 3.75 · CASE STUDIES
+================================================================ -->
+        <section id="case-studies" aria-labelledby="cs-heading" data-animate="fade">
+            <div class="wrap">
+                <span class="kicker">Real Projects, Real People</span>
+                <h2 id="cs-heading">Case Studies: The Human Cost of Highway Expansion</h2>
+                <p class="lead">
+                    These are not hypothetical scenarios. Each project below was built, funded with public dollars,
+                    and completed in the last decade.
+                </p>
+
+                <div class="cs-grid" data-anim="stagger">
+                    <div class="cs-card" data-animate="slide">
+                        <div class="cs-route">I-5 · Los Angeles</div>
+                        <div class="cs-stat">569</div>
+                        <div class="cs-stat-label">homes &amp; businesses demolished</div>
+                        <p>
+                            The surrounding community ranks in the <strong>98th percentile</strong> of CalEnviroScreen
+                            pollution burden. 96% of households in the area were already severely housing
+                            cost-burdened before demolition began.
+                        </p>
+                        <div class="cs-cost">Cost: $1.8 billion, completed 7 years late</div>
+                        <span class="cs-tag">Most destructive expansion 2018–2024</span>
+                    </div>
+
+                    <div class="cs-card" data-animate="slide">
+                        <div class="cs-route">SR-99 · Fresno</div>
+                        <div class="cs-stat">11</div>
+                        <div class="cs-stat-label">local businesses demolished</div>
+                        <p>
+                            Community ranks in the <strong>90th–99th percentile</strong> of CalEnviroScreen.
+                            72% of households severely housing cost-burdened. The expansion increased
+                            heavy truck traffic in California's already highest-pollution region.
+                        </p>
+                        <div class="cs-cost">Cost: $146 million</div>
+                        <span class="cs-tag">Small businesses erased</span>
+                    </div>
+
+                    <div class="cs-card" data-animate="slide">
+                        <div class="cs-route">I-405 · Los Angeles</div>
+                        <div class="cs-stat">23</div>
+                        <div class="cs-stat-label">homes &amp; businesses demolished</div>
+                        <p>
+                            Traffic and commute times <strong>increased</strong> after the expansion.
+                            96% of households severely housing cost-burdened. $2.16 billion spent,
+                            and congestion got worse.
+                        </p>
+                        <div class="cs-cost">Cost: $2.16 billion</div>
+                        <span class="cs-tag">Billions spent, traffic got worse</span>
+                    </div>
+                </div>
+
+                <div class="cs-summary">
+                    These are incumbent, car-dominated transportation infrastructure projects with no requirement
+                    to prove climate performance or community benefit.
+                </div>
+                <a class="cs-cite" href="https://greenlining.org/homes-before-highways" target="_blank"
+                    rel="noopener">Greenlining Institute, <em>Homes Before Highways</em> (2025) ↗</a>
+            </div>
+        </section>
+
+        <div class="transition-bridge" data-anim="bridge">
+            <div class="wrap"><p>These projects were funded under the current system. No law required them to prove climate performance. SB 375 was supposed to change that.</p></div>
+        </div>
 
         <!-- ================================================================
      § 4 · THE PROBLEM
@@ -2566,11 +2524,14 @@
             </div>
         </section>
 
+        <div class="transition-bridge" data-anim="bridge">
+            <div class="wrap"><p>Other states faced the same gap between plans and spending. Here&rsquo;s how they closed it.</p></div>
+        </div>
 
         <!-- ================================================================
      § 5 · FOUR STATE STORIES
 ================================================================ -->
-        <section id="state-stories" aria-labelledby="state-stories-heading">
+        <section id="state-stories" aria-labelledby="state-stories-heading" data-anim="fade">
             <div class="wrap">
                 <span class="kicker">Lessons from Elsewhere</span>
                 <h2 id="state-stories-heading">Four State Stories</h2>
@@ -2763,6 +2724,77 @@
             </div>
         </section>
 
+        <div class="transition-label"><span class="label-pill">What the Evidence Shows</span></div>
+
+        <!-- ================================================================
+     § 2 · KEY TAKEAWAYS
+================================================================ -->
+        <section id="key-takeaways" aria-labelledby="kt-heading" data-anim="fade">
+            <div class="wrap">
+                <span class="kicker">At a Glance</span>
+                <h2 id="kt-heading">Key Takeaways</h2>
+                <p class="lead">
+                    The visuals and stories below all point to the same conclusion: when investment rules have
+                    teeth, spending shifts. And so do emissions, driving rates, and health outcomes.
+                </p>
+                <div class="takeaway-grid">
+                    <div class="takeaway-card" data-animate="slide">
+                        <div class="tc-icon">📋</div>
+                        <h3>Plans ≠ Investments</h3>
+                        <p>SB 375 requires good plans. It doesn't require good spending. The gap between the two is
+                            where
+                            climate progress gets lost.</p>
+                    </div>
+                    <div class="takeaway-card" data-animate="slide">
+                        <div class="tc-icon">📉</div>
+                        <h3>Policy Tools Reduce VMT</h3>
+                        <p>Budget locks, capacity triggers, and scoring systems all tend to shift money away from
+                            projects that generate new driving, which reduces vehicle miles traveled over time.</p>
+                    </div>
+                    <div class="takeaway-card" data-animate="slide">
+                        <div class="tc-icon">🌿</div>
+                        <h3>Hard Limits Work</h3>
+                        <p>Legally binding emission caps, like the ones Massachusetts established, change how agencies
+                            prioritize
+                            projects internally, not just what they promise in reports.</p>
+                    </div>
+                    <div class="takeaway-card" data-animate="slide">
+                        <div class="tc-icon">🏘️</div>
+                        <h3>Equity Is Central</h3>
+                        <p>Communities near highways bear the highest pollution burdens. Redirecting funds toward
+                            transit,
+                            walking, and infill housing delivers the greatest health gains in those places.</p>
+                    </div>
+                </div>
+
+                <!-- Policy Journey Graphic -->
+                <div class="policy-journey" data-animate="fade">
+                    <div class="pj-step">
+                        <div class="pj-node">📄</div>
+                        <div class="pj-label">Plans Only</div>
+                    </div>
+                    <div class="pj-arrow"></div>
+                    <div class="pj-step">
+                        <div class="pj-node">💰</div>
+                        <div class="pj-label">Funding Rules</div>
+                    </div>
+                    <div class="pj-arrow"></div>
+                    <div class="pj-step">
+                        <div class="pj-node">🏗️</div>
+                        <div class="pj-label">Better Projects</div>
+                    </div>
+                    <div class="pj-arrow"></div>
+                    <div class="pj-step">
+                        <div class="pj-node">🌱</div>
+                        <div class="pj-label">Cleaner Air &amp; Safer Streets</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="transition-bridge" data-anim="bridge">
+            <div class="wrap"><p>The mechanisms exist. The legislative window is open. Here&rsquo;s what it looks like in California law.</p></div>
+        </div>
 
         <!-- ================================================================
      § 6 · WHAT THIS MEANS FOR CALIFORNIA
@@ -2837,6 +2869,166 @@
             </div>
         </section>
 
+        <div class="transition-stat" data-anim="bridge">
+            <div class="stat-big">29%</div>
+            <div class="stat-label">Potential VMT reduction achievable under a combined policy approach &mdash; enough to close California&rsquo;s climate gap</div>
+        </div>
+
+        <!-- ================================================================
+     § 3 · VISUALIZATION REGIONS
+================================================================ -->
+        <section id="visuals" aria-labelledby="visuals-heading" data-anim="fade">
+            <div class="wrap">
+                <span class="kicker">Data &amp; Evidence</span>
+                <h2 id="visuals-heading">Policy Performance at a Glance</h2>
+                <p class="lead">
+                    The charts below are computed from documented parameters: Caltrans VMT growth rates,
+                    EMFAC2021 CO₂ fleet-average factors, NCST induced-travel elasticities, and
+                    CalEnviroScreen-calibrated corridor burden scores. Values are illustrative scenario
+                    projections, not certified forecasts, and will be updated as corridor analyses mature.
+                </p>
+
+                <!-- ── VIZ 1: VMT ── -->
+                <div class="viz-block" id="viz-vmt" data-animate="slide">
+                    <h3>Potential VMT Reductions by Policy Approach</h3>
+                    <p>
+                        Each tool changes the incentive structure so that fewer lane-miles get built, more
+                        transit gets funded, and total driving slows compared to trend.
+                    </p>
+                    <div class="chart-wrapper">
+                        <canvas id="vmt-reduction-chart"
+                            aria-label="Bar chart: Conceptual VMT change (%) by policy approach vs. California baseline"
+                            role="img"></canvas>
+                        <p class="chart-disclaimer">Conceptual / illustrative data only. Values represent plausible
+                            scenario ranges,
+                            not modeled forecasts.</p>
+                    </div>
+                </div>
+
+                <!-- ── VIZ 2: GHG ── -->
+                <div class="viz-block" id="viz-ghg" data-animate="slide">
+                    <h3>Potential GHG Emissions Reductions Over Time</h3>
+                    <p>
+                        Shifting transportation spending away from highway capacity expansions and toward transit,
+                        walking, biking, and infill housing takes time to register in emissions data, but the
+                        trajectory compounds. This chart shows a conceptual 20-year comparison: California's
+                        current emissions path under existing SB 375 planning rules versus scenarios where SB 1087
+                        guardrails are in place. Reformed scenarios track lower over time, with steeper
+                        reductions as transit ridership builds, induced demand from new highway lanes is avoided,
+                        and more housing locates near jobs and services. The Massachusetts-style annual cap
+                        provides a reference for what staying "on track" would look like.
+                    </p>
+                    <div class="chart-wrapper">
+                        <canvas id="ghg-trend-chart"
+                            aria-label="Line chart: Conceptual GHG emission trajectories 2025–2045 under current law vs. SB 1087 policy scenarios"
+                            role="img"></canvas>
+                        <p class="chart-disclaimer">Conceptual / illustrative data only. Trajectories represent
+                            plausible scenario
+                            directions, not modeled forecasts.</p>
+                    </div>
+                </div>
+
+                <!-- ── VIZ 2.5: EVIDENCE FROM RESEARCH ── -->
+                <div class="viz-block" id="evidence" data-animate="slide">
+                    <h3>What the Evidence Shows</h3>
+                    <p>
+                        A growing body of California-focused research quantifies how different policy levers affect
+                        driving levels. Land-use strategies that place housing near transit and jobs (compact
+                        development / TOD) consistently show <strong>5–15% VMT reductions</strong> per household
+                        (Handy &amp; Boarnet 2016; CARB SB&nbsp;375 guidance). Pricing and TDM programs, such as
+                        congestion charges and employer commute incentives, yield <strong>3–12% reductions</strong>
+                        (PPIC <em>Driving Change</em>, 2021). Meanwhile, the NCST Induced Travel Calculator documents
+                        that highway capacity expansions routinely generate <strong>5–15% more driving</strong> on
+                        affected corridors within a few years (Caltrans/NCST, 2022). The chart below summarizes
+                        these literature-informed ranges.
+                    </p>
+                    <div class="chart-wrapper">
+                        <canvas id="literature-vmt-chart"
+                            aria-label="Horizontal bar chart: Literature-informed VMT change ranges by policy type"
+                            role="img" style="max-height:300px"></canvas>
+                        <p class="chart-disclaimer">Ranges are drawn from peer-reviewed and agency studies; they
+                            represent
+                            typical effect sizes, not project-specific forecasts. Sources: Handy/Boarnet 2016, PPIC
+                            2021,
+                            Caltrans/NCST 2022, CARB SB&nbsp;743 guidance.</p>
+                    </div>
+
+                    <p style="margin-top:1.5rem">
+                        Electrification alone will not get California to its climate targets. Vehicle technology (EVs
+                        and fuel standards) can deliver roughly <strong>25–40% GHG reductions</strong> from current
+                        levels by 2045 (CARB Scoping Plan 2022). Adding a modest VMT reduction (~5%) pushes that to
+                        about <strong>35–50%</strong>. An ambitious package combining technology with ~15% VMT cuts
+                        reaches <strong>50–65%</strong>, far closer to California's carbon-neutrality targets.
+                        SB 1087 is designed to unlock that combined potential.
+                    </p>
+                    <div class="chart-wrapper">
+                        <canvas id="literature-ghg-chart"
+                            aria-label="Bar chart: Projected GHG reductions under three scenarios (technology only, modest VMT cut, ambitious VMT cut)"
+                            role="img" style="max-height:260px"></canvas>
+                        <p class="chart-disclaimer">Illustrative ranges informed by CARB Scoping Plan 2022, PPIC, and
+                            NCST research. Not project-specific model outputs.</p>
+                    </div>
+                </div>
+
+                <!-- ── VIZ 3: EQUITY / HEALTH ── -->
+                <div class="viz-block" id="viz-equity" data-animate="slide">
+                    <h3>Health and Equity Impacts in Overburdened Communities</h3>
+                    <p>
+                        Disadvantaged communities, particularly those near major highways and freight corridors,
+                        face higher rates of traffic-related air pollution and the health consequences that follow:
+                        elevated asthma, cardiovascular disease, and premature death. The map and chart below
+                        compare estimated current pollution exposure with potential outcomes under SB 1087-style
+                        investment shifts across key California corridors.
+                    </p>
+
+                    <!-- KPI Metric Cards -->
+                    <div class="kpi-row">
+                        <div class="kpi-card">
+                            <div class="kpi-value kpi-red">309</div>
+                            <div class="kpi-label">High VMT + high pollution<br>hotspot tracts statewide</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-value">23.4 <span style="font-size:.85rem;font-weight:500">vs</span> 22.5
+                            </div>
+                            <div class="kpi-label">Avg VMT (mi/day) in<br>DAC vs non-DAC tracts</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-value">3.35</div>
+                            <div class="kpi-label">Statewide avg GHG<br>(tons CO₂ per person/yr)</div>
+                        </div>
+                    </div>
+
+                    <!-- Leaflet Map -->
+                    <div id="equity-map"></div>
+                    <p class="map-caption">
+                        Fill color shows a <strong>VMT index</strong>: each tract’s per-capita driving relative to the
+                        statewide average (100&nbsp;=&nbsp;California average). Dashed outlines mark
+                        <strong>disadvantaged
+                            community (DAC)</strong> tracts as defined in CalEnviroScreen&nbsp;4.0 (≥&nbsp;75th
+                        percentile).
+                        Thick red outlines mark tracts that are both <strong>high-VMT and high-pollution</strong>
+                        (top&nbsp;25% for VMT index and pollution burden).
+                        Data&nbsp;sources: CalEnviroScreen&nbsp;4.0 (OEHHA) + tract-level per-capita VMT derived from
+                        regional estimates and Caltrans/Tracking California traffic data.
+                    </p>
+
+                    <!-- Equity Bar Chart (kept below the map) -->
+                    <div class="chart-wrapper">
+                        <canvas id="equity-impact-chart"
+                            aria-label="Grouped bar chart: Conceptual pollution burden and projected benefit by corridor under SB 1087-style reform"
+                            role="img"></canvas>
+                        <p class="chart-disclaimer">Conceptual / illustrative data only. Exposure index is relative, not
+                            derived
+                            from measured monitoring data.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="transition-bridge" data-anim="bridge">
+            <div class="wrap"><p>Now it&rsquo;s your turn. Adjust the levers and see what combination of policies it would take to hit California&rsquo;s 2045 targets.</p></div>
+        </div>
 
         <!-- ================================================================
      § 6.5 · POLICY LEVER SIMULATOR
@@ -3091,11 +3283,12 @@
             </div>
         </section>
 
+        <div class="transition-label"><span class="label-pill">What You Can Do</span></div>
 
         <!-- ================================================================
      § 7 · CALL TO ACTION
 ================================================================ -->
-        <section id="cta" aria-labelledby="cta-heading">
+        <section id="cta" aria-labelledby="cta-heading" data-anim="fade">
             <div class="wrap">
                 <span class="kicker">Get Involved</span>
                 <h2 id="cta-heading">Questions Worth Asking</h2>
@@ -3167,8 +3360,6 @@
         </section>
 
 
-    </main>
-
     <!-- ================================================================
      DATA SOURCES
 ================================================================ -->
@@ -3212,6 +3403,7 @@
         </div>
     </section>
 
+
     <!-- ================================================================
      FOOTER
 ================================================================ -->
@@ -3223,30 +3415,109 @@
         <p>
             Conceptual visuals are for discussion purposes only. Actual data will be added as corridor analyses are
             completed. Content does not reflect the official positions of any agency or organization. Last reviewed
-            March
-            2026.
+            May 2026.
         </p>
+        <p style="margin-top:.75rem; font-size:.85rem; color:#6b7c70;">
+            Built in partnership with NRDC (Natural Resources Defense Council)
+            under the supervision of Zak Accuardi, Senior Transportation Policy Advocate.
+        </p>
+        <div style="display:flex; gap:1.5rem; justify-content:center; align-items:center; margin-top:1rem; opacity:.6;">
+            <span style="font-size:.75rem; font-weight:600; color:#6b7c70; border:1px solid #d8e0da; padding:4px 10px; border-radius:4px;">NRDC</span>
+            <span style="font-size:.75rem; font-weight:600; color:#6b7c70; border:1px solid #d8e0da; padding:4px 10px; border-radius:4px;">UC Berkeley &middot; Rausser College</span>
+        </div>
     </footer>
 
+
     <!-- ================================================================
-     INTERSECTION OBSERVER — scroll-triggered reveals
+     NAVIGATION: progress bar, active links, hamburger, smooth scroll
 ================================================================ -->
     <script>
-        (function () {
+        (function(){
             'use strict';
-            const els = document.querySelectorAll('[data-animate]');
-            if (!els.length) return;
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);   // reveal once only
+            // Scroll progress bar
+            var bar = document.getElementById('scroll-progress');
+            if (bar) {
+                window.addEventListener('scroll', function(){
+                    var h = document.documentElement.scrollHeight - window.innerHeight;
+                    bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+                }, {passive:true});
+            }
+
+            // Hamburger toggle
+            var ham = document.querySelector('.hamburger');
+            var links = document.querySelector('.nav-links');
+            if (ham && links) {
+                ham.addEventListener('click', function(){
+                    var open = ham.getAttribute('aria-expanded') === 'true';
+                    ham.setAttribute('aria-expanded', !open);
+                    links.classList.toggle('open');
+                });
+                links.addEventListener('click', function(e){
+                    if (e.target.tagName === 'A') {
+                        ham.setAttribute('aria-expanded', 'false');
+                        links.classList.remove('open');
                     }
                 });
-            }, { threshold: 0.12 });
-            els.forEach(el => observer.observe(el));
+            }
+
+            // Active nav highlighting
+            var sections = document.querySelectorAll('section[id]');
+            var navAs = document.querySelectorAll('.nav-links a[href^="#"]');
+            var observer = new IntersectionObserver(function(entries){
+                entries.forEach(function(e){
+                    if (e.isIntersecting) {
+                        navAs.forEach(function(a){ a.classList.remove('active-link'); });
+                        var match = document.querySelector('.nav-links a[href="#' + e.target.id + '"]');
+                        if (match) match.classList.add('active-link');
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '-80px 0px -50% 0px' });
+            sections.forEach(function(s){ observer.observe(s); });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(function(a){
+                a.addEventListener('click', function(e){
+                    var target = document.querySelector(this.getAttribute('href'));
+                    if (target) { e.preventDefault(); target.scrollIntoView({behavior:'smooth',block:'start'}); }
+                });
+            });
         })();
     </script>
+
+    <!-- ================================================================
+     SCROLL-TRIGGERED ANIMATIONS
+================================================================ -->
+    <script>
+        (function(){
+            'use strict';
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            var els = document.querySelectorAll('[data-anim]');
+            if (!els.length) return;
+            var obs = new IntersectionObserver(function(entries){
+                entries.forEach(function(e){
+                    if (e.isIntersecting) {
+                        // Stagger support for child cards
+                        if (e.target.getAttribute('data-anim') === 'stagger') {
+                            var cards = e.target.querySelectorAll('.sbd-stat-card, .kpi-card, .cs-card');
+                            cards.forEach(function(c, i){
+                                c.style.transitionDelay = (i * 0.15) + 's';
+                                c.style.opacity = '0';
+                                c.style.transform = 'translateY(30px)';
+                                c.style.transition = 'opacity .6s ease-out, transform .6s ease-out';
+                                setTimeout(function(){ c.style.opacity = '1'; c.style.transform = 'translateY(0)'; }, i * 150);
+                            });
+                        }
+                        e.target.classList.add('anim-visible');
+                        obs.unobserve(e.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            els.forEach(function(el){ obs.observe(el); });
+        })();
+    </script>
+
+
+    
 
     <!-- ================================================================
      CHART.JS INITIALIZATION
@@ -4574,5 +4845,4 @@
     </script>
 
 </body>
-
 </html>
