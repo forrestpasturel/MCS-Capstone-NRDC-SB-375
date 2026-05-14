@@ -1358,9 +1358,20 @@
             background: var(--green-600);
         }
 
-        .tl-card:nth-child(2)::before { background: var(--gold); box-shadow: 0 0 0 2px var(--gold); }
-        .tl-card:nth-child(3)::before { background: #e07b39; box-shadow: 0 0 0 2px #e07b39; }
-        .tl-card:nth-child(4)::before { background: #c62828; box-shadow: 0 0 0 2px #c62828; }
+        .tl-card:nth-child(2)::before {
+            background: var(--gold);
+            box-shadow: 0 0 0 2px var(--gold);
+        }
+
+        .tl-card:nth-child(3)::before {
+            background: #e07b39;
+            box-shadow: 0 0 0 2px #e07b39;
+        }
+
+        .tl-card:nth-child(4)::before {
+            background: #c62828;
+            box-shadow: 0 0 0 2px #c62828;
+        }
 
         .tl-badge {
             display: inline-block;
@@ -1374,10 +1385,21 @@
             color: #fff;
         }
 
-        .tl-card:nth-child(1) .tl-badge { background: var(--green-700); }
-        .tl-card:nth-child(2) .tl-badge { background: var(--gold); }
-        .tl-card:nth-child(3) .tl-badge { background: #e07b39; }
-        .tl-card:nth-child(4) .tl-badge { background: #c62828; }
+        .tl-card:nth-child(1) .tl-badge {
+            background: var(--green-700);
+        }
+
+        .tl-card:nth-child(2) .tl-badge {
+            background: var(--gold);
+        }
+
+        .tl-card:nth-child(3) .tl-badge {
+            background: #e07b39;
+        }
+
+        .tl-card:nth-child(4) .tl-badge {
+            background: #c62828;
+        }
 
         .tl-card h3 {
             font-size: 1.05rem;
@@ -1407,6 +1429,105 @@
                 left: -2rem;
             }
         }
+
+        /* ============================================================
+           CASE STUDY CARDS
+        ============================================================ */
+        #case-studies {
+            background: var(--white);
+        }
+
+        .cs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+
+        .cs-card {
+            border: 1px solid var(--border);
+            border-top: 5px solid #c62828;
+            border-radius: 0 0 var(--r) var(--r);
+            padding: 1.5rem;
+            background: var(--white);
+            transition: box-shadow .2s ease, transform .2s ease;
+        }
+
+        .cs-card:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, .09);
+            transform: translateY(-2px);
+        }
+
+        .cs-route {
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--ink-muted);
+            margin-bottom: .35rem;
+        }
+
+        .cs-stat {
+            font-size: 1.65rem;
+            font-weight: 800;
+            color: #c62828;
+            line-height: 1.15;
+            margin-bottom: .35rem;
+        }
+
+        .cs-stat-label {
+            font-size: .82rem;
+            font-weight: 600;
+            color: var(--ink-soft);
+            margin-bottom: .75rem;
+        }
+
+        .cs-card p {
+            font-size: .88rem;
+            color: var(--ink-soft);
+            line-height: 1.6;
+            margin-bottom: .5rem;
+        }
+
+        .cs-cost {
+            font-size: .82rem;
+            font-weight: 600;
+            color: var(--ink);
+        }
+
+        .cs-tag {
+            display: inline-block;
+            margin-top: .65rem;
+            font-size: .68rem;
+            font-weight: 700;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            background: #fef2f2;
+            color: #c62828;
+            border: 1px solid #f5c6c6;
+            border-radius: 4px;
+            padding: .2rem .55rem;
+        }
+
+        .cs-summary {
+            margin-top: 2rem;
+            padding: 1.25rem 1.5rem;
+            background: var(--red-soft);
+            border-left: 5px solid #c62828;
+            border-radius: 0 var(--r) var(--r) 0;
+            font-size: .95rem;
+            font-weight: 600;
+            color: var(--ink);
+            line-height: 1.55;
+        }
+
+        .cs-cite {
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: .82rem;
+            font-weight: 600;
+            color: var(--sky);
+        }
     </style>
 </head>
 
@@ -1425,6 +1546,7 @@
             <li><a href="#visuals">Visuals</a></li>
             <li><a href="#evidence">Evidence</a></li>
             <li><a href="#highway-history">History</a></li>
+            <li><a href="#case-studies">Case Studies</a></li>
             <li><a href="#problem">The Problem</a></li>
             <li><a href="#state-stories">State Stories</a></li>
             <li><a href="#california">For California</a></li>
@@ -1864,6 +1986,69 @@
                         <span class="tl-source">Source: CalEnviroScreen 4.0 (OEHHA)</span>
                     </div>
                 </div>
+            </div>
+        </section>
+
+
+        <!-- ================================================================
+     § 3.75 · CASE STUDIES
+================================================================ -->
+        <section id="case-studies" aria-labelledby="cs-heading" data-animate="fade">
+            <div class="wrap">
+                <span class="kicker">Real Projects, Real People</span>
+                <h2 id="cs-heading">Case Studies: The Human Cost of Highway Expansion</h2>
+                <p class="lead">
+                    These are not hypothetical scenarios. Each project below was built, funded with public dollars,
+                    and completed in the last decade.
+                </p>
+
+                <div class="cs-grid">
+                    <div class="cs-card" data-animate="slide">
+                        <div class="cs-route">I-5 · Los Angeles</div>
+                        <div class="cs-stat">569</div>
+                        <div class="cs-stat-label">homes &amp; businesses demolished</div>
+                        <p>
+                            The surrounding community ranks in the <strong>98th percentile</strong> of CalEnviroScreen
+                            pollution burden. 96% of households in the area were already severely housing
+                            cost-burdened before demolition began.
+                        </p>
+                        <div class="cs-cost">Cost: $1.8 billion, completed 7 years late</div>
+                        <span class="cs-tag">Most destructive expansion 2018–2024</span>
+                    </div>
+
+                    <div class="cs-card" data-animate="slide">
+                        <div class="cs-route">SR-99 · Fresno</div>
+                        <div class="cs-stat">11</div>
+                        <div class="cs-stat-label">local businesses demolished</div>
+                        <p>
+                            Community ranks in the <strong>90th–99th percentile</strong> of CalEnviroScreen.
+                            72% of households severely housing cost-burdened. The expansion increased
+                            heavy truck traffic in California's already highest-pollution region.
+                        </p>
+                        <div class="cs-cost">Cost: $146 million</div>
+                        <span class="cs-tag">Small businesses erased</span>
+                    </div>
+
+                    <div class="cs-card" data-animate="slide">
+                        <div class="cs-route">I-405 · Los Angeles</div>
+                        <div class="cs-stat">23</div>
+                        <div class="cs-stat-label">homes &amp; businesses demolished</div>
+                        <p>
+                            Traffic and commute times <strong>increased</strong> after the expansion.
+                            96% of households severely housing cost-burdened. $2.16 billion spent,
+                            and congestion got worse.
+                        </p>
+                        <div class="cs-cost">Cost: $2.16 billion</div>
+                        <span class="cs-tag">Billions spent, traffic got worse</span>
+                    </div>
+                </div>
+
+                <div class="cs-summary">
+                    These are incumbent, car-dominated transportation infrastructure projects with no requirement
+                    to prove climate performance or community benefit.
+                </div>
+                <a class="cs-cite" href="https://greenlining.org/homes-before-highways" target="_blank"
+                    rel="noopener">Greenlining Institute, <em>Homes Before Highways</em> (2025) ↗</a>
             </div>
         </section>
 
