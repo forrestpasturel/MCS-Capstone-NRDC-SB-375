@@ -1304,6 +1304,109 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* ============================================================
+           HIGHWAY HARM TIMELINE
+        ============================================================ */
+        #highway-history {
+            background: var(--surface);
+        }
+
+        .timeline {
+            position: relative;
+            margin-top: 2.25rem;
+            padding-left: 2.5rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--green-600), var(--gold), #c62828);
+            border-radius: 2px;
+        }
+
+        .tl-card {
+            position: relative;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--r);
+            padding: 1.4rem 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, .05);
+            transition: box-shadow .2s ease, transform .2s ease;
+        }
+
+        .tl-card:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, .09);
+            transform: translateY(-2px);
+        }
+
+        .tl-card::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 1.5rem;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            border: 3px solid var(--white);
+            box-shadow: 0 0 0 2px var(--green-600);
+            background: var(--green-600);
+        }
+
+        .tl-card:nth-child(2)::before { background: var(--gold); box-shadow: 0 0 0 2px var(--gold); }
+        .tl-card:nth-child(3)::before { background: #e07b39; box-shadow: 0 0 0 2px #e07b39; }
+        .tl-card:nth-child(4)::before { background: #c62828; box-shadow: 0 0 0 2px #c62828; }
+
+        .tl-badge {
+            display: inline-block;
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            border-radius: 4px;
+            padding: .2rem .6rem;
+            margin-bottom: .6rem;
+            color: #fff;
+        }
+
+        .tl-card:nth-child(1) .tl-badge { background: var(--green-700); }
+        .tl-card:nth-child(2) .tl-badge { background: var(--gold); }
+        .tl-card:nth-child(3) .tl-badge { background: #e07b39; }
+        .tl-card:nth-child(4) .tl-badge { background: #c62828; }
+
+        .tl-card h3 {
+            font-size: 1.05rem;
+            margin-bottom: .4rem;
+        }
+
+        .tl-card p {
+            font-size: .93rem;
+            color: var(--ink-soft);
+            line-height: 1.65;
+        }
+
+        .tl-source {
+            display: block;
+            margin-top: .5rem;
+            font-size: .75rem;
+            color: var(--ink-muted);
+            font-style: italic;
+        }
+
+        @media (max-width: 700px) {
+            .timeline {
+                padding-left: 2rem;
+            }
+
+            .tl-card::before {
+                left: -2rem;
+            }
+        }
     </style>
 </head>
 
@@ -1321,6 +1424,7 @@
             <li><a href="#key-takeaways">Takeaways</a></li>
             <li><a href="#visuals">Visuals</a></li>
             <li><a href="#evidence">Evidence</a></li>
+            <li><a href="#highway-history">History</a></li>
             <li><a href="#problem">The Problem</a></li>
             <li><a href="#state-stories">State Stories</a></li>
             <li><a href="#california">For California</a></li>
@@ -1706,6 +1810,65 @@
 
 
         <!-- ================================================================
+     § 3.5 · HIGHWAY HARM HISTORICAL TIMELINE
+================================================================ -->
+        <section id="highway-history" aria-labelledby="hh-heading" data-animate="fade">
+            <div class="wrap">
+                <span class="kicker">Historical Context</span>
+                <h2 id="hh-heading">How We Got Here: The Historical Roots of Today's Pollution Burden</h2>
+                <p class="lead">
+                    The communities that bear the heaviest traffic pollution today are largely the same communities
+                    that federal housing policy targeted a century ago. The pattern is not accidental.
+                </p>
+
+                <div class="timeline">
+                    <div class="tl-card" data-animate="slide">
+                        <span class="tl-badge">1930s</span>
+                        <h3>Redlining Concentrates Risk</h3>
+                        <p>
+                            Federal housing maps graded Black and immigrant neighborhoods as "hazardous,"
+                            denying residents loans and concentrating poverty. These same neighborhoods would
+                            later be targeted for freeway construction.
+                        </p>
+                        <span class="tl-source">Source: Greenbelt Alliance / HOLC maps</span>
+                    </div>
+
+                    <div class="tl-card" data-animate="slide">
+                        <span class="tl-badge">1950s–70s</span>
+                        <h3>Freeways Built Through Communities of Color</h3>
+                        <p>
+                            I-880, I-980, SR-99, and I-5 were routed through redlined neighborhoods, not despite
+                            who lived there, but because of it. Over 500 homes were demolished for the I-5 expansion
+                            alone in communities where 96% of households were already severely housing cost-burdened.
+                        </p>
+                        <span class="tl-source">Source: Greenlining Institute, 2025</span>
+                    </div>
+
+                    <div class="tl-card" data-animate="slide">
+                        <span class="tl-badge">2018–2024</span>
+                        <h3>Displacement Continues</h3>
+                        <p>
+                            850+ homes and businesses were demolished by highway expansion in just five years.
+                            More than 200 additional expansions remain in the pipeline.
+                        </p>
+                        <span class="tl-source">Source: Greenlining Institute / Caltrans SB 695 data</span>
+                    </div>
+
+                    <div class="tl-card" data-animate="slide">
+                        <span class="tl-badge">Today</span>
+                        <h3>The Burden Persists</h3>
+                        <p>
+                            Communities near I-710, I-105, SR-99, and I-80 still rank in the top 25% of CalEnviroScreen
+                            pollution burden, a direct legacy of where freeways were built and for whom.
+                        </p>
+                        <span class="tl-source">Source: CalEnviroScreen 4.0 (OEHHA)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================================================================
      § 4 · THE PROBLEM
 ================================================================ -->
         <section id="problem" aria-labelledby="problem-heading" data-animate="fade">
@@ -1832,7 +1995,8 @@
                     </p>
                     <div class="viz-pointer">
                         <strong>See the VMT and GHG charts →</strong> Minnesota's capacity trigger would appear in both
-                        charts as a scenario where the largest VMT-generating projects, specifically new highway lanes through
+                        charts as a scenario where the largest VMT-generating projects, specifically new highway lanes
+                        through
                         urban corridors, either disappear from the pipeline or arrive substantially scaled back. Fewer
                         new lane-miles means less induced demand; less induced demand means a lower GHG trajectory.
                     </div>
