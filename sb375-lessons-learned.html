@@ -3781,17 +3781,34 @@
 
                     <!-- Leaflet Map -->
                     <div id="equity-map"></div>
+                    <div class="equity-map-toggles" style="display:flex;gap:1.5rem;margin:.75rem 0;font-size:.88rem;color:#3d4f42;">
+                        <label style="display:flex;align-items:center;gap:.4rem;cursor:pointer;">
+                            <input type="checkbox" id="toggle-dac" checked style="accent-color:#6a1b9a;">
+                            Show Disadvantaged Communities (DAC tracts)
+                        </label>
+                        <label style="display:flex;align-items:center;gap:.4rem;cursor:pointer;">
+                            <input type="checkbox" id="toggle-hotspot" checked style="accent-color:#d32f2f;">
+                            Show High VMT + High Pollution Hotspots
+                        </label>
+                    </div>
                     <p class="map-caption">
-                        Fill color shows a <strong>VMT index</strong>: each tract’s per-capita driving relative to the
-                        statewide average (100&nbsp;=&nbsp;California average). Dashed outlines mark
-                        <strong>disadvantaged
-                            community (DAC)</strong> tracts as defined in CalEnviroScreen&nbsp;4.0 (≥&nbsp;75th
-                        percentile).
-                        Thick red outlines mark tracts that are both <strong>high-VMT and high-pollution</strong>
-                        (top&nbsp;25% for VMT index and pollution burden).
+                        Fill color shows a <strong>VMT index</strong>: each tract&rsquo;s per-capita driving relative to the
+                        statewide average (100&nbsp;=&nbsp;California average).
+                        Dashed outlines mark <strong>Disadvantaged Community (DAC)</strong> tracts as defined in
+                        CalEnviroScreen&nbsp;4.0 (&ge;&nbsp;75th percentile). Thick outlines mark tracts that are both
+                        <strong>high-VMT and high-pollution</strong> (top&nbsp;25% for both VMT index and pollution burden)&nbsp;&mdash;
+                        these 309 hotspot tracts are where the case for SB&nbsp;1087 reform is most urgent.<br>
                         Data&nbsp;sources: CalEnviroScreen&nbsp;4.0 (OEHHA) + tract-level per-capita VMT derived from
                         regional estimates and Caltrans/Tracking California traffic data.
                     </p>
+                    <div style="background:#254D40;border-left:4px solid #E8967A;padding:16px;border-radius:8px;margin:.75rem 0 1.5rem;font-size:.9rem;line-height:1.65;color:#F5E6D3;">
+                        &#x1F4CD; <strong>What to look for:</strong> The overlap between the darkest VMT fill colors
+                        (&ge;&nbsp;120 index) and the thick hotspot outlines shows exactly where California&rsquo;s
+                        driving burden and pollution burden converge. These corridors&nbsp;&mdash; concentrated along
+                        I-710, I-105, SR-99, and I-80&nbsp;&mdash; are the same communities that historical redlining
+                        maps designated as &ldquo;Hazardous&rdquo; in the 1930s. Reformed SB&nbsp;1087 investment
+                        rules would direct funding toward these communities first.
+                    </div>
 
                     <!-- Equity Bar Chart (kept below the map) -->
                     <div class="chart-wrapper">
@@ -5137,14 +5154,14 @@
 
                 legendDiv.innerHTML =
                     '<h4>' + title + '</h4>' +
-                    '<div class="map-legend-row"><span class="map-legend-swatch" style="background:' + COLORS[0] + '"></span> &lt; 90 (' + lo + ')</div>' +
-                    '<div class="map-legend-row"><span class="map-legend-swatch" style="background:' + COLORS[1] + '"></span> 90 &ndash; 99</div>' +
-                    '<div class="map-legend-row"><span class="map-legend-swatch" style="background:' + COLORS[2] + '"></span> 100 &ndash; 109 (avg)</div>' +
-                    '<div class="map-legend-row"><span class="map-legend-swatch" style="background:' + COLORS[3] + '"></span> 110 &ndash; 119</div>' +
-                    '<div class="map-legend-row"><span class="map-legend-swatch" style="background:' + COLORS[4] + '"></span> &ge; 120 (' + hi + ')</div>' +
+                    '<div class="map-legend-row"><span class="map-legend-swatch" style="background:' + COLORS[0] + '"></span> &lt; 90 (Below average VMT)</div>' +
+                    '<div class="map-legend-row"><span class="map-legend-swatch" style="background:' + COLORS[1] + '"></span> 90 &ndash; 99 (Near average VMT)</div>' +
+                    '<div class="map-legend-row"><span class="map-legend-swatch" style="background:' + COLORS[2] + '"></span> 100 &ndash; 109 (Average VMT, CA = 100)</div>' +
+                    '<div class="map-legend-row"><span class="map-legend-swatch" style="background:' + COLORS[3] + '"></span> 110 &ndash; 119 (Above average VMT)</div>' +
+                    '<div class="map-legend-row"><span class="map-legend-swatch" style="background:' + COLORS[4] + '"></span> &ge; 120 (Well above average VMT)</div>' +
                     '<h4 style="margin-top:8px">Overlays</h4>' +
-                    '<div class="map-legend-row"><span class="map-legend-swatch" style="background:transparent;border:2px dashed #6a1b9a"></span> DAC tract</div>' +
-                    '<div class="map-legend-row"><span class="map-legend-swatch" style="background:transparent;border:2.5px solid #d32f2f"></span> High VMT + Pollution</div>' +
+                    '<div class="map-legend-row"><span class="map-legend-swatch" style="background:transparent;border:2px dashed #6a1b9a"></span> Disadvantaged Community (DAC) &mdash; CalEnviroScreen &ge; 75th pctile</div>' +
+                    '<div class="map-legend-row"><span class="map-legend-swatch" style="background:transparent;border:2.5px solid #d32f2f"></span> High VMT + High Pollution Hotspot &mdash; top 25% both metrics</div>' +
                     (holcActive ?
                         '<h4 style="margin-top:8px">HOLC Redlining Grades (1930s)</h4>' +
                         '<div class="map-legend-row"><span class="map-legend-swatch" style="background:#76a865;opacity:.7"></span> A &ndash; Best</div>' +
@@ -5240,6 +5257,30 @@
                         activeBase = e.name.indexOf('Traffic') >= 0 ? 'traffic' : 'vmt';
                         updateLegend();
                     });
+
+                    // ── Custom HTML toggle checkboxes ──────────────────
+                    var dacToggle = document.getElementById('toggle-dac');
+                    var hotspotToggle = document.getElementById('toggle-hotspot');
+
+                    if (dacToggle) {
+                        dacToggle.addEventListener('change', function () {
+                            if (this.checked) {
+                                if (dacRef.layer && !map.hasLayer(dacRef.layer)) map.addLayer(dacRef.layer);
+                            } else {
+                                if (dacRef.layer && map.hasLayer(dacRef.layer)) map.removeLayer(dacRef.layer);
+                            }
+                        });
+                    }
+
+                    if (hotspotToggle) {
+                        hotspotToggle.addEventListener('change', function () {
+                            if (this.checked) {
+                                if (hotspotRef.layer && !map.hasLayer(hotspotRef.layer)) map.addLayer(hotspotRef.layer);
+                            } else {
+                                if (hotspotRef.layer && map.hasLayer(hotspotRef.layer)) map.removeLayer(hotspotRef.layer);
+                            }
+                        });
+                    }
 
                     console.log('Equity map: loaded ' + geojson.features.length + ' tracts' +
                         (hasTraffic ? ' (with traffic intensity)' : ''));
