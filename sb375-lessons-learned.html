@@ -824,6 +824,11 @@
             color: #F5E6D3;
         }
 
+        /* Hide the default Leaflet layer control on the equity map */
+        #equity-map .leaflet-control-layers {
+            display: none !important;
+        }
+
         .map-legend h4 {
             margin: 0 0 6px 0;
             font-size: 11px;
@@ -3801,7 +3806,7 @@
                             Show DAC tracts
                         </label>
                         <label style="display:flex;align-items:center;gap:.4rem;cursor:pointer;font-size:.88rem;color:#3d4f42;">
-                            <input type="checkbox" id="toggle-hotspot" checked style="accent-color:#FF00FF;">
+                            <input type="checkbox" id="toggle-hotspot" checked style="accent-color:#FF6B00;">
                             Highlight hotspot overlap
                         </label>
                     </div>
@@ -3819,8 +3824,8 @@
                         Data&nbsp;sources: CalEnviroScreen&nbsp;4.0 (OEHHA) + tract-level per-capita VMT derived from
                         regional estimates and Caltrans/Tracking California traffic data.
                     </p>
-                    <div style="background:#254D40;border-left:4px solid #FF00FF;padding:16px;border-radius:8px;margin:.75rem 0 1.5rem;font-size:.9rem;line-height:1.65;color:#F5E6D3;">
-                        &#x1F4CD; <strong>What to look for:</strong> Magenta-tinted tracts are where California&rsquo;s
+                    <div id="equity-annotation-box" style="background:#254D40;border-left:4px solid #FF6B00;padding:16px;border-radius:8px;margin:.75rem 0 1.5rem;font-size:.9rem;line-height:1.65;color:#F5E6D3;">
+                        &#x1F4CD; <strong>What to look for:</strong> Orange-tinted tracts are where California&rsquo;s
                         driving burden and pollution burden overlap most severely &mdash; 309 census tracts
                         statewide where per-capita VMT AND CalEnviroScreen pollution burden both rank in
                         the top&nbsp;25%. These are concentrated along I-710, I-105, SR-99, and I-80 &mdash;
@@ -5094,10 +5099,10 @@
 
             function hotspotStyle() {
                 return {
-                    fillColor: '#FF00FF',
-                    fillOpacity: 0.15,
+                    fillColor: '#FF6B00',
+                    fillOpacity: 0.18,
                     weight: 4,
-                    color: '#FF00FF',
+                    color: '#FF6B00',
                     opacity: 1.0,
                 };
             }
@@ -5183,7 +5188,7 @@
             var pollBurdenActive = false;
 
             /* ── Annotation text presets ──────────────────────────── */
-            var ANNOT_DEFAULT = '\ud83d\udccd <strong>What to look for:</strong> Magenta-tinted tracts are where California\u2019s driving burden and pollution burden overlap most severely \u2014 309 census tracts statewide where per-capita VMT AND CalEnviroScreen pollution burden both rank in the top\u00a025%. These are concentrated along I-710, I-105, SR-99, and I-80 \u2014 the same communities that historical redlining maps designated as \u201cHazardous\u201d in the 1930s. Reformed SB\u00a01087 investment rules would direct funding toward these communities first.';
+            var ANNOT_DEFAULT = '\ud83d\udccd <strong>What to look for:</strong> Orange-tinted tracts are where California\u2019s driving burden and pollution burden overlap most severely \u2014 309 census tracts statewide where per-capita VMT AND CalEnviroScreen pollution burden both rank in the top\u00a025%. These are concentrated along I-710, I-105, SR-99, and I-80 \u2014 the same communities that historical redlining maps designated as \u201cHazardous\u201d in the 1930s. Reformed SB\u00a01087 investment rules would direct funding toward these communities first.';
             var ANNOT_POLLUTION = '\ud83d\udccd <strong>You are now viewing pollution burden</strong> (CalEnviroScreen 4.0). Compare with VMT: tracts that are dark on BOTH views are the 309 hotspot tracts where driving burden and pollution burden overlap \u2014 concentrated along I-710, I-105, SR-99, and I-80. These are the communities SB 1087 reform would prioritize.';
 
             /* ── Legend rendering ────────────────────────────────── */
@@ -5213,7 +5218,9 @@
                 html += '<hr class="map-legend-divider">';
                 html += '<h4>Overlays</h4>';
                 html += '<div class="map-legend-row"><span class="map-legend-swatch" style="background:transparent;border:2px dashed #6a1b9a"></span> DAC tract (CES \u2265 75th pctile)</div>';
-                html += '<div class="map-legend-row"><span class="map-legend-swatch" style="background:rgba(255,0,255,.25);border:2.5px solid #FF00FF"></span> \u26a0\ufe0f High VMT + High Pollution Hotspot (309 tracts)</div>';
+                html += '<div class="map-legend-row"><span class="map-legend-swatch" style="background:rgba(255,107,0,.3);border:2.5px solid #FF6B00"></span> \u26a0\ufe0f <strong>Dual-Burden Hotspot Tracts (309 statewide)</strong></div>';
+                html += '<div style="font-size:11px;opacity:.8;line-height:1.4;margin:3px 0 0 22px">Census tracts ranking in the top 25% statewide for BOTH per-capita driving (VMT index) AND pollution burden (CalEnviroScreen 4.0). These communities face the combined health risks of high driving rates and high exposure to traffic-related air pollutants \u2014 NO\u2082, PM\u2082.\u2085, and ozone.</div>';
+                html += '<div style="font-size:10px;color:#4A9B8E;margin:4px 0 0 22px">Source: CalEnviroScreen 4.0 (OEHHA) \u00d7 Caltrans VMT data</div>';
 
                 legendDiv.innerHTML = html;
             }
@@ -5310,7 +5317,7 @@
 
                     // ── Pollution burden toggle button ─────────────────
                     var pbBtn = document.getElementById('toggle-pollution-burden');
-                    var annotBox = document.querySelector('[style*="border-left:4px solid #FF00FF"]');
+                    var annotBox = document.getElementById('equity-annotation-box');
 
                     if (pbBtn) {
                         pbBtn.addEventListener('click', function () {
