@@ -2216,24 +2216,53 @@
                 transform: none !important;
                 transition: none !important;
             }
+        }
+
         /* ============================================================
-           NRDC IMPACT SECTION
+           NRDC IMPACT SECTION (redesigned)
         ============================================================ */
         #nrdc-impact {
             background: #1B3A2F;
             color: #F5E6D3;
-            padding: 4rem 0 3rem;
+            padding: 5rem 2.5rem 3.5rem;
+            border-top: 3px solid #E8967A;
         }
 
-        #nrdc-impact .wrap {
-            max-width: var(--max, 1080px);
+        #nrdc-impact .nrdc-wrap {
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 0 1.5rem;
         }
 
-        #nrdc-impact .section-eyebrow {
-            display: inline-block;
-            font-size: .72rem;
+        .nrdc-header-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(74,155,142,.25);
+        }
+
+        .nrdc-header-logos {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .nrdc-header-logos .logo-divider {
+            width: 1px;
+            height: 48px;
+            background: #4A9B8E;
+        }
+
+        .nrdc-header-right {
+            text-align: right;
+        }
+
+        .nrdc-header-right .header-eyebrow {
+            display: block;
+            font-size: .7rem;
             font-weight: 700;
             letter-spacing: .15em;
             text-transform: uppercase;
@@ -2241,22 +2270,104 @@
             margin-bottom: .5rem;
         }
 
-        #nrdc-impact h2 {
-            font-size: 1.65rem;
-            font-weight: 800;
+        .nrdc-header-right h2 {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
             color: #F5E6D3;
-            margin-bottom: .75rem;
-            line-height: 1.25;
+            line-height: 1.3;
         }
 
-        #nrdc-impact .section-subtitle {
-            font-size: 1rem;
-            line-height: 1.75;
-            color: #d9cdbf;
-            max-width: 780px;
+        /* Sponsor card */
+        .nrdc-sponsor-card {
+            background: #254D40;
+            border-radius: 12px;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
             margin-bottom: 2.5rem;
         }
 
+        .sponsor-photo-col {
+            flex: 0 0 auto;
+            text-align: center;
+        }
+
+        .sponsor-photo-col img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #4A9B8E;
+        }
+
+        .sponsor-photo-col .sponsor-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #F5E6D3;
+            margin-top: .75rem;
+        }
+
+        .sponsor-photo-col .sponsor-title {
+            font-size: .82rem;
+            color: #4A9B8E;
+            line-height: 1.5;
+        }
+
+        .sponsor-photo-col .sponsor-location {
+            font-size: .78rem;
+            color: #d9cdbf;
+            font-style: italic;
+            margin-top: .25rem;
+        }
+
+        .btn-coral-sm {
+            display: inline-block;
+            padding: .5rem 1.2rem;
+            background: #E8967A;
+            color: #1B3A2F;
+            font-weight: 700;
+            font-size: .82rem;
+            border-radius: 6px;
+            text-decoration: none;
+            margin-top: .75rem;
+            transition: transform .15s;
+        }
+
+        .btn-coral-sm:hover {
+            transform: translateY(-2px);
+        }
+
+        .sponsor-quote-col {
+            flex: 1;
+        }
+
+        .sponsor-quote-col .sponsor-pullquote {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 1.15rem;
+            font-style: italic;
+            color: #F5E6D3;
+            line-height: 1.55;
+            margin-bottom: .75rem;
+            padding-left: 1rem;
+            border-left: 3px solid #E8967A;
+        }
+
+        .sponsor-quote-col .sponsor-attr {
+            font-size: .78rem;
+            color: #4A9B8E;
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+        }
+
+        .sponsor-quote-col .sponsor-bio {
+            font-size: .92rem;
+            color: #d9cdbf;
+            line-height: 1.7;
+        }
+
+        /* Impact cards */
         .nrdc-cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -2266,60 +2377,54 @@
 
         .nrdc-card {
             background: #254D40;
-            border-radius: var(--r, 12px);
+            border-radius: 10px;
             padding: 1.5rem;
             border-left: 4px solid #E8967A;
-            transition: transform .2s ease, box-shadow .2s ease;
         }
 
         .nrdc-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, .25);
+            transform: translateY(-2px);
+            transition: transform .2s ease;
         }
 
-        .nrdc-card .card-icon {
-            font-size: 1.8rem;
-            margin-bottom: .75rem;
-        }
+        .nrdc-card .card-icon { font-size: 2rem; margin-bottom: .6rem; }
 
         .nrdc-card h3 {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 700;
-            color: #F5E6D3;
-            margin-bottom: .6rem;
+            color: #E8967A;
+            margin-bottom: .5rem;
         }
 
         .nrdc-card p {
-            font-size: .9rem;
-            color: #d9cdbf;
-            line-height: 1.65;
-            margin-bottom: .75rem;
+            font-size: .88rem;
+            color: #F5E6D3;
+            line-height: 1.6;
+            margin-bottom: .6rem;
         }
 
         .nrdc-card .card-link {
             display: inline-block;
-            font-size: .82rem;
+            font-size: .78rem;
             font-weight: 600;
             color: #4A9B8E;
             text-decoration: underline;
-            text-decoration-color: rgba(74, 155, 142, .3);
-            transition: text-decoration-color .2s;
+            text-decoration-color: rgba(74,155,142,.3);
         }
 
-        .nrdc-card .card-link:hover {
-            text-decoration-color: #4A9B8E;
-        }
+        .nrdc-card .card-link:hover { text-decoration-color: #4A9B8E; }
 
+        /* Quote block */
         .nrdc-quote-block {
             background: #0F2318;
             padding: 3.5rem 1.5rem;
             text-align: center;
-            margin: 2.5rem -1.5rem;
+            margin: 2.5rem -2.5rem;
         }
 
         .nrdc-quote-block .quote-label {
             display: inline-block;
-            font-size: .7rem;
+            font-size: .68rem;
             font-weight: 700;
             letter-spacing: .12em;
             text-transform: uppercase;
@@ -2338,53 +2443,53 @@
         }
 
         .nrdc-quote-block .quote-attribution {
-            font-size: .9rem;
+            font-size: .88rem;
             color: #4A9B8E;
         }
 
+        /* Alignment table */
         .nrdc-alignment-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 2rem 0;
-            font-size: .88rem;
-            border-radius: var(--r, 12px);
+            margin: 1.5rem 0 2rem;
+            font-size: .86rem;
             overflow: hidden;
         }
 
         .nrdc-alignment-table thead th {
-            background: #1B3A2F;
-            color: #F5E6D3;
+            background: #0F2318;
+            color: #E8967A;
             font-weight: 700;
+            font-size: .76rem;
+            letter-spacing: .08em;
+            text-transform: uppercase;
             padding: .85rem 1rem;
             text-align: left;
             border-bottom: 2px solid #4A9B8E;
         }
 
-        .nrdc-alignment-table tbody tr:nth-child(odd) {
-            background: #254D40;
-        }
-
-        .nrdc-alignment-table tbody tr:nth-child(even) {
-            background: #1B3A2F;
-        }
+        .nrdc-alignment-table tbody tr:nth-child(odd) { background: #254D40; }
+        .nrdc-alignment-table tbody tr:nth-child(even) { background: #1B3A2F; }
 
         .nrdc-alignment-table td {
-            padding: .75rem 1rem;
+            padding: .85rem 1rem;
             color: #F5E6D3;
             line-height: 1.55;
             vertical-align: top;
+            font-size: .88rem;
         }
 
         .nrdc-alignment-table td:first-child {
             color: #E8967A;
             font-weight: 600;
-            white-space: nowrap;
+            border-left: 2px solid #4A9B8E;
         }
 
+        /* Capstone expander */
         .nrdc-capstone-expander {
             background: #254D40;
             border: 1px solid #2d5247;
-            border-radius: var(--r, 12px);
+            border-radius: 12px;
             overflow: hidden;
             margin-top: 2rem;
         }
@@ -2395,16 +2500,14 @@
             font-weight: 600;
             color: #4A9B8E;
             cursor: pointer;
-            background: rgba(74, 155, 142, .08);
+            background: rgba(74,155,142,.08);
             list-style: none;
             display: flex;
             align-items: center;
             gap: .5rem;
         }
 
-        .nrdc-capstone-expander summary::-webkit-details-marker {
-            display: none;
-        }
+        .nrdc-capstone-expander summary::-webkit-details-marker { display: none; }
 
         .nrdc-capstone-expander summary::before {
             content: '\25B6';
@@ -2412,9 +2515,7 @@
             transition: transform .2s;
         }
 
-        .nrdc-capstone-expander[open] summary::before {
-            transform: rotate(90deg);
-        }
+        .nrdc-capstone-expander[open] summary::before { transform: rotate(90deg); }
 
         .nrdc-capstone-expander .expander-body {
             padding: 1.2rem 1.5rem;
@@ -2423,79 +2524,191 @@
             line-height: 1.7;
         }
 
-        .nrdc-capstone-expander .expander-body strong {
-            color: #F5E6D3;
-        }
+        .nrdc-capstone-expander .expander-body strong { color: #F5E6D3; }
 
         .nrdc-capstone-expander .expander-body a {
             color: #4A9B8E;
             text-decoration: underline;
-            text-decoration-color: rgba(74, 155, 142, .3);
+            text-decoration-color: rgba(74,155,142,.3);
         }
 
-        .nrdc-capstone-expander .expander-body a:hover {
-            text-decoration-color: #4A9B8E;
+        .nrdc-capstone-expander .expander-body a:hover { text-decoration-color: #4A9B8E; }
+
+        /* ============================================================
+           ABOUT THE AUTHOR SECTION
+        ============================================================ */
+        #about {
+            background: #0F2318;
+            color: #F5E6D3;
+            padding: 5rem 2.5rem;
+            border-top: 3px solid #4A9B8E;
         }
 
-        .nrdc-logo-placeholders {
+        #about .about-wrap {
+            max-width: 1100px;
+            margin: 0 auto;
             display: flex;
-            gap: 1.5rem;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        .about-photo-col {
+            flex: 0 0 280px;
+            text-align: center;
+        }
+
+        .about-photo-col img.author-headshot {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #4A9B8E;
+        }
+
+        .about-photo-col .author-name {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #F5E6D3;
+            margin-top: 1rem;
+        }
+
+        .about-photo-col .author-title {
+            font-size: .88rem;
+            color: #E8967A;
+            margin-top: .25rem;
+        }
+
+        .about-photo-col .author-institution {
+            font-size: .78rem;
+            color: #4A9B8E;
+            font-style: italic;
+            margin-top: .25rem;
+            line-height: 1.4;
+        }
+
+        .about-photo-col img.author-school-logo {
+            width: 120px;
+            height: auto;
+            margin-top: 1rem;
+        }
+
+        .btn-outline-teal-sm {
+            display: inline-block;
+            padding: .6rem 1.2rem;
+            border: 2px solid #4A9B8E;
+            color: #4A9B8E;
+            font-weight: 700;
+            font-size: .82rem;
+            border-radius: 6px;
+            text-decoration: none;
+            margin-top: 1.25rem;
+            transition: all .15s;
+        }
+
+        .btn-outline-teal-sm:hover {
+            background: #4A9B8E;
+            color: #0F2318;
+        }
+
+        .about-bio-col {
+            flex: 1;
+        }
+
+        .about-bio-col .bio-eyebrow {
+            display: block;
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: #4A9B8E;
+            margin-bottom: .5rem;
+        }
+
+        .about-bio-col h2 {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: #F5E6D3;
+            margin-bottom: .35rem;
+        }
+
+        .about-bio-col .bio-tagline {
+            font-size: 1.05rem;
+            color: #E8967A;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-bio-col p {
+            font-size: .95rem;
+            color: #F5E6D3;
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+
+        .about-bio-col hr.bio-rule {
+            border: none;
+            height: 1px;
+            background: #4A9B8E;
+            width: 60px;
+            margin: 1.5rem 0;
+        }
+
+        .expertise-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem;
+        }
+
+        .expertise-tags .tag {
+            display: inline-flex;
+            align-items: center;
+            padding: .35rem .85rem;
+            border: 1px solid #4A9B8E;
+            color: #4A9B8E;
+            border-radius: 20px;
+            font-size: .78rem;
+            font-weight: 600;
+        }
+
+        /* Footer logos */
+        .footer-logo-bar {
+            display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 2rem;
-            opacity: .5;
+            gap: 2rem;
+            margin-top: 1rem;
         }
 
-        .nrdc-logo-placeholders span {
-            font-size: .72rem;
-            font-weight: 700;
-            color: #6b7c70;
-            border: 1px solid #3d5a50;
-            padding: 6px 14px;
-            border-radius: 4px;
-            letter-spacing: .04em;
-        }
+        .footer-logo-bar img { height: auto; }
 
+        /* Responsive */
         @media (max-width: 800px) {
-            .nrdc-cards {
-                grid-template-columns: 1fr;
-            }
-
-            .nrdc-alignment-table td:first-child {
-                white-space: normal;
-            }
-
-            .nrdc-quote-block .quote-text {
-                font-size: 1.25rem;
-            }
+            #nrdc-impact { padding: 3rem 1.2rem 2.5rem; }
+            .nrdc-header-bar { flex-direction: column; text-align: center; }
+            .nrdc-header-right { text-align: center; }
+            .nrdc-cards { grid-template-columns: 1fr; }
+            .nrdc-sponsor-card { flex-direction: column; align-items: center; text-align: center; }
+            .sponsor-quote-col .sponsor-pullquote { border-left: none; padding-left: 0; border-top: 3px solid #E8967A; padding-top: 1rem; }
+            .sponsor-quote-col .sponsor-attr { padding-left: 0; }
+            .nrdc-quote-block { margin: 2rem -1.2rem; }
+            .nrdc-quote-block .quote-text { font-size: 1.25rem; }
+            .nrdc-alignment-table td:first-child { white-space: normal; }
+            #about { padding: 3rem 1.2rem; }
+            #about .about-wrap { flex-direction: column; align-items: center; text-align: center; }
+            .about-photo-col { flex: none; }
+            .about-bio-col .bio-tagline { text-align: center; }
+            .about-bio-col hr.bio-rule { margin: 1.5rem auto; }
+            .expertise-tags { justify-content: center; }
         }
 
         @media (max-width: 600px) {
-            .nrdc-alignment-table,
-            .nrdc-alignment-table thead,
-            .nrdc-alignment-table tbody,
-            .nrdc-alignment-table tr,
-            .nrdc-alignment-table td,
-            .nrdc-alignment-table th {
-                display: block;
-            }
-
-            .nrdc-alignment-table thead {
-                display: none;
-            }
-
-            .nrdc-alignment-table tr {
-                margin-bottom: 1rem;
-                border-radius: 8px;
-                overflow: hidden;
-            }
-
-            .nrdc-alignment-table td {
-                padding: .6rem 1rem;
-                position: relative;
-                padding-left: 1rem;
-            }
-
+            .nrdc-alignment-table, .nrdc-alignment-table thead, .nrdc-alignment-table tbody,
+            .nrdc-alignment-table tr, .nrdc-alignment-table td, .nrdc-alignment-table th { display: block; }
+            .nrdc-alignment-table thead { display: none; }
+            .nrdc-alignment-table tr { margin-bottom: 1rem; border-radius: 8px; overflow: hidden; }
+            .nrdc-alignment-table td { padding: .6rem 1rem; }
             .nrdc-alignment-table td::before {
                 content: attr(data-label);
                 display: block;
@@ -2509,6 +2722,7 @@
         }
 
     </style>
+
 </head>
 
 <body>
@@ -2537,6 +2751,7 @@
             <li><a href="#simulator">Simulator</a></li>
             <li><a href="#cta">Act</a></li>
             <li><a href="#nrdc-impact">NRDC Impact</a></li>
+            <li><a href="#about">About</a></li>
         </ul>
     </nav>
 
@@ -3910,44 +4125,73 @@
     </main>
 
     <!-- ================================================================
-     NRDC POLICY IMPACT
+     NRDC POLICY IMPACT (redesigned)
 ================================================================ -->
     <section id="nrdc-impact" aria-labelledby="nrdc-heading" data-anim="fade">
-        <div class="wrap">
-            <span class="section-eyebrow">🌿 Supporting Active Advocacy</span>
-            <h2 id="nrdc-heading">How This Dashboard Supports NRDC&rsquo;s Policy Work</h2>
-            <p class="section-subtitle">
-                This capstone project was developed in partnership with NRDC&rsquo;s Mobility Choices
-                program under the supervision of Zak Accuardi, Director of Mobility Choices,
-                Climate &amp; Energy. Here&rsquo;s where the evidence connects to active advocacy.
-            </p>
+        <div class="nrdc-wrap">
 
-            <!-- Three Advocacy Cards -->
+            <!-- Partnership Header Bar -->
+            <div class="nrdc-header-bar">
+                <div class="nrdc-header-logos">
+                    <img src="images/NRDC_bear_logo_svg.png" alt="NRDC — Natural Resources Defense Council" width="120" style="height:auto">
+                    <div class="logo-divider"></div>
+                    <img src="images/Rausser_College_of_Natural_Resources_logo_svg.png" alt="UC Berkeley Rausser College of Natural Resources" width="200" style="height:auto">
+                </div>
+                <div class="nrdc-header-right">
+                    <span class="header-eyebrow">MCS Capstone Partnership &middot; 2026</span>
+                    <h2 id="nrdc-heading">Supporting NRDC&rsquo;s Mobility Choices Advocacy</h2>
+                </div>
+            </div>
+
+            <!-- Zak Accuardi Sponsor Card -->
+            <div class="nrdc-sponsor-card">
+                <div class="sponsor-photo-col">
+                    <img src="images/zak-accuardi.jpg" alt="Zak Accuardi, Director of Mobility Choices, NRDC">
+                    <div class="sponsor-name">Zak Accuardi</div>
+                    <div class="sponsor-title">Director, Mobility Choices</div>
+                    <div class="sponsor-title">Climate &amp; Energy &middot; NRDC</div>
+                    <div class="sponsor-location">Berkeley, CA</div>
+                    <a class="btn-coral-sm" href="https://www.nrdc.org/bio/zak-accuardi" target="_blank" rel="noopener">View NRDC Profile &uarr;</a>
+                </div>
+                <div class="sponsor-quote-col">
+                    <p class="sponsor-pullquote">
+                        California&rsquo;s transportation agencies have outlined strategies to solve
+                        our climate and mobility problems. The work now is making sure our
+                        budgets reflect what we say are our priorities.
+                    </p>
+                    <p class="sponsor-attr">Paraphrased from public advocacy statements &mdash; Zak Accuardi, NRDC</p>
+                    <p class="sponsor-bio">
+                        Zak leads NRDC&rsquo;s national policy advocacy to shift transportation funding from
+                        highway expansion toward community-centered investments in transit, walking, and biking.
+                        This capstone project was developed under his direct supervision as a practical tool
+                        for NRDC&rsquo;s ongoing SB 1087 advocacy work.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Three Impact Cards -->
             <div class="nrdc-cards">
                 <div class="nrdc-card" data-anim="fade">
-                    <div class="card-icon">📊</div>
+                    <div class="card-icon">&#x1F4CA;</div>
                     <h3>Visualizing the 81% Problem</h3>
                     <p>
-                        NRDC&rsquo;s 2023 report found that more than 81% of California&rsquo;s
-                        transportation funding goes to projects that increase or maintain VMT &mdash;
-                        not reduce it. The VMT and GHG charts in this dashboard provide an interactive,
-                        updateable layer of evidence to illustrate what that funding gap costs
-                        in emissions and health outcomes.
+                        NRDC&rsquo;s 2023 report found over 81% of California&rsquo;s $22B+ transportation budget
+                        goes to projects that maintain or expand VMT &mdash; not reduce it. This dashboard&rsquo;s
+                        charts and simulator make that gap interactive and shareable for legislative briefings.
                     </p>
                     <a class="card-link" href="https://www.nrdc.org/bio/carter-rubin/california-short-changing-climate-friendly-mobility-0" target="_blank" rel="noopener">
-                        NRDC: California Is Short-Changing Climate-Friendly Mobility &uarr;
+                        NRDC Report: California Is Short-Changing Climate-Friendly Mobility &uarr;
                     </a>
                 </div>
 
                 <div class="nrdc-card" data-anim="fade">
-                    <div class="card-icon">&starf;</div>
-                    <h3>Making the SB 1087 Case to Stakeholders</h3>
+                    <div class="card-icon">&#x2696;&#xFE0F;</div>
+                    <h3>A Tool for SB 1087 Stakeholder Briefings</h3>
                     <p>
-                        Zak Accuardi&rsquo;s advocacy has documented the implementation gap
-                        between California&rsquo;s transportation plans and its actual spending. The
-                        three reform scenarios in this dashboard &mdash; CAP Moratorium, VMT Neutral Rule,
-                        and Performance Floor &mdash; give NRDC a concrete, scenario-specific tool
-                        for stakeholder briefings on SB 1087 during the current legislative session.
+                        The three reform scenarios &mdash; CAP Moratorium, VMT Neutral Rule,
+                        and Performance Floor &mdash; give NRDC concrete, scenario-specific evidence
+                        tools for the current SB 1087 legislative session. Each scenario
+                        is tied to a proven state precedent.
                     </p>
                     <a class="card-link" href="https://www.nrdc.org/bio/zak-accuardi/california-has-led-policy-now-time-deliver-climate-and-equity" target="_blank" rel="noopener">
                         NRDC: California Has Led on Policy &mdash; Now It&rsquo;s Time to Deliver &uarr;
@@ -3955,36 +4199,21 @@
                 </div>
 
                 <div class="nrdc-card" data-anim="fade">
-                    <div class="card-icon">🏘️</div>
-                    <h3>Connecting Redlining to Present-Day Burden</h3>
+                    <div class="card-icon">&#x1F3D8;&#xFE0F;</div>
+                    <h3>Spatial Evidence for Equity Advocacy</h3>
                     <p>
-                        NRDC&rsquo;s reconnecting communities work documents how historically
-                        disinvested neighborhoods continue to bear the heaviest highway pollution
-                        burdens. The dashboard&rsquo;s HOLC overlay, hotspot map, and case studies
-                        (I-5, SR-99, I-405) provide spatial and data-backed evidence for
-                        community-facing advocacy and coalition briefings.
+                        The HOLC redlining overlay, CalEnviroScreen hotspot map, and highway displacement
+                        case studies provide visual, data-backed evidence for NRDC&rsquo;s reconnecting communities
+                        work &mdash; connecting historical disinvestment to present-day pollution burden.
                     </p>
                     <a class="card-link" href="https://www.nrdc.org/bio/zak-accuardi/california-walking-now-time-run-toward-reconnecting-communities" target="_blank" rel="noopener">
-                        NRDC: Now Is the Time to Run Toward Reconnecting Communities &uarr;
+                        NRDC: Reconnecting Communities &uarr;
                     </a>
                 </div>
             </div>
 
-            <!-- Quote Block -->
-            <div class="nrdc-quote-block">
-                <div class="quote-label">Reflecting NRDC&rsquo;s advocacy position</div>
-                <p class="quote-text">
-                    California&rsquo;s transportation agencies and our state&rsquo;s decision-makers
-                    have outlined strategies to solve our climate and mobility problems.
-                    Now we need our budgets to reflect what we say are our priorities.
-                </p>
-                <p class="quote-attribution">
-                    &mdash; Zak Accuardi, Director of Mobility Choices, NRDC &middot; Berkeley, CA
-                </p>
-            </div>
-
             <!-- Alignment Table -->
-            <h3 style="color:#F5E6D3; font-size:1.15rem; margin: 2rem 0 .75rem;">Where This Dashboard Connects to NRDC&rsquo;s Active Priorities</h3>
+            <h3 style="color:#F5E6D3; font-size:1.2rem; margin: 2rem 0 .75rem;">Where This Dashboard Connects to NRDC&rsquo;s Active Priorities</h3>
             <table class="nrdc-alignment-table">
                 <thead>
                     <tr>
@@ -4024,7 +4253,7 @@
 
             <!-- Capstone Summary -->
             <details class="nrdc-capstone-expander">
-                <summary>📋 About This Capstone Project</summary>
+                <summary>&#x1F4CB; About This Capstone Project</summary>
                 <div class="expander-body">
                     <p>
                         This dashboard was produced as a <strong>Master of Climate Solutions (MCS) capstone project</strong>
@@ -4054,14 +4283,59 @@
                         All data sources, methodology, and assumptions are documented in the References section
                         and within each chart&rsquo;s methodology expander.
                     </p>
-                    <div class="nrdc-logo-placeholders">
-                        <span>[LOGO: NRDC]</span>
-                        <span>[LOGO: UC Berkeley]</span>
-                    </div>
                 </div>
             </details>
         </div>
     </section>
+
+    <!-- ================================================================
+     ABOUT THE AUTHOR
+================================================================ -->
+    <section id="about" aria-labelledby="about-heading" data-anim="fade">
+        <div class="about-wrap">
+            <div class="about-photo-col">
+                <img class="author-headshot" src="images/20260409_MCIPortraits_bhs_063__1_.jpg" alt="Forrest Pasturel, MCS Candidate, UC Berkeley">
+                <div class="author-name">Forrest Pasturel</div>
+                <div class="author-title">MCS Candidate, 2026</div>
+                <div class="author-institution">UC Berkeley Rausser College<br>of Natural Resources</div>
+                <img class="author-school-logo" src="images/Rausser_College_of_Natural_Resources_logo_svg.png" alt="UC Berkeley Rausser College of Natural Resources" width="120">
+                <br>
+                <a class="btn-outline-teal-sm" href="https://www.linkedin.com/in/forrestpasturel/" target="_blank" rel="noopener">Connect on LinkedIn &uarr;</a>
+            </div>
+            <div class="about-bio-col">
+                <span class="bio-eyebrow">About the Researcher</span>
+                <h2 id="about-heading">Forrest Pasturel</h2>
+                <div class="bio-tagline">Transportation Policy &middot; Urban Equity &middot; Climate Solutions</div>
+                <p>
+                    Forrest Pasturel is a Master of Climate Solutions (MCS) candidate at UC Berkeley&rsquo;s Rausser
+                    College of Natural Resources, where his research focuses on the intersection of transportation
+                    policy, land use reform, and equitable climate solutions in California. He previously worked as
+                    an Air Pollution Specialist and Legislative Analyst at the California Air Resources Board, and
+                    as a Legislative Analyst at the California Energy Commission.
+                </p>
+                <p>
+                    His professional background spans urban policy, community development, and sustainable
+                    transportation advocacy. He is driven by a conviction that California&rsquo;s transportation system,
+                    historically built at the expense of marginalized and underserved communities, can and must be
+                    reformed to deliver equitable, climate-aligned outcomes for all Californians, not just those
+                    with access to a car.
+                </p>
+                <p>
+                    This capstone project, produced in partnership with NRDC under Zak Accuardi&rsquo;s supervision,
+                    represents his effort to translate that conviction into actionable legislative analysis,
+                    open-source data infrastructure, and interactive public tools that advocates, planners, and
+                    policymakers can deploy in the current SB 1087 legislative window.
+                </p>
+                <hr class="bio-rule">
+                <div class="expertise-tags">
+                    <span class="tag">Transportation Policy</span>
+                    <span class="tag">Environmental Justice</span>
+                    <span class="tag">California Climate Law</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- ================================================================
      DATA SOURCES
@@ -4111,25 +4385,19 @@
      FOOTER
 ================================================================ -->
     <footer class="site-footer">
-        <p>
-            This site was produced as part of MCS Capstone research on California transportation and climate policy,
-            in collaboration with the Natural Resources Defense Council (NRDC).
-        </p>
-        <p>
-            Conceptual visuals are for discussion purposes only. Actual data will be added as corridor analyses are
-            completed. Content does not reflect the official positions of any agency or organization. Last reviewed
-            May 2026.
-        </p>
-        <p style="margin-top:.75rem; font-size:.85rem; color:#6b7c70;">
-            Built in partnership with NRDC (Natural Resources Defense Council)
-            under the supervision of Zak Accuardi, Senior Transportation Policy Advocate.
-        </p>
-        <div style="display:flex; gap:1.5rem; justify-content:center; align-items:center; margin-top:1rem; opacity:.6;">
-            <span
-                style="font-size:.75rem; font-weight:600; color:#6b7c70; border:1px solid #d8e0da; padding:4px 10px; border-radius:4px;">NRDC</span>
-            <span
-                style="font-size:.75rem; font-weight:600; color:#6b7c70; border:1px solid #d8e0da; padding:4px 10px; border-radius:4px;">UC
-                Berkeley &middot; Rausser College</span>
+        <div class="footer-logo-bar">
+            <img src="images/NRDC_bear_logo_svg.png" alt="NRDC" style="width:80px">
+            <div>
+                <p>
+                    Developed by Forrest Pasturel &middot; MCS Capstone 2026 &middot;
+                    UC Berkeley Rausser College of Natural Resources &middot; In partnership with NRDC
+                </p>
+                <p>
+                    Content does not reflect the official positions of any agency or organization.
+                    Last reviewed May 2026.
+                </p>
+            </div>
+            <img src="images/Rausser_College_of_Natural_Resources_logo_svg.png" alt="UC Berkeley Rausser College of Natural Resources" style="width:140px">
         </div>
     </footer>
 
