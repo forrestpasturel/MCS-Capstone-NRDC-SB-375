@@ -2299,6 +2299,9 @@
             height: 120px;
             border-radius: 50%;
             object-fit: cover;
+            object-position: center top;
+            display: block;
+            margin: 0 auto;
             border: 3px solid #4A9B8E;
         }
 
@@ -2562,6 +2565,9 @@
             height: 180px;
             border-radius: 50%;
             object-fit: cover;
+            object-position: center top;
+            display: block;
+            margin: 0 auto 16px auto;
             border: 3px solid #4A9B8E;
         }
 
@@ -2682,6 +2688,15 @@
         }
 
         .footer-logo-bar img { height: auto; }
+
+        .logo-pill {
+            background-color: #F5F0E8;
+            border-radius: 8px;
+            padding: 10px 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
 
         /* Responsive */
         @media (max-width: 800px) {
@@ -3008,8 +3023,8 @@
                     <span class="legend-item"><span class="swatch" style="background:#d32f2f"></span> High pollution
                         burden</span>
                     <span class="legend-item"><span
-                            style="display:inline-block;width:18px;height:3px;background:#E8967A;border-radius:1px"></span>
-                        Freeway corridor</span>
+                            style="display:inline-block;width:18px;height:3px;background:#00E5FF;border-radius:1px"></span>
+                        Freeway corridor (I-710, I-105, SR-99, I-880, I-980, I-5, I-10, I-110)</span>
                 </div>
                 <p class="holc-map-caption">
                     With few exceptions, present-day pollution burden in Oakland and Los Angeles corresponds
@@ -3980,7 +3995,8 @@
                                 <td>Land Use Reform</td>
                                 <td>−7% to −12%</td>
                                 <td>
-                                    <a href="https://ww2.arb.ca.gov/our-work/programs/sustainable-communities-program/policy-briefs-effects-transportation-and-land-use#landuse" target="_blank" rel="noopener">CARB Land Use-Related Policy Briefs (2025)</a>
+                                    <a href="https://ww2.arb.ca.gov/our-work/programs/sustainable-communities-program/policy-briefs-effects-transportation-and-land-use#landuse" target="_blank" rel="noopener">CARB Land Use-Related Policy Briefs (2025)</a><br>
+                                    <a href="https://www.hcd.ca.gov/planning-and-community-development/housing-elements" target="_blank" rel="noopener">CA HCD</a>
                                 </td>
                                 <td>Long-term structural effect; 10+ year lag</td>
                             </tr>
@@ -4133,9 +4149,9 @@
             <!-- Partnership Header Bar -->
             <div class="nrdc-header-bar">
                 <div class="nrdc-header-logos">
-                    <img src="assets/images/NRDC_bear_logo_svg.png" alt="NRDC — Natural Resources Defense Council" width="120" style="height:auto">
+                    <div class="logo-pill"><img src="assets/images/NRDC_bear_logo_svg.png" alt="NRDC — Natural Resources Defense Council" width="120" style="height:auto"></div>
                     <div class="logo-divider"></div>
-                    <img src="assets/images/Rausser_College_of_Natural_Resources_logo_svg.png" alt="UC Berkeley Rausser College of Natural Resources" width="200" style="height:auto">
+                    <div class="logo-pill"><img src="assets/images/Rausser_College_of_Natural_Resources_logo_svg.png" alt="UC Berkeley Rausser College of Natural Resources" width="200" style="height:auto"></div>
                 </div>
                 <div class="nrdc-header-right">
                     <span class="header-eyebrow">MCS Capstone Partnership &middot; 2026</span>
@@ -4298,7 +4314,7 @@
                 <div class="author-name">Forrest Pasturel</div>
                 <div class="author-title">MCS Candidate, 2026</div>
                 <div class="author-institution">UC Berkeley Rausser College<br>of Natural Resources</div>
-                <img class="author-school-logo" src="assets/images/Rausser_College_of_Natural_Resources_logo_svg.png" alt="UC Berkeley Rausser College of Natural Resources" width="120">
+                <div class="logo-pill"><img class="author-school-logo" src="assets/images/Rausser_College_of_Natural_Resources_logo_svg.png" alt="UC Berkeley Rausser College of Natural Resources" width="120"></div>
                 <br>
                 <a class="btn-outline-teal-sm" href="https://www.linkedin.com/in/forrestpasturel/" target="_blank" rel="noopener">Connect on LinkedIn &uarr;</a>
             </div>
@@ -4386,7 +4402,7 @@
 ================================================================ -->
     <footer class="site-footer">
         <div class="footer-logo-bar">
-            <img src="assets/images/NRDC_bear_logo_svg.png" alt="NRDC" style="width:80px">
+            <div class="logo-pill"><img src="assets/images/NRDC_bear_logo_svg.png" alt="NRDC" style="width:80px"></div>
             <div>
                 <p>
                     Developed by Forrest Pasturel &middot; MCS Capstone 2026 &middot;
@@ -4397,7 +4413,7 @@
                     Last reviewed May 2026.
                 </p>
             </div>
-            <img src="assets/images/Rausser_College_of_Natural_Resources_logo_svg.png" alt="UC Berkeley Rausser College of Natural Resources" style="width:140px">
+            <div class="logo-pill"><img src="assets/images/Rausser_College_of_Natural_Resources_logo_svg.png" alt="UC Berkeley Rausser College of Natural Resources" style="width:140px"></div>
         </div>
     </footer>
 
@@ -4935,9 +4951,9 @@
                 freewayLayer = L.geoJSON({ type: 'FeatureCollection', features: freewayFeatures }, {
                     style: function () {
                         return {
-                            color: '#E8967A',
-                            weight: 4,
-                            opacity: 0.9,
+                            color: '#00E5FF',
+                            weight: 5,
+                            opacity: 0.95,
                             lineCap: 'round',
                             dashArray: null,
                         };
