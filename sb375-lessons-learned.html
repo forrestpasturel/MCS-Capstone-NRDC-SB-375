@@ -2275,11 +2275,18 @@
             .vs-label-left {
                 left: 3%;
                 bottom: 48px;
+                padding: 10px 12px;
             }
 
             .vs-label-right {
                 right: 3%;
                 bottom: 48px;
+                padding: 10px 12px;
+            }
+
+            .vs-center-label {
+                font-size: 18px;
+                padding: 8px 16px;
             }
         }
 
@@ -2325,16 +2332,30 @@
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-            background: rgba(27, 58, 47, 0.85);
+            background: rgba(15, 35, 24, 0.92);
             color: #F5E6D3;
             font-family: Georgia, 'Times New Roman', serif;
             font-style: italic;
-            font-size: 18px;
-            padding: 8px 16px;
-            border-radius: 20px;
-            border: 1px solid rgba(245,230,211,0.4);
+            font-weight: bold;
+            font-size: 22px;
+            padding: 10px 20px;
+            border-radius: 24px;
+            border: 1.5px solid rgba(245,230,211,0.6);
             white-space: nowrap;
-            z-index: 2;
+            z-index: 3;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.6), 0 0 0 4px rgba(245,230,211,0.08);
+            letter-spacing: 0.04em;
+        }
+
+        .vs-gradient-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 45%;
+            background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+            pointer-events: none;
+            z-index: 1;
         }
 
         .vs-label {
@@ -2346,61 +2367,80 @@
             left: 5%;
             bottom: 60px;
             text-align: left;
+            background: rgba(0,0,0,0.45);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            padding: 14px 18px;
+            border-radius: 8px;
+            border-left: 3px solid rgba(220, 80, 80, 0.9);
         }
 
         .vs-label-right {
             right: 5%;
             bottom: 60px;
             text-align: right;
+            background: rgba(0,0,0,0.45);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            padding: 14px 18px;
+            border-radius: 8px;
+            border-right: 3px solid rgba(74, 155, 142, 0.9);
         }
 
         .vs-tag {
             display: inline-block;
             font-family: var(--font);
-            font-size: 11px;
-            font-weight: bold;
-            letter-spacing: 0.12em;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.18em;
             text-transform: uppercase;
-            padding: 5px 12px;
+            padding: 6px 14px;
             border-radius: 4px;
             margin-bottom: 8px;
+            border: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
         }
 
         .vs-tag-bad {
-            background: rgba(232, 150, 122, 0.25);
-            color: #E8967A;
-            border: 1px solid #E8967A;
+            background: rgba(180, 30, 30, 0.85);
+            color: #FFFFFF;
         }
 
         .vs-tag-good {
-            background: rgba(74, 155, 142, 0.25);
-            color: #4A9B8E;
-            border: 1px solid #4A9B8E;
+            background: rgba(30, 130, 100, 0.85);
+            color: #FFFFFF;
         }
 
         .vs-desc {
-            color: #F5E6D3;
+            color: #FFFFFF;
             font-family: Georgia, 'Times New Roman', serif;
             font-style: italic;
-            font-size: 15px;
+            font-weight: 600;
+            font-size: 16px;
             margin: 0;
-            text-shadow: 0 1px 4px rgba(0,0,0,0.8);
-            max-width: 200px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.9), 0 2px 12px rgba(0,0,0,0.7);
+            max-width: 220px;
+            line-height: 1.4;
         }
 
         .vs-caption-bar {
             position: absolute;
             bottom: 0;
             width: 100%;
-            height: 36px;
+            min-height: 36px;
+            padding: 6px 16px;
+            box-sizing: border-box;
             background: rgba(15, 35, 24, 0.88);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 11px;
-            color: rgba(245, 230, 211, 0.6);
+            color: rgba(245, 230, 211, 0.65);
             letter-spacing: 0.04em;
             font-style: italic;
+            text-align: center;
+            line-height: 1.5;
+            z-index: 2;
         }
 
         /* Scroll-triggered animation states */
@@ -3379,6 +3419,7 @@
 ================================================================ -->
         <section id="visual-statement" class="vs-section">
             <img src="images/LA-traffic-rebound.png" alt="Split image: congested smoggy LA freeway on left versus clean empty road on right — visualizing the difference smart transportation policy can make" class="vs-bg-img">
+            <div class="vs-gradient-overlay"></div>
             <div class="vs-overlay">
                 <div class="vs-divider-line"></div>
                 <span class="vs-center-label">vs.</span>
@@ -3387,11 +3428,11 @@
                     <p class="vs-desc">Congestion. Smog. No accountability.</p>
                 </div>
                 <div class="vs-label vs-label-right">
-                    <span class="vs-tag vs-tag-good">WITH SB 1087</span>
-                    <p class="vs-desc">Cleaner air. Accountable investment.</p>
+                    <span class="vs-tag vs-tag-good">CALIFORNIA'S FUTURE</span>
+                    <p class="vs-desc">Clean air. Accountable investment. Communities first.</p>
                 </div>
                 <div class="vs-caption-bar">
-                    The difference between a transportation system that plans for less driving &mdash; and one that requires it. I-110, Los Angeles.
+                    Left: I-110 South, Los Angeles &mdash; peak-hour congestion under today&rsquo;s system. Right: The same corridor during COVID-19 low-traffic period, visualizing what accountability could make permanent. Source: Los Angeles Times.
                 </div>
             </div>
         </section>
