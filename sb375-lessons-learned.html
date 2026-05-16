@@ -1725,10 +1725,146 @@
             text-decoration: underline;
         }
 
+        /* ── New image figure styles ─────────────────────── */
+        .timeline-img-figure {
+            margin: 16px 0 0;
+            border-radius: 8px;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+
+        .timeline-img-figure.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+        }
+
+        .timeline-img-caption {
+            font-size: 12px;
+            color: rgba(245,230,211,0.7);
+            font-style: italic;
+            padding: 8px 12px;
+            background: #0F2318;
+            line-height: 1.5;
+            display: block;
+        }
+
+        .timeline-img-source {
+            display: block;
+            font-size: 10px;
+            color: #4A9B8E;
+            margin-top: 4px;
+            font-style: normal;
+        }
+
+        .timeline-before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .ba-tag {
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 4px 4px 0 0;
+            display: inline-block;
+            margin-bottom: -1px;
+        }
+
+        .ba-tag-before {
+            background: #4A9B8E;
+            color: #1B3A2F;
+        }
+
+        .ba-tag-after {
+            background: #E8967A;
+            color: #1B3A2F;
+        }
+
+        .timeline-ba-before {
+            border: 1px solid #4A9B8E;
+            border-radius: 0 8px 8px 8px;
+        }
+
+        .timeline-ba-after {
+            border: 1px solid #E8967A;
+            border-radius: 0 8px 8px 8px;
+        }
+
+        .timeline-ba-before .timeline-img-figure,
+        .timeline-ba-after .timeline-img-figure {
+            margin: 0;
+            border-radius: 0;
+        }
+
+        .case-study-img-figure {
+            margin: 0 0 16px;
+            border-radius: 8px;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+
+        .case-study-img-figure.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .case-study-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .case-study-img-caption {
+            font-size: 11px;
+            color: rgba(245,230,211,0.65);
+            font-style: italic;
+            padding: 7px 10px;
+            background: #0F2318;
+            line-height: 1.5;
+            display: block;
+        }
+
+        .case-study-img-source {
+            display: block;
+            font-size: 10px;
+            color: #4A9B8E;
+            margin-top: 3px;
+            font-style: normal;
+        }
+
         @media (max-width: 640px) {
             .case-img-placeholder,
-            .img-pair {
+            .img-pair,
+            .timeline-before-after {
                 flex-direction: column;
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .timeline-img-figure,
+            .case-study-img-figure {
+                opacity: 1;
+                transform: none;
+                transition: none;
             }
         }
 
@@ -3902,14 +4038,13 @@
                             Source: <a href="https://segregationbydesign.com/oakland/freeways" target="_blank"
                                 rel="noopener">Segregation by Design</a>
                         </span>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Cypress_Freeway_1989_Loma_Prieta.jpg/640px-Cypress_Freeway_1989_Loma_Prieta.jpg" alt="Cypress Street Viaduct (I-880) double-deck freeway structure built through West Oakland in 1957, later collapsed in 1989 Loma Prieta earthquake" class="tl-img-real" loading="lazy">
-                        <p class="tl-img-caption">The Cypress Freeway (I-880) double-deck viaduct sliced through West Oakland (1957). Destroyed 5,000 homes. &mdash; USGS / Public Domain</p>
-                        <div class="img-placeholder" style="margin-top:10px">
-                            <span class="placeholder-icon">📍</span>
-                            <p class="placeholder-title">West Oakland Today</p>
-                            <p class="placeholder-desc">Mandela Parkway now occupies the former Cypress Freeway corridor &mdash; a green median where the viaduct once stood.</p>
-                            <a class="placeholder-source" href="https://www.connectoakland.org/history/west-oakland/" target="_blank" rel="noopener">Source: ConnectOakland ↗</a>
-                        </div>
+                        <figure class="timeline-img-figure">
+                            <img src="images/I-710 Freeway Aerial View.jpeg" alt="Aerial black and white photograph of I-710 freeway construction cutting through East Los Angeles communities, circa 1960s" class="timeline-img" loading="lazy">
+                            <figcaption class="timeline-img-caption">
+                                Aerial view of I-710 (Long Beach Freeway) construction through East Los Angeles, c. 1961. Nearly 11,000 residents were displaced along the I-710 corridor alone &mdash; homes and neighborhoods cleared to make way for concrete.
+                                <span class="timeline-img-source">Source: Kelly-Holiday Mid-Century Aerial Collection / LA Public Library</span>
+                            </figcaption>
+                        </figure>
                     </div>
 
                     <div class="sbd-tl-card" data-animate="slide">
@@ -3968,21 +4103,28 @@
                             <a href="https://greenlining.org/homes-before-highways" target="_blank"
                                 rel="noopener">Greenlining Institute</a>
                         </span>
-                        <div class="img-pair">
-                            <div class="img-placeholder">
-                                <span class="placeholder-icon">🏨️</span>
-                                <p class="placeholder-title">West Oakland 7th Street, pre-1955</p>
-                                <p class="placeholder-desc">The &ldquo;Harlem of the West&rdquo; &mdash; jazz clubs, Black-owned banks, walkable transit-connected neighborhoods before freeway construction.</p>
-                                <a class="placeholder-source" href="https://www.thebolditalic.com/west-oaklands-seventh-street-was-once-a-prosperous-hub-for-the-bays-black-community/" target="_blank" rel="noopener">Source: The Bold Italic ↗</a>
+                        <div class="timeline-before-after">
+                            <div class="timeline-ba-before">
+                                <div class="ba-tag ba-tag-before">BEFORE &mdash; Pre-1955</div>
+                                <figure class="timeline-img-figure">
+                                    <img src="images/West Oakland 7th Street pre-1955.webp" alt="West Oakland 7th Street before freeway construction, pre-1955 — streetcar, pedestrians, thriving Black commercial corridor known as the Harlem of the West" class="timeline-img" loading="lazy">
+                                    <figcaption class="timeline-img-caption">
+                                        West Oakland's 7th Street &mdash; the &ldquo;Harlem of the West.&rdquo; Jazz clubs, Black-owned banks, a working streetcar line, and a walkable community thriving before freeway construction arrived.
+                                        <span class="timeline-img-source">Source: Oakland History Center / Public Archive</span>
+                                    </figcaption>
+                                </figure>
                             </div>
-                            <div class="img-placeholder img-placeholder-after">
-                                <span class="placeholder-icon">😷</span>
-                                <p class="placeholder-title">West Oakland Today &mdash; Highest Asthma Rates in California</p>
-                                <p class="placeholder-desc">4% tree canopy. 12&deg;F hotter during heat waves. Among the highest asthma rates in the state. A direct legacy of where freeways were built.</p>
-                                <a class="placeholder-source" href="https://www.greenbelt.org/blog/oakland-black-neighborhoods-resilience/" target="_blank" rel="noopener">Source: Greenbelt Alliance ↗</a>
+                            <div class="timeline-ba-after">
+                                <div class="ba-tag ba-tag-after">TODAY &mdash; Present Day</div>
+                                <figure class="timeline-img-figure" style="transition-delay:0.2s">
+                                    <img src="images/West Oakland Industrial Pollution.jpg" alt="Row of diesel semi-trucks queued near Port of Oakland cranes — present-day industrial pollution burden in West Oakland" class="timeline-img" loading="lazy">
+                                    <figcaption class="timeline-img-caption">
+                                        West Oakland today &mdash; diesel freight trucks queue near the Port of Oakland, one block from where the streetcar once ran. The neighborhood has among the highest diesel particulate matter exposure and asthma rates in California.
+                                        <span class="timeline-img-source">Source: Bay Area news archive</span>
+                                    </figcaption>
+                                </figure>
                             </div>
                         </div>
-                        <p class="placeholder-rights">📷 Archival before/after photography available through The Bold Italic and Greenbelt Alliance. Placeholder shown pending image rights clearance.</p>
                     </div>
                 </div>
 
@@ -4032,20 +4174,13 @@
 
                 <div class="cs-grid" data-anim="stagger">
                     <div class="cs-card" data-animate="slide">
-                        <div class="case-img-placeholder">
-                            <div class="case-img-before">
-                                <span class="case-img-tag">BEFORE</span>
-                                <span class="case-img-icon">🏨️</span>
-                                <p>South Gate / Downey neighborhood, pre-expansion</p>
-                                <a href="https://greenlining.org/homes-before-highways" target="_blank" rel="noopener">Source: Greenlining Institute ↗</a>
-                            </div>
-                            <div class="case-img-after">
-                                <span class="case-img-tag case-img-tag-after">AFTER</span>
-                                <span class="case-img-icon">🛣️</span>
-                                <p>569 homes &amp; businesses demolished. 98th percentile CalEnviroScreen.</p>
-                                <a href="https://greenlining.org/homes-before-highways" target="_blank" rel="noopener">Source: Greenlining Institute ↗</a>
-                            </div>
-                        </div>
+                        <figure class="case-study-img-figure">
+                            <img src="images/West Oakland Industrial Pollution.jpg" alt="Heavy diesel truck traffic near port — representative of present-day pollution burden in communities near I-5 in Los Angeles" class="case-study-img" loading="lazy">
+                            <figcaption class="case-study-img-caption">
+                                Present-day reality along California's major freight corridors: diesel truck traffic, port operations, and industrial activity concentrated in communities already burdened by decades of highway expansion. I-5's La Mirada&ndash;Downey expansion added lanes through the 98th percentile CalEnviroScreen community.
+                                <span class="case-study-img-source">Diesel truck traffic, Port of Oakland / Bay Area news archive</span>
+                            </figcaption>
+                        </figure>
                         <div class="cs-route">I-5 · Los Angeles</div>
                         <div class="cs-stat">569</div>
                         <div class="cs-stat-label">homes &amp; businesses demolished</div>
@@ -4059,20 +4194,13 @@
                     </div>
 
                     <div class="cs-card" data-animate="slide">
-                        <div class="case-img-placeholder">
-                            <div class="case-img-before">
-                                <span class="case-img-tag">BEFORE</span>
-                                <span class="case-img-icon">🏪</span>
-                                <p>Central Fresno small business corridor, pre-expansion</p>
-                                <a href="https://greenlining.org/homes-before-highways" target="_blank" rel="noopener">Source: Greenlining Institute ↗</a>
-                            </div>
-                            <div class="case-img-after">
-                                <span class="case-img-tag case-img-tag-after">AFTER</span>
-                                <span class="case-img-icon">💨</span>
-                                <p>11 businesses demolished. Increased heavy truck traffic in California&rsquo;s most polluted region.</p>
-                                <a href="https://greenlining.org/homes-before-highways" target="_blank" rel="noopener">Source: Greenlining Institute ↗</a>
-                            </div>
-                        </div>
+                        <figure class="case-study-img-figure">
+                            <img src="images/I-710 Freeway Aerial View.jpeg" alt="Aerial view of freeway construction through California community — representative of SR-99 corridor expansion impact in Fresno" class="case-study-img" loading="lazy">
+                            <figcaption class="case-study-img-caption">
+                                Aerial documentation of freeway construction displacing California communities. SR-99's Fresno expansion demolished 11 local businesses in the 90th&ndash;99th percentile CalEnviroScreen corridor.
+                                <span class="case-study-img-source">Representative image &mdash; I-710 aerial, Kelly-Holiday Collection / LAPL</span>
+                            </figcaption>
+                        </figure>
                         <div class="cs-route">SR-99 · Fresno</div>
                         <div class="cs-stat">11</div>
                         <div class="cs-stat-label">local businesses demolished</div>
@@ -6929,6 +7057,27 @@
 
                 observer.observe(fig);
             });
+        })();
+    </script>
+    <!-- Image figure scroll animations -->
+    <script>
+        (function () {
+            var figs = document.querySelectorAll('.timeline-img-figure, .case-study-img-figure');
+            if (!figs.length) return;
+            var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (prefersReduced) {
+                figs.forEach(function (f) { f.classList.add('visible'); });
+                return;
+            }
+            var imgObs = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        imgObs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+            figs.forEach(function (f) { imgObs.observe(f); });
         })();
     </script>
 
