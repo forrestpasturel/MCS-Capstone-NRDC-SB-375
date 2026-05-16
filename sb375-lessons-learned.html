@@ -1964,21 +1964,22 @@
             font-weight: 700;
             line-height: 1.15;
             margin-bottom: 1.2rem;
+            will-change: transform, opacity;
         }
 
         .title-coral {
             color: #F5E6D3;
-            animation: fadeUpGentle 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
+            animation: fadeUpGentle 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
             display: inline;
         }
 
         .title-cream {
             color: #F5E6D3;
-            animation: fadeUpGentle 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
+            animation: fadeUpGentle 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
         }
 
         .hero-section h1 br + .title-cream {
-            animation: fadeUpGentle 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.75s both;
+            animation: fadeUpGentle 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.65s both;
         }
 
         /* ── From-to treatment ─────────────────────────── */
@@ -2134,8 +2135,19 @@
         }
 
         @keyframes fadeUpGentle {
-            from { opacity: 0; transform: translateY(44px); }
-            to   { opacity: 1; transform: translateY(0); }
+            0% {
+                opacity: 0;
+                transform: translateY(52px);
+                filter: blur(4px);
+            }
+            60% {
+                filter: blur(0px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0px);
+            }
         }
 
         @keyframes fadeIn {
@@ -2174,6 +2186,21 @@
                 animation: none !important;
                 opacity: 1 !important;
                 transform: none !important;
+                filter: none !important;
+            }
+
+            .chart-figure,
+            .chart-figure img,
+            .chart-figure-vmt::after {
+                transition: none !important;
+                animation: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+                filter: none !important;
+            }
+
+            .chart-figure-vmt::after {
+                display: none;
             }
         }
 
@@ -2374,6 +2401,137 @@
 
         .vs-center-label.vs-animate {
             animation: fadeIn 0.5s ease-out 0.4s both;
+        }
+
+        /* ============================================================
+           CHART FIGURES — Shared Styles
+        ============================================================ */
+        .chart-figure {
+            position: relative;
+            margin: 24px auto;
+            max-width: 580px;
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+
+        .chart-figure.chart-animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .chart-link {
+            display: block;
+            position: relative;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .chart-link img {
+            max-width: 580px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 12px;
+        }
+
+        .chart-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(15, 35, 24, 0.85));
+            padding: 32px 16px 14px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 0 0 12px 12px;
+        }
+
+        .chart-link:hover .chart-overlay {
+            opacity: 1;
+        }
+
+        .chart-overlay-text {
+            color: #4A9B8E;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .chart-caption {
+            text-align: center;
+            font-size: 12px;
+            color: rgba(245, 230, 211, 0.6);
+            font-style: italic;
+            margin-top: 10px;
+            line-height: 1.5;
+            padding: 0 8px;
+        }
+
+        .chart-source-link {
+            color: #4A9B8E;
+            text-decoration: none;
+            margin-left: 6px;
+            white-space: nowrap;
+        }
+
+        .chart-source-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Pie chart: black bg + glow */
+        .chart-figure .chart-link img {
+            transition: filter 0.6s ease-out;
+        }
+
+        .chart-figure:not(.chart-figure-vmt) .chart-link img {
+            background: #000000;
+        }
+
+        .chart-figure.slice-highlight .chart-link img {
+            animation: chartGlowPulse 1.8s ease-in-out 1 forwards;
+        }
+
+        @keyframes chartGlowPulse {
+            0%   { filter: drop-shadow(0 0 18px rgba(232,150,122,0.7)) drop-shadow(0 0 36px rgba(232,150,122,0.3)); }
+            50%  { filter: drop-shadow(0 0 28px rgba(232,150,122,1.0)) drop-shadow(0 0 52px rgba(232,150,122,0.5)); }
+            100% { filter: drop-shadow(0 0 12px rgba(232,150,122,0.4)) drop-shadow(0 0 24px rgba(232,150,122,0.2)); }
+        }
+
+        /* VMT chart: white bg + wipe reveal */
+        .chart-figure-vmt .chart-link img {
+            background: #ffffff;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.25);
+        }
+
+        .chart-figure-vmt {
+            overflow: hidden;
+        }
+
+        .chart-figure-vmt::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #1B3A2F;
+            transform-origin: right center;
+            transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.6s;
+            z-index: 2;
+            pointer-events: none;
+            border-radius: 12px;
+        }
+
+        .chart-figure-vmt.chart-animated::after {
+            transform: scaleX(0);
+        }
+
+        .chart-figure-vmt.line-highlight .chart-link img {
+            filter: drop-shadow(0 -2px 12px rgba(232, 150, 122, 0.35));
+            transition: filter 0.8s ease-out 1.8s;
         }
 
         /* ============================================================
@@ -3240,11 +3398,17 @@
                     </ul>
                 </div>
                 <div class="panel-visual">
-                    <figure>
-                        <img src="images/carb-ghg-pie-2023.png"
-                            alt="Pie chart showing transportation as 38 percent of California greenhouse gas emissions in 2023">
-                        <figcaption>Transportation is the single largest source of climate pollution in California,
-                            at about 38% of statewide emissions (CARB GHG inventory, 2023).</figcaption>
+                    <figure class="chart-figure">
+                        <a href="https://ww2.arb.ca.gov/ghg-inventory-data" target="_blank" rel="noopener" class="chart-link">
+                            <img src="images/carb-ghg-pie-2023.png" alt="CARB 2023 GHG inventory pie chart showing transportation at 38% of California's 360.4 MMT CO2e total emissions">
+                            <div class="chart-overlay">
+                                <span class="chart-overlay-text">View CARB GHG Inventory Data &nearr;</span>
+                            </div>
+                        </a>
+                        <figcaption class="chart-caption">
+                            California GHG emissions by sector, 2023. Transportation = 38% &mdash; more than industry, electricity, and buildings combined.
+                            <a href="https://ww2.arb.ca.gov/ghg-inventory-data" target="_blank" rel="noopener" class="chart-source-link">Source: CARB GHG Inventory &nearr;</a>
+                        </figcaption>
                     </figure>
                 </div>
             </div>
@@ -3268,11 +3432,17 @@
                     </ul>
                 </div>
                 <div class="panel-visual">
-                    <figure>
-                        <img src="images/carb-sb150-vmt-trend.png"
-                            alt="Line chart: GHG and VMT compared to SB 375 targets, showing VMT rebound after COVID">
-                        <figcaption>Statewide VMT rebounded above pre-pandemic levels while GHG reductions stalled.
-                            both remain short of SB&nbsp;375 targets (CARB SB&nbsp;150 Dashboard).</figcaption>
+                    <figure class="chart-figure chart-figure-vmt">
+                        <a href="https://ww2.arb.ca.gov/our-work/programs/sustainable-communities-program/sb-150-dashboard-tracking-progress-sustainable" target="_blank" rel="noopener" class="chart-link">
+                            <img src="images/carb-sb150-vmt-trend.png" alt="CARB SB 150 dashboard line chart showing statewide VMT and GHG compared to SB 375 targets, 2005 to 2022">
+                            <div class="chart-overlay">
+                                <span class="chart-overlay-text">View CARB SB 150 Dashboard &nearr;</span>
+                            </div>
+                        </a>
+                        <figcaption class="chart-caption">
+                            Statewide VMT rebounded above pre-pandemic levels while GHG reductions stalled &mdash; both remain short of SB&nbsp;375 targets.
+                            <a href="https://ww2.arb.ca.gov/our-work/programs/sustainable-communities-program/sb-150-dashboard-tracking-progress-sustainable" target="_blank" rel="noopener" class="chart-source-link">Source: CARB SB 150 Dashboard &nearr;</a>
+                        </figcaption>
                     </figure>
                 </div>
             </div>
@@ -6408,6 +6578,48 @@
             }, { threshold: 0.3 });
 
             observer.observe(vsSection);
+        })();
+    </script>
+
+    <!-- Chart scroll animations -->
+    <script>
+        (function () {
+            var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            document.querySelectorAll('.chart-figure').forEach(function (fig) {
+                if (prefersReduced) {
+                    fig.classList.add('chart-animated');
+                    fig.style.opacity = '1';
+                    fig.style.transform = 'none';
+                    return;
+                }
+
+                var observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            fig.classList.add('chart-animated');
+
+                            // Pie chart: add glow after 0.8s
+                            if (!fig.classList.contains('chart-figure-vmt')) {
+                                setTimeout(function () {
+                                    fig.classList.add('slice-highlight');
+                                }, 800);
+                            }
+
+                            // VMT chart: add line highlight after 1.8s
+                            if (fig.classList.contains('chart-figure-vmt')) {
+                                setTimeout(function () {
+                                    fig.classList.add('line-highlight');
+                                }, 1800);
+                            }
+
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.3 });
+
+                observer.observe(fig);
+            });
         })();
     </script>
 
