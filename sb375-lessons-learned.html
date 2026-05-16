@@ -3616,7 +3616,7 @@
                     <span class="legend-item"><span class="swatch" style="background:#d32f2f"></span> High pollution
                         burden</span>
                     <span class="legend-item"><span
-                            style="display:inline-block;width:18px;height:3px;background:#00E5FF;border-radius:1px"></span>
+                            style="display:inline-block;width:18px;height:4px;background:#FFE033;border:1px solid #0A1A14;border-radius:1px"></span>
                         Freeway corridor (I-710, I-105, SR-99, I-880, I-980, I-5, I-10, I-110)</span>
                 </div>
                 <p class="holc-map-caption">
@@ -5566,14 +5566,29 @@
                     };
                 });
 
-                freewayLayer = L.geoJSON({ type: 'FeatureCollection', features: freewayFeatures }, {
+                // Layer 1 — Dark casing (drawn first, sits underneath)
+                var casingLayer = L.geoJSON({ type: 'FeatureCollection', features: freewayFeatures }, {
                     style: function () {
                         return {
-                            color: '#00E5FF',
-                            weight: 5,
-                            opacity: 0.95,
+                            color: '#0A1A14',
+                            weight: 10,
+                            opacity: 1.0,
                             lineCap: 'round',
-                            dashArray: null,
+                            lineJoin: 'round',
+                            interactive: false,
+                        };
+                    },
+                });
+
+                // Layer 2 — Bright corridor line (drawn second, sits on top)
+                var corridorLine = L.geoJSON({ type: 'FeatureCollection', features: freewayFeatures }, {
+                    style: function () {
+                        return {
+                            color: '#FFE033',
+                            weight: 5,
+                            opacity: 1.0,
+                            lineCap: 'round',
+                            lineJoin: 'round',
                         };
                     },
                     onEachFeature: function (feature, layer) {
@@ -5582,7 +5597,9 @@
                             { sticky: true }
                         );
                     },
-                }).addTo(holcMap);
+                });
+
+                freewayLayer = L.layerGroup([casingLayer, corridorLine]).addTo(holcMap);
             }
 
             /* ── City switcher buttons ──────────────────────────────── */
