@@ -1918,6 +1918,7 @@
             align-items: center;
             justify-content: space-between;
             padding: 24px 40px 0 40px;
+            animation: fadeIn 0.6s ease-out 0.1s both;
         }
 
         .hero-logo-bar .logo-group {
@@ -1945,55 +1946,46 @@
             color: #4A9B8E;
             opacity: 0.9;
             margin: 0;
+            animation: fadeIn 0.5s ease-out 0.3s both;
         }
 
         /* ── Hero inner ───────────────────────────────── */
         .hero-inner {
             position: relative;
             z-index: 2;
-            max-width: 800px;
+            max-width: 860px;
             margin: 0 auto;
-            padding: 6rem 1.5rem 2rem;
+            padding: 6rem 1.5rem 1rem;
         }
 
         .hero-section h1 {
             font-family: Georgia, 'Times New Roman', serif;
-            font-size: 3.4rem;
+            font-size: 3.6rem;
             font-weight: 700;
-            line-height: 1.18;
-            margin-bottom: 1rem;
+            line-height: 1.15;
+            margin-bottom: 1.2rem;
         }
 
-        .title-word-1 {
+        .title-coral {
             color: #E8967A;
+            animation: fadeUp 0.7s ease-out 0.5s both;
+            display: inline;
         }
 
-        .title-word-2 {
-            color: #00B4D8;
+        .title-cream {
+            color: #F5E6D3;
+            animation: fadeUp 0.7s ease-out 0.5s both;
         }
 
-        .hero-sub {
-            font-family: Georgia, 'Times New Roman', serif;
-            font-size: 1.75rem;
-            color: #E8967A;
-            font-weight: 400;
-            font-style: italic;
-            margin-bottom: 2rem;
-        }
-
-        .hero-body {
-            font-size: 1.12rem;
-            line-height: 1.75;
-            color: #d9cdbf;
-            max-width: 640px;
-            margin: 0 auto 2rem;
+        .hero-section h1 br + .title-cream {
+            animation: fadeUp 0.7s ease-out 0.75s both;
         }
 
         /* ── Split panel bar ──────────────────────────── */
         .hero-split-panel {
             display: flex;
             max-width: 680px;
-            margin: 0 auto 24px;
+            margin: 0 auto 20px;
             border-radius: 8px;
             overflow: hidden;
             position: relative;
@@ -2006,10 +1998,12 @@
             padding: 16px 24px;
             color: #fff;
             font-family: Georgia, 'Times New Roman', serif;
-            font-size: 15px;
+            font-size: 16px;
             font-weight: 700;
             font-style: italic;
             text-align: center;
+            animation: slideInLeft 0.6s ease-out 1.0s both;
+            transform-origin: left center;
         }
 
         .hero-split-panel .split-right {
@@ -2018,10 +2012,49 @@
             padding: 16px 24px;
             color: #fff;
             font-family: Georgia, 'Times New Roman', serif;
-            font-size: 15px;
+            font-size: 16px;
             font-weight: 700;
             font-style: italic;
             text-align: center;
+            animation: slideInRight 0.6s ease-out 1.15s both;
+            transform-origin: right center;
+        }
+
+        /* ── Author credit ────────────────────────────── */
+        .hero-author {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 0;
+            margin: 20px 0 28px 0;
+            font-size: 14px;
+            letter-spacing: 0.02em;
+            position: relative;
+            z-index: 2;
+            animation: fadeUp 0.6s ease-out 1.35s both;
+        }
+
+        .author-by {
+            color: rgba(245, 230, 211, 0.6);
+            font-style: italic;
+        }
+
+        .author-name {
+            color: #F5E6D3;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .author-divider {
+            color: #4A9B8E;
+            padding: 0 6px;
+            font-weight: normal;
+        }
+
+        .author-meta {
+            color: rgba(245, 230, 211, 0.75);
+            font-size: 13px;
         }
 
         /* ── CTA buttons ──────────────────────────────── */
@@ -2032,6 +2065,7 @@
             flex-wrap: wrap;
             position: relative;
             z-index: 2;
+            animation: fadeUp 0.6s ease-out 1.55s both;
         }
 
         .btn-coral {
@@ -2076,33 +2110,62 @@
             margin-top: 2.5rem;
             position: relative;
             z-index: 2;
-            animation: pulse-bounce 2s ease-in-out infinite;
+            animation: fadeIn 0.5s ease-out 1.8s both, subtlePulse 2.5s ease-in-out 2.5s infinite;
         }
 
         .scroll-chevron {
             font-size: 1.5rem;
             color: #4A9B8E;
-            opacity: .7;
         }
 
-        @keyframes pulse-bounce {
-            0%, 100% {
-                transform: translateY(0);
-                opacity: .5;
-            }
-            50% {
-                transform: translateY(8px);
-                opacity: 1;
+        /* ── Hero keyframes ───────────────────────────── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(28px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-32px); }
+            to   { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(32px); }
+            to   { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes subtlePulse {
+            0%, 100% { opacity: 0.7; }
+            50%      { opacity: 1; }
+        }
+
+        /* ── Reduced motion safety ─────────────────────── */
+        @media (prefers-reduced-motion: reduce) {
+            .hero-logo-bar,
+            .hero-logo-bar .hero-eyebrow,
+            .title-coral,
+            .title-cream,
+            .hero-section h1 br + .title-cream,
+            .hero-split-panel .split-left,
+            .hero-split-panel .split-right,
+            .hero-author,
+            .hero-ctas,
+            .scroll-indicator {
+                animation: none !important;
+                opacity: 1 !important;
+                transform: none !important;
             }
         }
 
+        /* ── Mobile ──────────────────────────────────── */
         @media (max-width: 700px) {
             .hero-section h1 {
-                font-size: 2.25rem;
-            }
-
-            .hero-sub {
-                font-size: 1.35rem;
+                font-size: 2.4rem;
             }
 
             .hero-section {
@@ -2121,7 +2184,17 @@
             }
 
             .hero-inner {
-                padding: 5rem 1.2rem 2rem;
+                padding: 5rem 1.2rem 1rem;
+            }
+
+            .hero-author {
+                flex-direction: column;
+                align-items: center;
+                gap: 4px;
+            }
+
+            .hero-author .author-divider {
+                display: none;
             }
         }
 
@@ -2909,20 +2982,23 @@
             </div>
 
             <div class="hero-inner">
-                <h1 id="hero-h1"><span class="title-word-1">California has a plan </span><span class="title-word-2">to fix this.</span></h1>
-                <h2 class="hero-sub">It just doesn&rsquo;t have to follow it.</h2>
-                <p class="hero-body">
-                    SB 375 requires every California region to plan for lower emissions. But there is no
-                    rule that says transportation dollars have to follow the plan. This dashboard explores
-                    what it would take to close that gap, and what four other states have already done to
-                    make it happen.
-                </p>
+                <h1 id="hero-h1"><span class="title-coral">Rethinking</span><span class="title-cream"> California&rsquo;s Transportation</span><br><span class="title-cream">Policy Landscape</span></h1>
             </div>
 
             <!-- Split panel -->
             <div class="hero-split-panel">
                 <div class="split-left">from incumbent stagnation</div>
                 <div class="split-right">to climate accountability</div>
+            </div>
+
+            <!-- Author credit -->
+            <div class="hero-author">
+                <span class="author-by">By&nbsp;</span>
+                <span class="author-name">Forrest Pasturel</span>
+                <span class="author-divider"> &middot; </span>
+                <span class="author-meta">MCS Candidate, UC Berkeley Rausser College of Natural Resources</span>
+                <span class="author-divider"> &middot; </span>
+                <span class="author-meta">In partnership with NRDC</span>
             </div>
 
             <div class="hero-ctas">
