@@ -1967,7 +1967,7 @@
         }
 
         .title-coral {
-            color: #E8967A;
+            color: #F5E6D3;
             animation: fadeUp 0.7s ease-out 0.5s both;
             display: inline;
         }
@@ -1981,43 +1981,52 @@
             animation: fadeUp 0.7s ease-out 0.75s both;
         }
 
-        /* ── Split panel bar ──────────────────────────── */
-        .hero-split-panel {
+        /* ── From-to treatment ─────────────────────────── */
+        .hero-from-to {
             display: flex;
-            max-width: 680px;
-            margin: 0 auto 20px;
-            border-radius: 8px;
-            overflow: hidden;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin: 24px auto 12px auto;
+            max-width: 700px;
             position: relative;
             z-index: 2;
+            animation: fadeUp 0.6s ease-out 1.0s both;
         }
 
-        .hero-split-panel .split-left {
-            flex: 1;
-            background: #E8967A;
-            padding: 16px 24px;
-            color: #fff;
+        .from-text {
+            color: #E8967A;
             font-family: Georgia, 'Times New Roman', serif;
-            font-size: 16px;
-            font-weight: 700;
+            font-size: 18px;
+            font-weight: 600;
             font-style: italic;
-            text-align: center;
-            animation: slideInLeft 0.6s ease-out 1.0s both;
-            transform-origin: left center;
+            letter-spacing: 0.02em;
         }
 
-        .hero-split-panel .split-right {
-            flex: 1;
-            background: #4A9B8E;
-            padding: 16px 24px;
-            color: #fff;
+        .hero-arrow {
+            color: rgba(245, 230, 211, 0.5);
+            font-size: 20px;
+            font-weight: 300;
+        }
+
+        .to-text {
+            color: #4A9B8E;
             font-family: Georgia, 'Times New Roman', serif;
-            font-size: 16px;
-            font-weight: 700;
+            font-size: 18px;
+            font-weight: 600;
             font-style: italic;
-            text-align: center;
-            animation: slideInRight 0.6s ease-out 1.15s both;
-            transform-origin: right center;
+            letter-spacing: 0.02em;
+        }
+
+        .hero-gradient-rule {
+            width: 320px;
+            height: 1.5px;
+            margin: 0 auto 24px auto;
+            background: linear-gradient(to right, #E8967A, rgba(245,230,211,0.2), #4A9B8E);
+            border-radius: 2px;
+            position: relative;
+            z-index: 2;
         }
 
         /* ── Author credit ────────────────────────────── */
@@ -2151,11 +2160,12 @@
             .title-coral,
             .title-cream,
             .hero-section h1 br + .title-cream,
-            .hero-split-panel .split-left,
-            .hero-split-panel .split-right,
+            .hero-from-to,
             .hero-author,
             .hero-ctas,
-            .scroll-indicator {
+            .scroll-indicator,
+            .vs-label,
+            .vs-center-label {
                 animation: none !important;
                 opacity: 1 !important;
                 transform: none !important;
@@ -2179,8 +2189,13 @@
                 gap: 8px;
             }
 
-            .hero-split-panel {
-                flex-direction: column;
+            .hero-from-to {
+                gap: 10px;
+            }
+
+            .from-text,
+            .to-text {
+                font-size: 15px;
             }
 
             .hero-inner {
@@ -2196,6 +2211,164 @@
             .hero-author .author-divider {
                 display: none;
             }
+
+            .vs-section {
+                height: 300px;
+            }
+
+            .vs-desc {
+                font-size: 13px;
+                max-width: 140px;
+            }
+
+            .vs-label-left {
+                left: 3%;
+                bottom: 48px;
+            }
+
+            .vs-label-right {
+                right: 3%;
+                bottom: 48px;
+            }
+        }
+
+        /* ============================================================
+           VISUAL STATEMENT — LA Freeway Split
+        ============================================================ */
+        .vs-section {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            height: 480px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .vs-bg-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .vs-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .vs-divider-line {
+            position: absolute;
+            left: 50%;
+            top: 10%;
+            height: 80%;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, rgba(245,230,211,0.8), transparent);
+            transform: translateX(-50%);
+        }
+
+        .vs-center-label {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(27, 58, 47, 0.85);
+            color: #F5E6D3;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-style: italic;
+            font-size: 18px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(245,230,211,0.4);
+            white-space: nowrap;
+            z-index: 2;
+        }
+
+        .vs-label {
+            position: absolute;
+            z-index: 2;
+        }
+
+        .vs-label-left {
+            left: 5%;
+            bottom: 40px;
+            text-align: left;
+        }
+
+        .vs-label-right {
+            right: 5%;
+            bottom: 40px;
+            text-align: right;
+        }
+
+        .vs-tag {
+            display: inline-block;
+            font-family: var(--font);
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 5px 12px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+
+        .vs-tag-bad {
+            background: rgba(232, 150, 122, 0.25);
+            color: #E8967A;
+            border: 1px solid #E8967A;
+        }
+
+        .vs-tag-good {
+            background: rgba(74, 155, 142, 0.25);
+            color: #4A9B8E;
+            border: 1px solid #4A9B8E;
+        }
+
+        .vs-desc {
+            color: #F5E6D3;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-style: italic;
+            font-size: 15px;
+            margin: 0;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+            max-width: 200px;
+        }
+
+        .vs-caption-bar {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 36px;
+            background: rgba(15, 35, 24, 0.88);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            color: rgba(245, 230, 211, 0.6);
+            letter-spacing: 0.04em;
+            font-style: italic;
+        }
+
+        /* Scroll-triggered animation states */
+        .vs-label,
+        .vs-center-label {
+            opacity: 0;
+        }
+
+        .vs-label-left.vs-animate {
+            animation: slideInLeft 0.7s ease-out both;
+        }
+
+        .vs-label-right.vs-animate {
+            animation: slideInRight 0.7s ease-out 0.2s both;
+        }
+
+        .vs-center-label.vs-animate {
+            animation: fadeIn 0.5s ease-out 0.4s both;
         }
 
         /* ============================================================
@@ -2985,11 +3158,13 @@
                 <h1 id="hero-h1"><span class="title-coral">Rethinking</span><span class="title-cream"> California&rsquo;s Transportation</span><br><span class="title-cream">Policy Landscape</span></h1>
             </div>
 
-            <!-- Split panel -->
-            <div class="hero-split-panel">
-                <div class="split-left">from incumbent stagnation</div>
-                <div class="split-right">to climate accountability</div>
+            <!-- From-to treatment -->
+            <div class="hero-from-to">
+                <span class="from-text">from incumbent stagnation</span>
+                <span class="hero-arrow">&rarr;</span>
+                <span class="to-text">to climate accountability</span>
             </div>
+            <div class="hero-gradient-rule"></div>
 
             <!-- Author credit -->
             <div class="hero-author">
@@ -3007,6 +3182,29 @@
             </div>
             <div class="scroll-indicator" aria-hidden="true">
                 <span class="scroll-chevron">&darr;</span>
+            </div>
+        </section>
+
+
+        <!-- ================================================================
+     VISUAL STATEMENT — LA Freeway Split
+================================================================ -->
+        <section id="visual-statement" class="vs-section">
+            <img src="images/LA-traffic-rebound.png" alt="Split image: congested smoggy LA freeway on left versus clean empty road on right — visualizing the difference smart transportation policy can make" class="vs-bg-img">
+            <div class="vs-overlay">
+                <div class="vs-divider-line"></div>
+                <span class="vs-center-label">vs.</span>
+                <div class="vs-label vs-label-left">
+                    <span class="vs-tag vs-tag-bad">TODAY</span>
+                    <p class="vs-desc">Congestion. Smog. No accountability.</p>
+                </div>
+                <div class="vs-label vs-label-right">
+                    <span class="vs-tag vs-tag-good">WITH SB 1087</span>
+                    <p class="vs-desc">Cleaner air. Accountable investment.</p>
+                </div>
+                <div class="vs-caption-bar">
+                    The difference between a transportation system that plans for less driving &mdash; and one that requires it. I-110, Los Angeles.
+                </div>
             </div>
         </section>
 
@@ -6174,6 +6372,37 @@
             buildVmtChart(initR);
             buildGhgChart(initR);
 
+        })();
+    </script>
+
+    <!-- Visual statement scroll animation -->
+    <script>
+        (function () {
+            var vsSection = document.getElementById('visual-statement');
+            if (!vsSection) return;
+
+            // Honor prefers-reduced-motion
+            var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (prefersReduced) {
+                vsSection.querySelectorAll('.vs-label, .vs-center-label').forEach(function (el) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                });
+                return;
+            }
+
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        vsSection.querySelectorAll('.vs-label, .vs-center-label').forEach(function (el) {
+                            el.classList.add('vs-animate');
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            observer.observe(vsSection);
         })();
     </script>
 
