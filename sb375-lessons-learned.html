@@ -2008,6 +2008,204 @@
         }
 
         /* ============================================================
+           AI DISCLOSURE SECTION
+        ============================================================ */
+        .ai-disclosure-section {
+            background: #1B3A2F;
+            padding: 80px 40px;
+            border-top: 3px solid #4A9B8E;
+        }
+
+        .ai-section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .ai-section-icon {
+            font-size: 36px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .ai-section-title {
+            font: bold 32px Georgia, serif;
+            color: #F5E6D3;
+            margin-bottom: 8px;
+        }
+
+        .ai-section-subtitle {
+            font-size: 16px;
+            color: rgba(245,230,211,0.75);
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .ai-intro {
+            max-width: 760px;
+            margin: 0 auto 36px auto;
+            font-size: 15px;
+            color: rgba(245,230,211,0.85);
+            line-height: 1.75;
+            text-align: center;
+        }
+
+        .ai-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto 32px auto;
+        }
+
+        @media (max-width: 768px) {
+            .ai-cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .ai-card {
+            background: #254D40;
+            border-radius: 10px;
+            padding: 24px;
+            border-top: 3px solid var(--card-color);
+        }
+
+        .ai-card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .ai-card-icon {
+            font-size: 20px;
+        }
+
+        .ai-card-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--card-color);
+        }
+
+        .ai-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .ai-card li {
+            font-size: 13px;
+            color: rgba(245,230,211,0.82);
+            line-height: 1.55;
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(245,230,211,0.07);
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .ai-card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #4A9B8E;
+            font-size: 11px;
+            top: 8px;
+        }
+
+        .ai-card li:last-child {
+            border-bottom: none;
+        }
+
+        .tools-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .tool-item {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(27,58,47,0.5);
+        }
+
+        .tool-name {
+            font-size: 13px;
+            font-weight: bold;
+            color: #1B3A2F;
+            display: block;
+        }
+
+        .tool-provider {
+            font-size: 11px;
+            color: rgba(27,58,47,0.65);
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .tool-use {
+            font-size: 12px;
+            color: rgba(27,58,47,0.85);
+            line-height: 1.4;
+        }
+
+        .tool-link {
+            font-size: 11px;
+            color: #254D40;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 3px;
+        }
+
+        .tool-link:hover {
+            text-decoration: underline;
+        }
+
+        .ai-accountability {
+            background: #0F2318;
+            border-left: 4px solid #4A9B8E;
+            padding: 20px 24px;
+            border-radius: 8px;
+            max-width: 800px;
+            margin: 0 auto 28px auto;
+        }
+
+        .ai-accountability-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #F5E6D3;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .ai-accountability-body {
+            font-size: 14px;
+            color: rgba(245,230,211,0.82);
+            line-height: 1.75;
+        }
+
+        .ai-closing {
+            max-width: 680px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .ai-closing-text {
+            font-size: 15px;
+            color: rgba(245,230,211,0.75);
+            font-style: italic;
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
+
+        .ai-closing-attribution {
+            font-size: 13px;
+            color: #4A9B8E;
+            font-style: normal;
+        }
+
+        /* ============================================================
            SEGREGATION BY DESIGN — HIGHWAY-REDLINING SECTION
         ============================================================ */
         #redlining-connection {
@@ -3785,6 +3983,7 @@
             <li><a href="#cta">Act</a></li>
             <li><a href="#nrdc-impact">NRDC Impact</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#ai-disclosure">AI</a></li>
         </ul>
     </nav>
 
@@ -5529,6 +5728,105 @@
         </div>
     </section>
 
+
+    <!-- ================================================================
+     AI DISCLOSURE
+================================================================ -->
+    <section id="ai-disclosure" class="ai-disclosure-section" data-animate="fade">
+        <div class="ai-section-header">
+            <span class="ai-section-icon">🤖</span>
+            <h2 class="ai-section-title">AI Disclosure</h2>
+            <p class="ai-section-subtitle">
+                This dashboard was developed with the assistance of AI tools. In the spirit of transparency and reproducibility, here is an honest account of how AI was and was not used in this project.
+            </p>
+        </div>
+
+        <p class="ai-intro">
+            Artificial intelligence tools played a meaningful role in the research, analysis, and development of this dashboard &mdash; particularly in accelerating data processing and code generation tasks that would have taken significantly longer with traditional methods. All policy analysis, legislative interpretation, stakeholder research, and editorial judgment remain the work of the author.
+        </p>
+
+        <div class="ai-cards-grid">
+            <div class="ai-card" style="--card-color: #4A9B8E;">
+                <div class="ai-card-header">
+                    <span class="ai-card-icon">✅</span>
+                    <span class="ai-card-title">How AI Was Used</span>
+                </div>
+                <ul>
+                    <li>Data pipeline development &mdash; processing 8,000+ CalEnviroScreen 4.0 census tract polygons and merging with Caltrans VMT and EMFAC2021 emissions data</li>
+                    <li>Spatial analysis &mdash; generating initial map layers, identifying high-VMT and high-pollution hotspot tracts, and building the Leaflet.js equity maps</li>
+                    <li>Dashboard code generation &mdash; HTML, CSS, and JavaScript for the interactive Policy Lever Simulator, scroll animations, and responsive layout</li>
+                    <li>Iterative design refinement &mdash; color palette optimization, section reordering, and visual transition improvements</li>
+                    <li>Literature synthesis &mdash; summarizing peer-reviewed research on VMT elasticities, TOD effects, and induced demand for the methodology table</li>
+                </ul>
+            </div>
+
+            <div class="ai-card" style="--card-color: #E8967A;">
+                <div class="ai-card-header">
+                    <span class="ai-card-icon">⚖️</span>
+                    <span class="ai-card-title">What Remained Human-Led</span>
+                </div>
+                <ul>
+                    <li>All policy analysis and legislative interpretation of SB 375, SB 1087, and the three reform scenarios</li>
+                    <li>Stakeholder research and interviews with NRDC, regional planners, and policy experts</li>
+                    <li>Selection and verification of all data sources, citations, and literature</li>
+                    <li>Equity and environmental justice framing &mdash; all decisions about how to represent community harm and historical context</li>
+                    <li>Editorial judgment on narrative arc, tone, and what to include or exclude</li>
+                    <li>All final review and quality control of AI-generated outputs</li>
+                </ul>
+            </div>
+
+            <div class="ai-card" style="--card-color: #1B3A2F; background: #F5E6D3; border-top: 3px solid #1B3A2F;">
+                <div class="ai-card-header">
+                    <span class="ai-card-icon">🛠️</span>
+                    <span class="ai-card-title">Tools &amp; Models</span>
+                </div>
+                <ul class="tools-list">
+                    <li class="tool-item">
+                        <span class="tool-name">Claude Opus / Sonnet</span>
+                        <span class="tool-provider">Anthropic</span>
+                        <div class="tool-use">Data analysis, spatial map creation, dashboard code generation, and iterative design refinement throughout the project</div>
+                        <a href="https://claude.ai" class="tool-link" target="_blank" rel="noopener">https://claude.ai ↗</a>
+                    </li>
+                    <li class="tool-item">
+                        <span class="tool-name">Claude (via Claude.ai)</span>
+                        <span class="tool-provider">Anthropic</span>
+                        <div class="tool-use">Research synthesis, prompt engineering for policy scenario development, and literature review acceleration</div>
+                        <a href="https://claude.ai" class="tool-link" target="_blank" rel="noopener">https://claude.ai ↗</a>
+                    </li>
+                    <li class="tool-item">
+                        <span class="tool-name">Google Antigravity</span>
+                        <span class="tool-provider">Google</span>
+                        <div class="tool-use">Agentic coding environment used to implement, test, and deploy dashboard code with AI-assisted terminal and browser verification</div>
+                    </li>
+                    <li class="tool-item" style="border-bottom: none;">
+                        <span class="tool-name">Gamma AI</span>
+                        <span class="tool-provider">Gamma</span>
+                        <div class="tool-use">Initial slide deck structure and layout for the capstone presentation</div>
+                        <a href="https://gamma.app" class="tool-link" target="_blank" rel="noopener">https://gamma.app ↗</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="ai-accountability">
+            <div class="ai-accountability-title">
+                <span class="ai-accountability-icon">📋</span>
+                A Note on Accuracy and Verification
+            </div>
+            <div class="ai-accountability-body">
+                All AI-generated code, analysis, and content was reviewed, tested, and verified by the author before inclusion. Data figures cited in this dashboard are sourced from peer-reviewed research, government databases, and institutional reports &mdash; not generated by AI. The Policy Lever Simulator's effect size ranges are drawn from documented literature (see Methodology &amp; Assumptions), not AI estimates. Where AI tools produced outputs that could not be independently verified, those outputs were discarded or revised.
+            </div>
+        </div>
+
+        <div class="ai-closing">
+            <div class="ai-closing-text">
+                "AI tools helped make this dashboard more comprehensive and more polished than would have been possible in a single-semester capstone. But the questions it asks &mdash; about who bears the burden of California's transportation system, and who should be held accountable &mdash; are human questions that required human judgment to frame, investigate, and answer."
+            </div>
+            <div class="ai-closing-attribution">
+                &mdash; Forrest Pasturel, MCS Candidate 2026, UC Berkeley
+            </div>
+        </div>
+    </section>
 
     <!-- ================================================================
      DATA SOURCES
