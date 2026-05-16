@@ -1856,6 +1856,136 @@
             font-style: normal;
         }
 
+        .chavez-mural-figure {
+            margin: 0 0 40px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .chavez-mural-figure.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .chavez-mural-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .chavez-mural-caption {
+            background: #0F2318;
+            padding: 16px 20px;
+            font-size: 13px;
+            color: rgba(245,230,211,0.8);
+            font-style: italic;
+            line-height: 1.6;
+            border-radius: 0 0 12px 12px;
+            border-top: 2px solid #E8967A;
+            display: block;
+        }
+
+        .chavez-caption-title {
+            display: block;
+            font-size: 15px;
+            font-weight: bold;
+            color: #E8967A;
+            font-style: normal;
+            margin-bottom: 6px;
+        }
+
+        .chavez-source-link {
+            display: block;
+            margin-top: 8px;
+            font-size: 11px;
+            color: #4A9B8E;
+            text-decoration: none;
+            font-style: normal;
+        }
+
+        .chavez-source-link:hover {
+            text-decoration: underline;
+        }
+
+        .holc-maps-section {
+            margin-top: 20px;
+        }
+
+        .holc-maps-intro {
+            font-size: 13px;
+            color: rgba(245,230,211,0.8);
+            line-height: 1.6;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+
+        .holc-maps-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .holc-map-figure {
+            margin: 0;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(74,155,142,0.3);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .holc-map-figure.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .holc-map-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+        }
+
+        .holc-map-caption {
+            background: #0F2318;
+            padding: 8px 10px;
+            font-size: 11px;
+            color: rgba(245,230,211,0.75);
+            line-height: 1.4;
+            display: block;
+        }
+
+        .holc-map-caption strong {
+            color: #4A9B8E;
+            display: block;
+            margin-bottom: 2px;
+            font-size: 12px;
+        }
+
+        .holc-maps-source {
+            font-size: 11px;
+            color: rgba(245,230,211,0.55);
+            font-style: italic;
+            margin-top: 8px;
+        }
+
+        .holc-source-link {
+            color: #4A9B8E;
+            text-decoration: none;
+        }
+
+        .holc-source-link:hover {
+            text-decoration: underline;
+        }
+
         @media (max-width: 640px) {
             .case-img-placeholder,
             .img-pair,
@@ -1863,11 +1993,16 @@
                 flex-direction: column;
                 grid-template-columns: 1fr;
             }
+            .holc-maps-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (prefers-reduced-motion: reduce) {
             .timeline-img-figure,
-            .case-study-img-figure {
+            .case-study-img-figure,
+            .chavez-mural-figure,
+            .holc-map-figure {
                 opacity: 1;
                 transform: none;
                 transition: none;
@@ -4028,6 +4163,45 @@
                             Source: <a href="https://dsl.richmond.edu/panorama/redlining/" target="_blank"
                                 rel="noopener">Mapping Inequality, Univ. of Richmond</a>
                         </span>
+                        <div class="holc-maps-section">
+                            <p class="holc-maps-intro">
+                                These maps show the same pattern repeated across California's major cities &mdash; Grade D "Hazardous" neighborhoods (red) later became the primary routes for highway construction, concentrating both displacement and pollution burden in communities of color.
+                            </p>
+                            <div class="holc-maps-grid">
+                                <figure class="holc-map-figure" style="transition-delay: 0s;">
+                                    <img src="images/holc-la.png" alt="Los Angeles HOLC risk classification map showing Grade D Hazardous neighborhoods in red overlaid with highway corridors including I-5, I-10, I-105, I-110, and I-710" class="holc-map-img" loading="lazy">
+                                    <figcaption class="holc-map-caption">
+                                        <strong>Los Angeles</strong>
+                                        I-5, I-10, I-105, I-110, and I-710 run directly through Grade D "Hazardous" communities
+                                    </figcaption>
+                                </figure>
+                                <figure class="holc-map-figure" style="transition-delay: 0.15s;">
+                                    <img src="images/holc-sf.png" alt="San Francisco HOLC risk classification map showing Grade D Hazardous neighborhoods overlaid with I-80, I-101, and I-280 highway corridors" class="holc-map-img" loading="lazy">
+                                    <figcaption class="holc-map-caption">
+                                        <strong>San Francisco</strong>
+                                        I-80, I-101, and I-280 routed through the city's most heavily redlined eastern neighborhoods
+                                    </figcaption>
+                                </figure>
+                                <figure class="holc-map-figure" style="transition-delay: 0.3s;">
+                                    <img src="images/holc-fresno.png" alt="Fresno HOLC risk classification map showing Grade D Hazardous neighborhoods overlaid with SR-99 and SR-41 highway corridors" class="holc-map-img" loading="lazy">
+                                    <figcaption class="holc-map-caption">
+                                        <strong>Fresno</strong>
+                                        SR-99 bisects the city's redlined core &mdash; the same corridor now ranking in the 90th&ndash;99th percentile CalEnviroScreen
+                                    </figcaption>
+                                </figure>
+                                <figure class="holc-map-figure" style="transition-delay: 0.45s;">
+                                    <img src="images/holc-stockton.png" alt="Stockton HOLC risk classification map showing Grade D Hazardous neighborhoods overlaid with I-5 and SR-99 highway corridors" class="holc-map-img" loading="lazy">
+                                    <figcaption class="holc-map-caption">
+                                        <strong>Stockton</strong>
+                                        I-5 and SR-99 converge through Stockton's redlined neighborhoods, creating persistent diesel and freight pollution burdens
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <p class="holc-maps-source">
+                                Source: UCLA Luskin Center for Innovation, <em>Addressing the Discriminatory Impacts of Redlining and Highway Development in California</em> (2024). 
+                                <a href="https://innovation.luskin.ucla.edu/wp-content/uploads/2024/06/Addressing-the-Discriminatory-Impacts-of-Redlining-and-Highway-Development-in-California.pdf" target="_blank" rel="noopener" class="holc-source-link">Download full report ↗</a>
+                            </p>
+                        </div>
                     </div>
 
                     <div class="sbd-tl-card" data-animate="slide">
@@ -4170,6 +4344,15 @@
                     These are not hypothetical scenarios. Each project below was built, funded with public dollars,
                     and completed in the last decade.
                 </p>
+
+                <figure class="chavez-mural-figure">
+                    <img src="images/chavez-ravine-mural.png" alt="Division of the Barrios and Chavez Ravine — community mural depicting the displacement of Mexican-American families from Chavez Ravine by freeway construction and urban renewal in Los Angeles" class="chavez-mural-img" loading="lazy">
+                    <figcaption class="chavez-mural-caption">
+                        <span class="chavez-caption-title">"Division of the Barrios &amp; Chavez Ravine"</span>
+                        Community mural depicting the forced displacement of Mexican-American families from Chavez Ravine &mdash; a thriving community bulldozed in the 1950s for the 110 Freeway and Dodger Stadium. Their story is California's story: infrastructure built on communities of color, without their consent.
+                        <a href="https://sparcinla.org/programs/greatwallinstitute/" target="_blank" rel="noopener" class="chavez-source-link">Source: SPARC LA / Great Wall Institute ↗</a>
+                    </figcaption>
+                </figure>
 
                 <div class="cs-grid" data-anim="stagger">
                     <div class="cs-card" data-animate="slide">
@@ -7033,22 +7216,43 @@
     <!-- Image figure scroll animations -->
     <script>
         (function () {
-            var figs = document.querySelectorAll('.timeline-img-figure, .case-study-img-figure');
-            if (!figs.length) return;
+            var figs = document.querySelectorAll('.timeline-img-figure, .case-study-img-figure, .chavez-mural-figure');
             var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            if (prefersReduced) {
-                figs.forEach(function (f) { f.classList.add('visible'); });
-                return;
+            
+            if (figs.length) {
+                if (prefersReduced) {
+                    figs.forEach(function (f) { f.classList.add('visible'); });
+                } else {
+                    var imgObs = new IntersectionObserver(function (entries) {
+                        entries.forEach(function (entry) {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('visible');
+                                imgObs.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.2 });
+                    figs.forEach(function (f) { imgObs.observe(f); });
+                }
             }
-            var imgObs = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        imgObs.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.2 });
-            figs.forEach(function (f) { imgObs.observe(f); });
+
+            var holcGrid = document.querySelector('.holc-maps-grid');
+            if (holcGrid) {
+                if (prefersReduced) {
+                    holcGrid.querySelectorAll('.holc-map-figure').forEach(function (f) { f.classList.add('visible'); });
+                } else {
+                    var gridObs = new IntersectionObserver(function (entries) {
+                        entries.forEach(function (entry) {
+                            if (entry.isIntersecting) {
+                                entry.target.querySelectorAll('.holc-map-figure').forEach(function(f) {
+                                    f.classList.add('visible');
+                                });
+                                gridObs.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.15 });
+                    gridObs.observe(holcGrid);
+                }
+            }
         })();
     </script>
 
