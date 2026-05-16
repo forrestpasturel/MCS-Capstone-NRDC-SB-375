@@ -1585,6 +1585,154 @@
         }
 
         /* ============================================================
+           IMAGE PLACEHOLDER CARDS — Timeline & Case Studies
+        ============================================================ */
+        .img-placeholder {
+            background: #0F2318;
+            border: 1px dashed #4A9B8E;
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 16px;
+            text-align: center;
+            max-width: 100%;
+        }
+
+        .img-placeholder-after {
+            border-color: #E8967A;
+        }
+
+        .placeholder-icon {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .placeholder-title {
+            font-size: 13px;
+            font-weight: bold;
+            color: #F5E6D3;
+            margin: 0 0 6px;
+        }
+
+        .placeholder-desc {
+            font-size: 12px;
+            color: rgba(245,230,211,0.7);
+            line-height: 1.5;
+            margin: 0 0 8px;
+        }
+
+        .placeholder-source {
+            font-size: 11px;
+            color: #4A9B8E;
+            text-decoration: none;
+        }
+
+        .placeholder-source:hover {
+            text-decoration: underline;
+        }
+
+        .img-pair {
+            display: flex;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .img-pair .img-placeholder {
+            flex: 1;
+            margin-top: 0;
+        }
+
+        .placeholder-rights {
+            font-size: 10px;
+            color: rgba(245,230,211,0.4);
+            font-style: italic;
+            margin-top: 10px;
+            line-height: 1.4;
+        }
+
+        .tl-img-real {
+            width: 100%;
+            border-radius: 6px;
+            margin-top: 12px;
+            border: 1px solid rgba(74,155,142,0.3);
+        }
+
+        .tl-img-caption {
+            font-size: 11px;
+            color: rgba(245,230,211,0.55);
+            font-style: italic;
+            margin-top: 4px;
+            text-align: center;
+        }
+
+        .case-img-placeholder {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+            width: 100%;
+        }
+
+        .case-img-before,
+        .case-img-after {
+            flex: 1;
+            background: #f7f5f2;
+            border-radius: 6px;
+            padding: 12px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--ink-soft);
+            border: 1px dashed var(--border);
+            line-height: 1.5;
+        }
+
+        .case-img-after {
+            border-color: #c62828;
+        }
+
+        .case-img-tag {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            background: var(--green-600);
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin-bottom: 6px;
+        }
+
+        .case-img-tag-after {
+            background: #c62828;
+        }
+
+        .case-img-icon {
+            font-size: 24px;
+            display: block;
+            margin: 6px 0;
+        }
+
+        .case-img-before a,
+        .case-img-after a {
+            display: block;
+            font-size: 10px;
+            color: var(--sky);
+            margin-top: 6px;
+            text-decoration: none;
+        }
+
+        .case-img-before a:hover,
+        .case-img-after a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 640px) {
+            .case-img-placeholder,
+            .img-pair {
+                flex-direction: column;
+            }
+        }
+
+        /* ============================================================
            SEGREGATION BY DESIGN — HIGHWAY-REDLINING SECTION
         ============================================================ */
         #redlining-connection {
@@ -3754,6 +3902,14 @@
                             Source: <a href="https://segregationbydesign.com/oakland/freeways" target="_blank"
                                 rel="noopener">Segregation by Design</a>
                         </span>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Cypress_Freeway_1989_Loma_Prieta.jpg/640px-Cypress_Freeway_1989_Loma_Prieta.jpg" alt="Cypress Street Viaduct (I-880) double-deck freeway structure built through West Oakland in 1957, later collapsed in 1989 Loma Prieta earthquake" class="tl-img-real" loading="lazy">
+                        <p class="tl-img-caption">The Cypress Freeway (I-880) double-deck viaduct sliced through West Oakland (1957). Destroyed 5,000 homes. &mdash; USGS / Public Domain</p>
+                        <div class="img-placeholder" style="margin-top:10px">
+                            <span class="placeholder-icon">📍</span>
+                            <p class="placeholder-title">West Oakland Today</p>
+                            <p class="placeholder-desc">Mandela Parkway now occupies the former Cypress Freeway corridor &mdash; a green median where the viaduct once stood.</p>
+                            <a class="placeholder-source" href="https://www.connectoakland.org/history/west-oakland/" target="_blank" rel="noopener">Source: ConnectOakland ↗</a>
+                        </div>
                     </div>
 
                     <div class="sbd-tl-card" data-animate="slide">
@@ -3786,6 +3942,13 @@
                             Source: <a href="https://greenlining.org/homes-before-highways" target="_blank"
                                 rel="noopener">Greenlining Institute, <em>Homes Before Highways</em></a> (2025)
                         </span>
+                        <div class="img-placeholder">
+                            <span class="placeholder-icon">🛣️</span>
+                            <p class="placeholder-title">I-710 Construction, Vernon, CA (1961)</p>
+                            <p class="placeholder-desc">Aerial view of I-710 freeway construction cutting through East Los Angeles communities. Nearly 11,000 residents were displaced along the I-710 corridor.</p>
+                            <a class="placeholder-source" href="https://calisphere.org/item/ebff010ef530251c702212ce1a14a549/" target="_blank" rel="noopener">View archival image: Calisphere / LA Public Library ↗</a>
+                            <p class="placeholder-rights">📷 Archival before/after photography for this corridor is available through Calisphere (LAPL Kelly-Holiday Collection). Placeholder shown pending image rights clearance.</p>
+                        </div>
                     </div>
 
                     <div class="sbd-tl-card" data-animate="slide">
@@ -3805,6 +3968,21 @@
                             <a href="https://greenlining.org/homes-before-highways" target="_blank"
                                 rel="noopener">Greenlining Institute</a>
                         </span>
+                        <div class="img-pair">
+                            <div class="img-placeholder">
+                                <span class="placeholder-icon">🏨️</span>
+                                <p class="placeholder-title">West Oakland 7th Street, pre-1955</p>
+                                <p class="placeholder-desc">The &ldquo;Harlem of the West&rdquo; &mdash; jazz clubs, Black-owned banks, walkable transit-connected neighborhoods before freeway construction.</p>
+                                <a class="placeholder-source" href="https://www.thebolditalic.com/west-oaklands-seventh-street-was-once-a-prosperous-hub-for-the-bays-black-community/" target="_blank" rel="noopener">Source: The Bold Italic ↗</a>
+                            </div>
+                            <div class="img-placeholder img-placeholder-after">
+                                <span class="placeholder-icon">😷</span>
+                                <p class="placeholder-title">West Oakland Today &mdash; Highest Asthma Rates in California</p>
+                                <p class="placeholder-desc">4% tree canopy. 12&deg;F hotter during heat waves. Among the highest asthma rates in the state. A direct legacy of where freeways were built.</p>
+                                <a class="placeholder-source" href="https://www.greenbelt.org/blog/oakland-black-neighborhoods-resilience/" target="_blank" rel="noopener">Source: Greenbelt Alliance ↗</a>
+                            </div>
+                        </div>
+                        <p class="placeholder-rights">📷 Archival before/after photography available through The Bold Italic and Greenbelt Alliance. Placeholder shown pending image rights clearance.</p>
                     </div>
                 </div>
 
@@ -3854,6 +4032,20 @@
 
                 <div class="cs-grid" data-anim="stagger">
                     <div class="cs-card" data-animate="slide">
+                        <div class="case-img-placeholder">
+                            <div class="case-img-before">
+                                <span class="case-img-tag">BEFORE</span>
+                                <span class="case-img-icon">🏨️</span>
+                                <p>South Gate / Downey neighborhood, pre-expansion</p>
+                                <a href="https://greenlining.org/homes-before-highways" target="_blank" rel="noopener">Source: Greenlining Institute ↗</a>
+                            </div>
+                            <div class="case-img-after">
+                                <span class="case-img-tag case-img-tag-after">AFTER</span>
+                                <span class="case-img-icon">🛣️</span>
+                                <p>569 homes &amp; businesses demolished. 98th percentile CalEnviroScreen.</p>
+                                <a href="https://greenlining.org/homes-before-highways" target="_blank" rel="noopener">Source: Greenlining Institute ↗</a>
+                            </div>
+                        </div>
                         <div class="cs-route">I-5 · Los Angeles</div>
                         <div class="cs-stat">569</div>
                         <div class="cs-stat-label">homes &amp; businesses demolished</div>
@@ -3867,6 +4059,20 @@
                     </div>
 
                     <div class="cs-card" data-animate="slide">
+                        <div class="case-img-placeholder">
+                            <div class="case-img-before">
+                                <span class="case-img-tag">BEFORE</span>
+                                <span class="case-img-icon">🏪</span>
+                                <p>Central Fresno small business corridor, pre-expansion</p>
+                                <a href="https://greenlining.org/homes-before-highways" target="_blank" rel="noopener">Source: Greenlining Institute ↗</a>
+                            </div>
+                            <div class="case-img-after">
+                                <span class="case-img-tag case-img-tag-after">AFTER</span>
+                                <span class="case-img-icon">💨</span>
+                                <p>11 businesses demolished. Increased heavy truck traffic in California&rsquo;s most polluted region.</p>
+                                <a href="https://greenlining.org/homes-before-highways" target="_blank" rel="noopener">Source: Greenlining Institute ↗</a>
+                            </div>
+                        </div>
                         <div class="cs-route">SR-99 · Fresno</div>
                         <div class="cs-stat">11</div>
                         <div class="cs-stat-label">local businesses demolished</div>
@@ -3880,6 +4086,20 @@
                     </div>
 
                     <div class="cs-card" data-animate="slide">
+                        <div class="case-img-placeholder">
+                            <div class="case-img-before">
+                                <span class="case-img-tag">BEFORE</span>
+                                <span class="case-img-icon">🏠</span>
+                                <p>Inglewood / Hawthorne residential neighborhood, pre-expansion</p>
+                                <a href="https://greenlining.org/homes-before-highways" target="_blank" rel="noopener">Source: Greenlining Institute ↗</a>
+                            </div>
+                            <div class="case-img-after">
+                                <span class="case-img-tag case-img-tag-after">AFTER</span>
+                                <span class="case-img-icon">📉</span>
+                                <p>$2.16B spent. 23 homes demolished. Traffic and commute times increased after expansion.</p>
+                                <a href="https://greenlining.org/homes-before-highways" target="_blank" rel="noopener">Source: Greenlining Institute ↗</a>
+                            </div>
+                        </div>
                         <div class="cs-route">I-405 · Los Angeles</div>
                         <div class="cs-stat">23</div>
                         <div class="cs-stat-label">homes &amp; businesses demolished</div>
