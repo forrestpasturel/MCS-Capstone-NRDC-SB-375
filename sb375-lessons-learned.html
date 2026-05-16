@@ -1740,6 +1740,12 @@
             transform: translateY(0);
         }
 
+        .timeline-img-uncropped .timeline-img {
+            height: auto;
+            max-height: none;
+            object-fit: unset;
+        }
+
         .timeline-img {
             width: 100%;
             height: 180px;
@@ -4038,7 +4044,7 @@
                             Source: <a href="https://segregationbydesign.com/oakland/freeways" target="_blank"
                                 rel="noopener">Segregation by Design</a>
                         </span>
-                        <figure class="timeline-img-figure">
+                        <figure class="timeline-img-figure timeline-img-uncropped">
                             <img src="images/I-710 Freeway Aerial View.jpeg" alt="Aerial black and white photograph of I-710 freeway construction cutting through East Los Angeles communities, circa 1960s" class="timeline-img" loading="lazy">
                             <figcaption class="timeline-img-caption">
                                 Aerial view of I-710 (Long Beach Freeway) construction through East Los Angeles, c. 1961. Nearly 11,000 residents were displaced along the I-710 corridor alone &mdash; homes and neighborhoods cleared to make way for concrete.
@@ -4077,13 +4083,6 @@
                             Source: <a href="https://greenlining.org/homes-before-highways" target="_blank"
                                 rel="noopener">Greenlining Institute, <em>Homes Before Highways</em></a> (2025)
                         </span>
-                        <div class="img-placeholder">
-                            <span class="placeholder-icon">🛣️</span>
-                            <p class="placeholder-title">I-710 Construction, Vernon, CA (1961)</p>
-                            <p class="placeholder-desc">Aerial view of I-710 freeway construction cutting through East Los Angeles communities. Nearly 11,000 residents were displaced along the I-710 corridor.</p>
-                            <a class="placeholder-source" href="https://calisphere.org/item/ebff010ef530251c702212ce1a14a549/" target="_blank" rel="noopener">View archival image: Calisphere / LA Public Library ↗</a>
-                            <p class="placeholder-rights">📷 Archival before/after photography for this corridor is available through Calisphere (LAPL Kelly-Holiday Collection). Placeholder shown pending image rights clearance.</p>
-                        </div>
                     </div>
 
                     <div class="sbd-tl-card" data-animate="slide">
@@ -4107,7 +4106,7 @@
                             <div class="timeline-ba-before">
                                 <div class="ba-tag ba-tag-before">BEFORE &mdash; Pre-1955</div>
                                 <figure class="timeline-img-figure">
-                                    <img src="images/West Oakland 7th Street pre-1955.webp" alt="West Oakland 7th Street before freeway construction, pre-1955 — streetcar, pedestrians, thriving Black commercial corridor known as the Harlem of the West" class="timeline-img" loading="lazy">
+                                    <img src="images/west-oakland-7th-street-pre-1955.webp" alt="West Oakland 7th Street before freeway construction, pre-1955 — streetcar, pedestrians, thriving Black commercial corridor known as the Harlem of the West" class="timeline-img" loading="lazy">
                                     <figcaption class="timeline-img-caption">
                                         West Oakland's 7th Street &mdash; the &ldquo;Harlem of the West.&rdquo; Jazz clubs, Black-owned banks, a working streetcar line, and a walkable community thriving before freeway construction arrived.
                                         <span class="timeline-img-source">Source: Oakland History Center / Public Archive</span>
@@ -4174,13 +4173,6 @@
 
                 <div class="cs-grid" data-anim="stagger">
                     <div class="cs-card" data-animate="slide">
-                        <figure class="case-study-img-figure">
-                            <img src="images/West Oakland Industrial Pollution.jpg" alt="Heavy diesel truck traffic near port — representative of present-day pollution burden in communities near I-5 in Los Angeles" class="case-study-img" loading="lazy">
-                            <figcaption class="case-study-img-caption">
-                                Present-day reality along California's major freight corridors: diesel truck traffic, port operations, and industrial activity concentrated in communities already burdened by decades of highway expansion. I-5's La Mirada&ndash;Downey expansion added lanes through the 98th percentile CalEnviroScreen community.
-                                <span class="case-study-img-source">Diesel truck traffic, Port of Oakland / Bay Area news archive</span>
-                            </figcaption>
-                        </figure>
                         <div class="cs-route">I-5 · Los Angeles</div>
                         <div class="cs-stat">569</div>
                         <div class="cs-stat-label">homes &amp; businesses demolished</div>
@@ -4194,13 +4186,6 @@
                     </div>
 
                     <div class="cs-card" data-animate="slide">
-                        <figure class="case-study-img-figure">
-                            <img src="images/I-710 Freeway Aerial View.jpeg" alt="Aerial view of freeway construction through California community — representative of SR-99 corridor expansion impact in Fresno" class="case-study-img" loading="lazy">
-                            <figcaption class="case-study-img-caption">
-                                Aerial documentation of freeway construction displacing California communities. SR-99's Fresno expansion demolished 11 local businesses in the 90th&ndash;99th percentile CalEnviroScreen corridor.
-                                <span class="case-study-img-source">Representative image &mdash; I-710 aerial, Kelly-Holiday Collection / LAPL</span>
-                            </figcaption>
-                        </figure>
                         <div class="cs-route">SR-99 · Fresno</div>
                         <div class="cs-stat">11</div>
                         <div class="cs-stat-label">local businesses demolished</div>
@@ -4214,20 +4199,6 @@
                     </div>
 
                     <div class="cs-card" data-animate="slide">
-                        <div class="case-img-placeholder">
-                            <div class="case-img-before">
-                                <span class="case-img-tag">BEFORE</span>
-                                <span class="case-img-icon">🏠</span>
-                                <p>Inglewood / Hawthorne residential neighborhood, pre-expansion</p>
-                                <a href="https://greenlining.org/homes-before-highways" target="_blank" rel="noopener">Source: Greenlining Institute ↗</a>
-                            </div>
-                            <div class="case-img-after">
-                                <span class="case-img-tag case-img-tag-after">AFTER</span>
-                                <span class="case-img-icon">📉</span>
-                                <p>$2.16B spent. 23 homes demolished. Traffic and commute times increased after expansion.</p>
-                                <a href="https://greenlining.org/homes-before-highways" target="_blank" rel="noopener">Source: Greenlining Institute ↗</a>
-                            </div>
-                        </div>
                         <div class="cs-route">I-405 · Los Angeles</div>
                         <div class="cs-stat">23</div>
                         <div class="cs-stat-label">homes &amp; businesses demolished</div>
