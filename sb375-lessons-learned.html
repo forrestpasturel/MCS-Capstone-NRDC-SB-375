@@ -5446,6 +5446,10 @@
             }).addTo(holcMap);
 
             /* ── Layer groups ───────────────────────────────────────── */
+            // Custom pane so corridors always render above polygons
+            holcMap.createPane('corridorPane');
+            holcMap.getPane('corridorPane').style.zIndex = 450;
+
             var tractLayer = null;
             var holcLayer = null;
             var freewayLayer = null;
@@ -5576,6 +5580,7 @@
                             lineCap: 'round',
                             lineJoin: 'round',
                             interactive: false,
+                            pane: 'corridorPane',
                         };
                     },
                 });
@@ -5589,6 +5594,7 @@
                             opacity: 1.0,
                             lineCap: 'round',
                             lineJoin: 'round',
+                            pane: 'corridorPane',
                         };
                     },
                     onEachFeature: function (feature, layer) {
