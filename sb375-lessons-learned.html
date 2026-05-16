@@ -815,13 +815,31 @@
             backdrop-filter: blur(6px);
             -webkit-backdrop-filter: blur(6px);
             border-radius: 8px;
-            padding: 12px;
-            font-size: 12px;
+            padding: 10px 12px;
+            font-size: 11px;
             line-height: 1.5;
             box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
             border: 1px solid #4A9B8E;
             max-width: 220px;
             color: #F5E6D3;
+            max-height: 380px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #4A9B8E #1B3A2F;
+        }
+
+        .map-legend::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .map-legend::-webkit-scrollbar-track {
+            background: #1B3A2F;
+            border-radius: 2px;
+        }
+
+        .map-legend::-webkit-scrollbar-thumb {
+            background: #4A9B8E;
+            border-radius: 2px;
         }
 
         /* Hide the default Leaflet layer control on the equity map */
@@ -847,7 +865,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            margin-bottom: 4px;
+            margin-bottom: 3px;
         }
 
         .map-legend-swatch {
